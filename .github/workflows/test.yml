@@ -32,8 +32,8 @@ jobs:
       - name: Upload PDF as an artifact
         uses: actions/upload-artifact@v3
         with:
-          name: Cheat-Sheet.pdf
-          path: cheat_sheets/build/Cheat_Sheet*.pdf
+          name: Cheat-Sheet
+          path: cheat_sheets/build/Cheat_Sheet/*.pdf
           retention-days: 7
 
       - name: Deploy CV to gh-pages
