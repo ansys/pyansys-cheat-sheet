@@ -11,14 +11,14 @@ on:
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true 
+  cancel-in-progress: true
 
 jobs:
   make-pdf:
     name: Build
     runs-on: ubuntu-latest
     steps:
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
 
       - name: Install dependencies
         run: |
