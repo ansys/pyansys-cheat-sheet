@@ -14,7 +14,7 @@ concurrency:
   cancel-in-progress: true 
 
 jobs:
-  make_pdf:
+  make-pdf:
     name: Build
     runs-on: ubuntu-latest
     steps:
@@ -33,5 +33,16 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: Cheat-Sheet.pdf
-          path: build/Cheat_Sheet*.pdf
+          path: cheat_sheets/build/Cheat_Sheet*.pdf
           retention-days: 7
+
+      - name: Deploy CV to gh-pages
+        if: github.ref == 'refs/heads/main'
+        uses: JamesIves/github-pages-deploy-action@4.1.5
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: gh-pages
+          folder: cheat_sheets/build
+          clean: true
+          clean-exclude: index.html
+          single-commit: true
