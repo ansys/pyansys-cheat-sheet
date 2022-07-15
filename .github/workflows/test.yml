@@ -22,8 +22,8 @@ jobs:
 
       - name: Install dependencies
         run: |
-          sudo apt-get update -y
-          sudo apt-get install -y latexmk texlive-fonts-extra
+          sudo apt update
+          sudo apt install zip pandoc libgl1-mesa-glx xvfb texlive-latex-extra latexm
 
       - name: make pdf
         run: |
@@ -52,4 +52,4 @@ jobs:
         run: |
           echo "::group:: Xvfb error 'xvfb_error.log'" && cat xvfb_error.log && echo "::endgroup::"
           echo "::group:: Terminal output 'console_output.txt'" && cat console_output.txt && echo "::endgroup::"
-          for f in build/*.log; do echo "::group:: Output latex log file $f" && cat $f && echo "::endgroup::" ; done
+          for f in cheat_sheets/cheat_sheets/build/*.log; do echo "::group:: Output latex log file $f" && cat $f && echo "::endgroup::" ; done
