@@ -12,3 +12,8 @@ clean:
 	rm -rf $(BUILD)
 
 .PHONY: build clean
+
+all:
+	pymapdl_cheat_sheat
+	pyaedt_cheat_sheat
+	pyansy_cheat_sheat
