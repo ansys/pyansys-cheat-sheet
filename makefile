@@ -1,9 +1,13 @@
 BUILD = build
 
-pdf:
-	latexmk -f -pdf -use-make cheat_sheets/Cheat_Sheet_Template_3.tex -cd -outdir=$(BUILD) -interaction=nonstopmode || true
+pymapdl_cheatsheat:
+	latexmk -f -pdf -use-make mapdl_cheat_sheat/pymapdl_cheat_sheat.tex -cd -outdir=../$(BUILD) -interaction=nonstopmode || true
+
+pyaedt_cheatsheat:
+	latexmk -f -pdf -use-make aedt_cheat_sheat/pyaedt_cheat_sheat.tex -cd -outdir=../$(BUILD) -interaction=nonstopmode || true
+
 
 clean:
-	rm -rf cheat_sheets/$(BUILD)
+	rm -rf $(BUILD)
 
 .PHONY: build clean
