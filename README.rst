@@ -3,7 +3,8 @@ PyAnsys cheat sheets
 
 Introduction
 ------------
-This repository contains the cheat sheats for different pyansys library.
+This repository contains cheat sheets for PyAnsys libraries. Procedures follow for creating
+and deploying a cheat sheet.
 
 Create cheat sheet
 ~~~~~~~~~~~~~~~~~~
