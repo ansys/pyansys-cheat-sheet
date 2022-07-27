@@ -67,6 +67,7 @@
 \definecolor{codegreen}{rgb}{0,0.6,0}
 \definecolor{codegray}{rgb}{0.5,0.5,0.5}
 \definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{blue}{RGB}{57,114,161}
 
 \lstdefinestyle{python_style}{
 	backgroundcolor=\color{silver},
@@ -243,7 +244,7 @@ elem_num_all=mapdl.mesh.enum_all
 
 \columnbreak
 
-\section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Post-processing Class}
+\section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Post-Processing Class}
 %To plot results the general form is: \code{mapdl.postprocessing.result_name}
 This class is used for plotting and saving results to NumPy arrays.
 \begin{lstlisting}[language=Python]
@@ -269,7 +270,7 @@ mapdl.post_processing.plot_nodal_eqv_stress(
 \end{lstlisting} 
 \vfill
 \section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Plotting Class}
-Plotting is interpolated with pyvista by saving the resulting stress and storing wtihin the underlying UnstructuredGrid
+Plotting is interpolated with PyVista by saving the resulting stress and storing wtihin the underlying UnstructuredGrid
 \begin{lstlisting}[language=Python]
 pl=pyvista.Plotter()
 pl0=mapdl.post_processing.plot_nodal_stress(
@@ -296,9 +297,9 @@ mapdl.lplot(vtk=False)
 
 \subsection{References from PyMAPDL Documentation}
 \begin{itemize}
-\item \href{https://mapdldocs.pyansys.com/getting_started/index.html}{Getting Started}
-\item \href{https://mapdldocs.pyansys.com/mapdl_commands/index.html}{MAPDL Commands}
-\item \href{https://mapdldocs.pyansys.com/api/index.html}{API Reference}
+\item \href{https://mapdldocs.pyansys.com/getting_started/index.html}{\color{blue}{Getting Started}}
+\item \href{https://mapdldocs.pyansys.com/mapdl_commands/index.html}{\color{blue}{MAPDL Commands}}
+\item \href{https://mapdldocs.pyansys.com/api/index.html}{\color{blue}{API Reference}}
 \end{itemize}
 \end{multicols}
 \vspace{-0.15cm}
