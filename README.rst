@@ -1,14 +1,14 @@
-PyAnsys Cheat Sheats
+PyAnsys cheat sheets
 ====================
 
 Introduction
 ------------
 This repository contains the cheat sheats for different pyansys library.
 
-To make cheatsheat using this template
+Create cheat sheet
+~~~~~~~~~~~~~~~~~~
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-To make a new cheat sheat :
+You use a template to create a cheat sheet. Here is the procedure to follow:
 
 - make a folder inside the `<cheat_sheats>`_ in the project name.
   for example: 
