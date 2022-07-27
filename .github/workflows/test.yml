@@ -51,7 +51,7 @@ jobs:
         if: always()
         run: |
           echo "::group:: Terminal output 'console_output.txt'" && cat console_output.txt && echo "::endgroup::"
-          for f in cheat_sheets/build/*.log; do echo "::group:: Output latex log file $f" && cat $f && echo "::endgroup::" ; done
+          for f in build/*.log; do echo "::group:: Output latex log file $f" && cat $f && echo "::endgroup::" ; done
 
   release:
     name: Release
