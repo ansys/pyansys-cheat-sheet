@@ -8,7 +8,6 @@ and deploying a cheat sheet.
 
 Create cheat sheet
 ~~~~~~~~~~~~~~~~~~
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 You use a template to create a cheat sheet. Here is the procedure to follow:
 
 #. In the `<cheat_sheats>`_ folder, create a child folder with an appropriate project
