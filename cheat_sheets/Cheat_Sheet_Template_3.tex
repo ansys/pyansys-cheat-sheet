@@ -294,14 +294,14 @@ pl.show()
 \end{lstlisting} 
 \begin{lstlisting}[language=Python]
 # Plot the currently selected elements
-mapdl.eplot(show_node_numbering,vtk)
+mapdl.eplot(show_node_numbering, vtk)
 # Plot the selected volumes
-mapdl.vplot(nv1nv2,ninc,degen,scale, ...)
+mapdl.vplot(nv1, nv2, ninc, degen, scale, ...)
 # Display the selected areas
-mapdl.aplot(na1,na2,ninc,degen,scale,...)
+mapdl.aplot(na1, na2, ninc, degen, scale, ...)
 # Display the selected lines without 
 # MAPDL plot symbols
-mapdl.lplot(vtk=True,cpos='xy',line_width=10)
+mapdl.lplot(vtk=True, cpos='xy', line_width=10)
 # Save png file of line plot with MAPDL 
 # coordinate symbol
 mapdl.psymb('CS', 1)
