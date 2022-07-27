@@ -40,10 +40,10 @@ Inside the tex file:
    
    link the dev-guide in blue color with name in pdf as Pyansys dev-guide.
 
-To Generate cheatsheat
+Generate cheat sheet
 ~~~~~~~~~~~~~~~~~~~~~~ 
-- Add new makefile command in makefile as:
+#. In ``makefile``, add a new makefile command:
     <your_project>_cheatsheat:
 	    latexmk -f -pdf -use-make cheat_sheats/<your_folder_name>/<your_tex_file_name>.tex -cd -outdir=../../$(BUILD) -interaction=nonstopmode || true
 
-- Add the command to make all in makefile
+#. In ``makefile``, add this command to ``make all``.
