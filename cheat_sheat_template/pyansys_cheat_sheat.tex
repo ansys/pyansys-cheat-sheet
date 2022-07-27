@@ -11,8 +11,12 @@
 \begin{document}
 \raggedright
 \footnotesize
+
+% Add the title of cheat sheat here
+% ----------------------------------------
+
 \begin{center}
-     \Huge{\textbf{Cheat sheet for PyAEDT}} \\
+     \Huge{\textbf{Cheat sheet for PYANSYS}} \\
 \end{center}
 \AddToShipoutPicture*
   {\put(670,577.5){\includegraphics[height = 1.2cm]{ansys.png}}}
@@ -21,44 +25,52 @@
 \noindent\makebox[\linewidth]{\rule{\paperwidth}{2pt}}
 
 \begin{multicols}{3}
-% multicol parameters
-% These lengths are set only within the two main columns
-%\setlength{\columnseprule}{0.25pt}
 \setlength{\premulticols}{1pt}
 \setlength{\postmulticols}{1pt}
 \setlength{\multicolsep}{1pt}
 \setlength{\columnsep}{2pt}
 
 % session starts here. 
+% First colomn
 % --------------------------------------------------------------------------------
 
-\section{\includegraphics[height=\fontcharht\font`\S]{slash.png} /*Add heading here*/}
-/*add description of code block here*/
+\section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Add heading here}
+add description of code block here
 \begin{lstlisting}[language=Python]
-/*
+
 ADD code here
-*/
+
 \end{lstlisting}
 
-\vfill
-\section{\includegraphics[height=\fontcharht\font`\S]{slash.png}  /*Add heading here*/}
-/*add description of code block here*/
-\begin{lstlisting}[language=Python]
-/*
-ADD code here
-*/
-\end{lstlisting} 
-\vfill
+% Second column
+% --------------------------------------------------------------------------------
 
-\section{\includegraphics[height=\fontcharht\font`\S]{slash.png}  /*Add heading here*/}
-/*add description of code block here*/
+\vfill
+\section{\includegraphics[height=\fontcharht\font`\S]{slash.png}  Add heading here}
+add description of code block here
 \begin{lstlisting}[language=Python]
-/*
+
 ADD code here
-*/
+
 \end{lstlisting} 
 
-\subsection{References from PyAEDT Documentation}
+% Third colomn
+% --------------------------------------------------------------------------------
+\vfill
+\section{\includegraphics[height=\fontcharht\font`\S]{slash.png}  Add heading here}
+add description of code block here
+\begin{lstlisting}[language=Python]
+
+ADD code here
+
+\end{lstlisting}
+
+% Add Subsection
+% This session includes the useful links to the docummentation of library
+% example: installation, Api reference, commands, examples.
+% Replace the name of link in 'name of link'
+
+\subsection{References from PyAnsys Documentation}
 \begin{itemize}
 \item \href{usefullinks}{\color{blue}{name of link}}
 \item \href{useful_links}{\color{blue}{name of link}}
@@ -66,7 +78,7 @@ ADD code here
 \end{itemize}
 \end{multicols}
 
-
+% Footer session of the latex with link to documentation and github page
 \vspace{-0.15cm}
 \noindent\makebox[\linewidth]{\rule{\paperwidth}{4pt}}
 \begin{center}
