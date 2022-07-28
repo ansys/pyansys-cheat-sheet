@@ -10,7 +10,7 @@ Create cheat sheet
 ~~~~~~~~~~~~~~~~~~
 You use a template to create a cheat sheet. Here is the procedure to follow:
 
-#. In the `<cheat_sheats>`_ folder, create a child folder with an appropriate project
+#. In the `<cheat_sheets>`_ folder, create a child folder with an appropriate project
     name. For example, ``pymapdl_cheat_sheet``.
 #. In the `<cheat_sheet_template>_` folder, copy ``pyansys_cheat_sheet.tex`` and then
     paste it into your new project folder.
@@ -40,7 +40,7 @@ You use a template to create a cheat sheet. Here is the procedure to follow:
      
     .. code ::
    
-    item \href{https://dev.docs.pyansys.com/}{\color{blue}{PyAnsys dev-guide}}
+    item \href{https://dev.docs.pyansys.com/}{\color{blue}{PyAnsys Developer's Guide}}
    
 
 Generate cheat sheet
