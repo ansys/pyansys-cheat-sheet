@@ -26,24 +26,27 @@ You use a template to create a cheat sheet. Here is the procedure to follow:
     #. In ``Add description of code block here``, add a description.
     #. In the block ``Add code here``, add the Python code.
     #. If you have more than one code block, add the following code:
-        .. code::
+        .. code:: TeX
+
             \begin{lstlisting}[language=Python]
             Add code here
             \end{lstlisting} 
 
- #. In ``References from PyAnsys documentation``, add references to the library's documentation,
-    replacing link names with the names of the guides. For example, this reference adds a link to
-    the *PyAnsys Developer's Guide*:
-        .. code::
-   
-            item \href{https://dev.docs.pyansys.com/}{\color{blue}{PyAnsys Developer's Guide}}
-   
+#. In ``References from PyAnsys documentation``, add references to the library's documentation,
+   replacing link names with the names of the guides. For example, this reference adds a link to
+   the *PyAnsys Developer's Guide*:
 
+    .. code:: TeX
+
+        item \href{https://dev.docs.pyansys.com/}{\color{blue}{PyAnsys Developer's Guide}}
 Generate cheat sheet
 ~~~~~~~~~~~~~~~~~~~~~~ 
 #. In ``makefile``, add a new makefile command:
-    .. code::
+    .. code:: TeX
+
         <your_project>_cheatsheat:
 	        latexmk -f -pdf -use-make cheat_sheats/<your_folder_name>/<your_tex_file_name>.tex -cd -outdir=../../$(BUILD) -interaction=nonstopmode || true
 
 #. In ``makefile``, add this command to ``make all``.
+
+   
