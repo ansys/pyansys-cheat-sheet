@@ -1,0 +1,71 @@
+\documentclass[9pt,landscape]{article}
+\usepackage{{./../static/style}}
+\pdfinfo{
+  /Title (PyAEDT Cheat Sheet)
+  /Creator (TeX)
+  /Producer (pdfTeX 1.40.0)
+  /Author (Ansys)
+  /Subject (PyAEDT)
+  /Keywords (PyAEDT,AEDT,ANSYS,FEA)}
+
+\begin{document}
+\raggedright
+\footnotesize
+\begin{center}
+     \Huge{\textbf{Cheat sheet for PyAEDT}} \\
+\end{center}
+\AddToShipoutPicture*
+  {\put(670,577.5){\includegraphics[height = 1.2cm]{ansys.png}}}
+\AddToShipoutPictureBG*{\includegraphics[width=\paperwidth]{bground.png}}
+\vspace{-0.15cm}
+\noindent\makebox[\linewidth]{\rule{\paperwidth}{2pt}}
+
+\begin{multicols}{3}
+% multicol parameters
+% These lengths are set only within the two main columns
+%\setlength{\columnseprule}{0.25pt}
+\setlength{\premulticols}{1pt}
+\setlength{\postmulticols}{1pt}
+\setlength{\multicolsep}{1pt}
+\setlength{\columnsep}{2pt}
+
+% session starts here. 
+\section{\includegraphics[height=\fontcharht\font`\S]{slash.png} /*Add heading here*/}
+/*Add description of code block here*/
+\begin{lstlisting}[language=Python]
+/*
+Add code here
+*/
+\end{lstlisting}
+
+\vfill
+\section{\includegraphics[height=\fontcharht\font`\S]{slash.png}  /*Add heading here*/}
+/*add description of code block here*/
+\begin{lstlisting}[language=Python]
+/*
+Add code here
+*/
+\end{lstlisting} 
+\vfill
+
+\section{\includegraphics[height=\fontcharht\font`\S]{slash.png}  /*Add heading here*/}
+/*Add description of code block here*/
+\begin{lstlisting}[language=Python]
+/*
+Add code here
+*/
+\end{lstlisting} 
+
+\subsection{References from PyAEDT Documentation}
+\begin{itemize}
+\item \href{https://aedtdocs.pyansys.com/Resources/Installation.html}{\color{blue}{Installation}}
+\item \href{https://aedtdocs.pyansys.com/Resources/Code_Guidelines.html}{\color{blue}{Code guidelines}}
+\item \href{https://aedtdocs.pyansys.com/API/index.html}{\color{blue}{API reference}}
+\end{itemize}
+\end{multicols}
+\vspace{-0.15cm}
+\noindent\makebox[\linewidth]{\rule{\paperwidth}{4pt}}
+\begin{center}
+Getting Started with PyAEDT \includegraphics[height=\fontcharht\font`\S]{slash.png} \href{https://github.com/pyansys/pyaedt}{\color{blue}{PyAEDT on GitHub}} \includegraphics[height=\fontcharht\font`\S]{slash.png} Visit \code{\href{https://aedtdocs.pyansys.com/}}{\color{blue}{aedtdocs.pyansys.com}}
+\end{center}
+\end{document}
