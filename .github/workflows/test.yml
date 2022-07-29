@@ -42,7 +42,7 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           branch: gh-pages
-          folder: cheat_sheets/build
+          folder: build
           clean: true
           clean-exclude: index.html
           single-commit: true
