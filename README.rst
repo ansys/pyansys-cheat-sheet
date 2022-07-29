@@ -21,7 +21,7 @@ You use a template to create a cheat sheet. Here is the procedure to follow:
     #. Change the PDF title from ``PyAnsys Cheat Sheet`` to your project title.
     #. In ``pdfinfo``, add a subject and keywords.
     #. Change the title of the cheat sheet from ``Cheat sheet for PyAnsys`` to
-       your project title.
+       `Cheat sheet for <project title>``
     #. In ``Add heading here``, add the heading name.
     #. In ``Add description of code block here``, add a description.
     #. In the block ``Add code here``, add the Python code.
