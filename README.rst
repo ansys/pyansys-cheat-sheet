@@ -44,6 +44,7 @@ You use a template to create a cheat sheet. Here is the procedure to follow:
 Generate cheat sheet
 ~~~~~~~~~~~~~~~~~~~~~~ 
 #. In ``makefile``, add a new makefile command:
+    .. code::
         <your_project>_cheatsheat:
 	        latexmk -f -pdf -use-make cheat_sheats/<your_folder_name>/<your_tex_file_name>.tex -cd -outdir=../../$(BUILD) -interaction=nonstopmode || true
 
