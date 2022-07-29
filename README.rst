@@ -39,6 +39,7 @@ You use a template to create a cheat sheet. Here is the procedure to follow:
     .. code:: TeX
 
         item \href{https://dev.docs.pyansys.com/}{\color{blue}{PyAnsys Developer's Guide}}
+
 Generate cheat sheet
 ~~~~~~~~~~~~~~~~~~~~~~ 
 #. In ``makefile``, add a new makefile command:
