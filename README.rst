@@ -26,7 +26,6 @@ You use a template to create a cheat sheet. Here is the procedure to follow:
     #. In ``Add description of code block here``, add a description.
     #. In the block ``Add code here``, add the Python code.
     #. If you have more than one code block, add the following code:
-    
         .. code::
             \begin{lstlisting}[language=Python]
             Add code here
@@ -35,7 +34,6 @@ You use a template to create a cheat sheet. Here is the procedure to follow:
  #. In ``References from PyAnsys documentation``, add references to the library's documentation,
     replacing link names with the names of the guides. For example, this reference adds a link to
     the *PyAnsys Developer's Guide*:
-     
         .. code::
    
             item \href{https://dev.docs.pyansys.com/}{\color{blue}{PyAnsys Developer's Guide}}
