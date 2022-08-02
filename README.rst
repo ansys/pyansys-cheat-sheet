@@ -10,13 +10,13 @@ Create cheat sheet
 ~~~~~~~~~~~~~~~~~~
 You use a template to create a cheat sheet. Here is the procedure to follow:
 
-#. In the `<cheat_sheets>`_ folder, create a child folder with an appropriate project
+#.  In the `<cheat_sheets>`_ folder, create a child folder with an appropriate project
     name. For example, ``pymapdl_cheat_sheet``.
-#. In the `<cheat_sheet_template>`_ folder, copy ``pyansys_cheat_sheet.tex`` and then
+#.  In the `<cheat_sheet_template>`_ folder, copy ``pyansys_cheat_sheet.tex`` and then
     paste it into your new project folder.
-#. Rename this copy of ``pyansys_cheat_sheet.tex`` so that it uses your project folder
+#.  Rename this copy of ``pyansys_cheat_sheet.tex`` so that it uses your project folder
     name. For example, ``pymapdl_cheat_sheet.tex``.
-#. Inside this LaTeX file, do the following:
+#.  Inside this LaTeX file, do the following:
 
     #. Change the PDF title from ``PyAnsys Cheat Sheet`` to your project title.
     #. In ``pdfinfo``, add a subject and keywords.
@@ -42,12 +42,12 @@ You use a template to create a cheat sheet. Here is the procedure to follow:
 
 Generate cheat sheet
 ~~~~~~~~~~~~~~~~~~~~~~ 
-#. In ``makefile``, add a new makefile command:
+#.  In ``makefile``, add a new makefile command:
     .. code:: TeX
 
         <your_project>_cheatsheat:
 	        latexmk -f -pdf -use-make cheat_sheats/<your_folder_name>/<your_tex_file_name>.tex -cd -outdir=../../$(BUILD) -interaction=nonstopmode || true
 
-#. In ``makefile``, add this command to ``make all``.
+#.  In ``makefile``, add this command to ``make all``.
 
    
