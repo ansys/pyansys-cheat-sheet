@@ -36,13 +36,18 @@ jobs:
           path: build/*.pdf
           retention-days: 7
 
+      - name: Prepare files for gh-pages deployment
+        run: |
+          mkdir build-pdf
+          cp build/*.pdf build-pdf/
+
       - name: Deploy to gh-pages
         if: github.ref == 'refs/heads/main'
         uses: JamesIves/github-pages-deploy-action@4.1.5
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           branch: gh-pages
-          folder: build
+          folder: build-pdf
           clean: true
           single-commit: true
 
