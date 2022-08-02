@@ -36,7 +36,7 @@ jobs:
           path: build/*.pdf
           retention-days: 7
 
-      - name: Deploy CV to gh-pages
+      - name: Deploy to gh-pages
         if: github.ref == 'refs/heads/main'
         uses: JamesIves/github-pages-deploy-action@4.1.5
         with:
@@ -44,7 +44,6 @@ jobs:
           branch: gh-pages
           folder: build
           clean: true
-          clean-exclude: index.html
           single-commit: true
 
       - name: Display logs
