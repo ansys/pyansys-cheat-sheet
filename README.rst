@@ -18,15 +18,16 @@ You use a template to create a cheat sheet. Here is the procedure to follow:
    name. For example, ``pymapdl_cheat_sheet.tex``.
 #. Inside this LaTeX file, do the following:
 
-    #. Change the PDF title from ``PyAnsys Cheat Sheet`` to your project title.
-    #. In ``pdfinfo``, add a subject and keywords.
-    #. Change the title of the cheat sheet from ``Cheat sheet for PyAnsys`` to
-       `Cheat sheet for <project title>``
-    #. In ``Add heading here``, add the heading name.
-    #. In ``Add description of code block here``, add a description.
-    #. In the block ``Add code here``, add the Python code.
-    #. If you have more than one code block, add the following code:
-        .. code:: TeX
+   #. Change the PDF title from ``PyAnsys Cheat Sheet`` to your project title.
+   #. In ``pdfinfo``, add a subject and keywords.
+   #. Change the title of the cheat sheet from ``Cheat sheet for PyAnsys`` to
+      `Cheat sheet for <project title>``
+   #. In ``Add heading here``, add the heading name.
+   #. In ``Add description of code block here``, add a description.
+   #. In the block ``Add code here``, add the Python code.
+   #. If you have more than one code block, add the following code:
+
+      .. code:: TeX
 
             \begin{lstlisting}[language=Python]
             Add code here
@@ -36,14 +37,15 @@ You use a template to create a cheat sheet. Here is the procedure to follow:
    replacing link names with the names of the guides. For example, this reference adds a link to
    the *PyAnsys Developer's Guide*:
 
-    .. code:: TeX
+   .. code:: TeX
 
         item \href{https://dev.docs.pyansys.com/}{\color{blue}{PyAnsys Developer's Guide}}
 
 Generate cheat sheet
 ~~~~~~~~~~~~~~~~~~~~~~ 
 #. In ``makefile``, add a new makefile command:
-    .. code:: TeX
+
+   .. code:: TeX
 
         <your_project>_cheatsheat:
 	        latexmk -f -pdf -use-make cheat_sheats/<your_folder_name>/<your_tex_file_name>.tex -cd -outdir=../../$(BUILD) -interaction=nonstopmode || true
