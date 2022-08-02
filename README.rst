@@ -11,11 +11,11 @@ Create cheat sheet
 You use a template to create a cheat sheet. Here is the procedure to follow:
 
 #. In the `<cheat_sheets>`_ folder, create a child folder with an appropriate project
-    name. For example, ``pymapdl_cheat_sheet``.
+   name. For example, ``pymapdl_cheat_sheet``.
 #. In the `<cheat_sheet_template>`_ folder, copy ``pyansys_cheat_sheet.tex`` and then
-    paste it into your new project folder.
+   paste it into your new project folder.
 #. Rename this copy of ``pyansys_cheat_sheet.tex`` so that it uses your project folder
-    name. For example, ``pymapdl_cheat_sheet.tex``.
+   name. For example, ``pymapdl_cheat_sheet.tex``.
 #. Inside this LaTeX file, do the following:
 
     #. Change the PDF title from ``PyAnsys Cheat Sheet`` to your project title.
