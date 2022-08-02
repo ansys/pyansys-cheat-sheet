@@ -50,6 +50,6 @@ Generate cheat sheet
         <your_project>_cheatsheat:
 	        latexmk -f -pdf -use-make cheat_sheats/<your_folder_name>/<your_tex_file_name>.tex -cd -outdir=../../$(BUILD) -interaction=nonstopmode || true
 
-#. In ``makefile``, add this command to ``make all``.
+#.  In ``makefile``, add this command to ``make all``.
 
    
