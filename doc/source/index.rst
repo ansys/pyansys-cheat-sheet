@@ -12,13 +12,16 @@ PyAnsys cheat-sheet for different projects.
 
         .. card:: pymapdl cheat-sheet
             :link: https://cheatsheet.mapdldocs.pyansys.com/pymapdl_cheat_sheet.pdf
+            
+            :octicon:`file;2em;sd-text-info`
 
 
     .. grid-item::
 
         .. card:: pyaedt cheat-sheet
             :link: https://cheatsheet.mapdldocs.pyansys.com/pyaedt_cheat_sheet.pdf
-
+            
+            :octicon:`file;2em;sd-text-info`
 
 PyAnsys general cheat-sheet template.
 -------------------------------------
@@ -29,3 +32,5 @@ PyAnsys general cheat-sheet template.
         
         .. card:: pyansys-cheat-sheat template
             :link: https://cheatsheet.mapdldocs.pyansys.com/pyansys_cheat_sheet.pdf
+            
+            :octicon:`file;2em;sd-text-info`
