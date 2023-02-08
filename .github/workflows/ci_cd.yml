@@ -29,18 +29,30 @@ jobs:
         run: |
           make all
 
-      - name: Upload PDF as an artifact
-        uses: actions/upload-artifact@v3
-        with:
-          name: Cheat-Sheets
-          path: build/*.pdf
-          retention-days: 7
+      - name: make html
+        run: |
+          make -C doc html
+
+    - name: "Upload HTML documentation artifact"
+      uses: actions/upload-artifact@v3
+      with:
+        name: documentation-html
+        path: doc/_build/html
+        retention-days: 7
+
+    - name: "Upload PDF documentation artifact"
+      uses: actions/upload-artifact@v3
+      with:
+        name: documentation-pdf
+        path: _build/*.pdf
+        retention-days: 7
 
       - name: Prepare files for gh-pages deployment
         if: github.ref == 'refs/heads/main'
         run: |
           mkdir build-pdf
-          cp build/*.pdf build-pdf/
+          cp _build/ build-pdf/
+          cp doc/_build/html build-pdf/
 
       - name: Deploy to gh-pages
         if: github.ref == 'refs/heads/main'
@@ -56,7 +68,7 @@ jobs:
         if: always()
         run: |
           echo "::group:: Terminal output 'console_output.txt'" && cat console_output.txt && echo "::endgroup::"
-          for f in build/*.log; do echo "::group:: Output latex log file $f" && cat $f && echo "::endgroup::" ; done
+          for f in _build/*.log; do echo "::group:: Output latex log file $f" && cat $f && echo "::endgroup::" ; done
 
   release:
     name: Release
