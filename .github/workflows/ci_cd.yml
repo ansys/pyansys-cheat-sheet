@@ -20,8 +20,14 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
+      - name: Set up Python 3.10
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.10
+
       - name: Install dependencies
         run: |
+          python -m pip install -r requirements/requirements_doc.txt
           sudo apt-get update -y
           sudo apt-get install -y latexmk texlive-fonts-extra
 
@@ -33,26 +39,26 @@ jobs:
         run: |
           make -C doc html
 
-    - name: "Upload HTML documentation artifact"
-      uses: actions/upload-artifact@v3
-      with:
-        name: documentation-html
-        path: doc/_build/html
-        retention-days: 7
+      - name: "Upload HTML documentation artifact"
+        uses: actions/upload-artifact@v3
+        with:
+          name: documentation-html
+          path: doc/_build/html
+          retention-days: 7
 
-    - name: "Upload PDF documentation artifact"
-      uses: actions/upload-artifact@v3
-      with:
-        name: documentation-pdf
-        path: _build/*.pdf
-        retention-days: 7
+      - name: "Upload PDF artifact"
+        uses: actions/upload-artifact@v3
+        with:
+          name: documentation-pdf
+          path: _build/*.pdf
+          retention-days: 7
 
       - name: Prepare files for gh-pages deployment
         if: github.ref == 'refs/heads/main'
         run: |
           mkdir build-pdf
-          cp _build/ build-pdf/
-          cp doc/_build/html build-pdf/
+          cp -r _build/ build-pdf/
+          cp -r doc/_build/html build-pdf/
 
       - name: Deploy to gh-pages
         if: github.ref == 'refs/heads/main'
