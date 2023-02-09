@@ -31,6 +31,6 @@ PyAnsys general cheat-sheet template
     .. grid-item::
         
         .. card:: Cheat-sheat template
-            :link: https://cheatsheets.docs.pyansys.com/pyansys_cheat_sheet.pdf
+            :link: https://cheatsheets.docs.pyansys.com/pyansys_general_cheat_sheet.pdf
             
             :octicon:`file;2em;sd-text-info`
