@@ -1,36 +1,36 @@
-PyAnsys cheat-sheet
-===================
+PyAnsys cheat-sheets
+====================
 
 PyAnsys provides cheat-sheets for different projects as a quick reference guide.
 
-PyAnsys cheat-sheet for different projects.
+PyAnsys cheat-sheets for different projects
 -------------------------------------------
 
 .. grid:: 2 1 1 2
 
     .. grid-item::
 
-        .. card:: pymapdl cheat-sheet
-            :link: https://cheatsheet.mapdldocs.pyansys.com/pymapdl_cheat_sheet.pdf
+        .. card:: PyMAPDL
+            :link: https://cheatsheets.docs.pyansys.com/pymapdl_cheat_sheet.pdf
             
             :octicon:`file;2em;sd-text-info`
 
 
     .. grid-item::
 
-        .. card:: pyaedt cheat-sheet
-            :link: https://cheatsheet.mapdldocs.pyansys.com/pyaedt_cheat_sheet.pdf
+        .. card:: PyAEDT
+            :link: https://cheatsheets.docs.pyansys.com/pyaedt_cheat_sheet.pdf
             
             :octicon:`file;2em;sd-text-info`
 
-PyAnsys general cheat-sheet template.
--------------------------------------
+PyAnsys general cheat-sheet template
+------------------------------------
 
 .. grid:: 2 1 1 2
 
     .. grid-item::
         
-        .. card:: pyansys-cheat-sheat template
-            :link: https://cheatsheet.mapdldocs.pyansys.com/pyansys_cheat_sheet.pdf
+        .. card:: Cheat-sheat template
+            :link: https://cheatsheets.docs.pyansys.com/pyansys_cheat_sheet.pdf
             
             :octicon:`file;2em;sd-text-info`
