@@ -100,10 +100,8 @@ solver.setup.models.energy.enabled = True
 \section{\includegraphics[height=\fontcharht\font`\S]{slash.png}  Define materials}
 This example shows how you use Solver settings objects to define materials.
 \begin{lstlisting}[language=Python]
-
 solver.setup.materials.copy_database_material_by_name(type="fluid", name="water-liquid")
 solver.setup.cell_zone_conditions.fluid["elbow-fluid"].material = "water-liquid"
-
 \end{lstlisting} 
 
 % row 2 col 2
