@@ -23,6 +23,13 @@ PyAnsys cheat-sheets for different projects
             
             :octicon:`file;2em;sd-text-info`
 
+    .. grid-item::
+
+        .. card:: PyFluent
+            :link: https://cheatsheets.docs.pyansys.com/pyfluent_cheat_sheet.pdf
+            
+            :octicon:`file;2em;sd-text-info`
+
 PyAnsys general cheat-sheet template
 ------------------------------------
 
