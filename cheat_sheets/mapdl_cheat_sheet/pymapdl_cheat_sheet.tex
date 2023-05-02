@@ -158,15 +158,12 @@ nod_eqv_stress=
 # Plot contour legend using dictionary
 mapdl.allsel()
 sbar_kwargs={"color": "black",
-          "title": "Equivalent Stress (psi)",
+        "title": "Equivalent Stress (psi)",
         "vertical": False,"n_labels": 6}
 mapdl.post_processing.plot_nodal_eqv_stress(
-                  cpos='xy',
-                  background='white',
-                  edge_color='black',
-                  show_edges=True,
-                  scalar bar_args=sbar_kwargs,
-                  n_colors=9)
+        cpos='xy', background='white',
+        edge_color='black', show_edges=True,
+        scalar bar_args=sbar_kwargs, n_colors=9)
 \end{lstlisting} 
 \vfill
 \section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Plotting Class}
@@ -197,9 +194,9 @@ mapdl.lplot(vtk=False)
 
 \subsection{References from PyMAPDL Documentation}
 \begin{itemize}
-\item \href{https://mapdldocs.pyansys.com/getting_started/index.html}{\color{blue}{Getting Started}}
-\item \href{https://mapdldocs.pyansys.com/mapdl_commands/index.html}{\color{blue}{MAPDL Commands}}
-\item \href{https://mapdldocs.pyansys.com/api/index.html}{\color{blue}{API Reference}}
+\item \href{https://mapdldocs.pyansys.com/version/stable/getting_started/index.html}{\color{blue}{Getting Started}}
+\item \href{https://mapdldocs.pyansys.com/version/stable/mapdl_commands/index.html}{\color{blue}{MAPDL Commands}}
+\item \href{https://mapdldocs.pyansys.com/version/stable/api/index.html}{\color{blue}{API Reference}}
 \end{itemize}
 \end{multicols}
 \vspace{-0.15cm}
