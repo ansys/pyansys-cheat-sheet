@@ -11,6 +11,7 @@ PyAnsys cheat-sheets for different projects
     .. grid-item::
 
         .. card:: PyMAPDL
+            :img-top: https://cheatsheets.docs.pyansys.com/pymapdl_cheat_sheet.png
             :link: https://cheatsheets.docs.pyansys.com/pymapdl_cheat_sheet.pdf
             
             :octicon:`file;2em;sd-text-info`
