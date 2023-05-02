@@ -13,23 +13,20 @@ PyAnsys cheat-sheets for different projects
         .. card:: PyMAPDL
             :img-top: https://cheatsheets.docs.pyansys.com/pymapdl_cheat_sheet.png
             :link: https://cheatsheets.docs.pyansys.com/pymapdl_cheat_sheet.pdf
-            
-            :octicon:`file;2em;sd-text-info`
 
 
     .. grid-item::
 
         .. card:: PyAEDT
+            :img-top: https://cheatsheets.docs.pyansys.com/pyaedt_cheat_sheet.png
             :link: https://cheatsheets.docs.pyansys.com/pyaedt_cheat_sheet.pdf
             
-            :octicon:`file;2em;sd-text-info`
-
     .. grid-item::
 
         .. card:: PyFluent
+            :img-top: https://cheatsheets.docs.pyansys.com/pyfluent_cheat_sheet.png
             :link: https://cheatsheets.docs.pyansys.com/pyfluent_cheat_sheet.pdf
             
-            :octicon:`file;2em;sd-text-info`
 
 PyAnsys general cheat-sheet template
 ------------------------------------
