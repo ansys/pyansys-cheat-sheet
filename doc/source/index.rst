@@ -23,6 +23,26 @@ PyAnsys cheat-sheets for different projects
             
             :octicon:`file;2em;sd-text-info`
 
+
+
+    .. grid-item::
+
+        .. card:: PyAEDT-API
+            :link: https://cheatsheets.docs.pyansys.com/pyaedt_API_cheat_sheet.pdf
+
+            :octicon:`file;2em;sd-text-info`
+
+
+
+    .. grid-item::
+
+        .. card:: PyEDB-API
+            :link: https://cheatsheets.docs.pyansys.com/pyedb_API_cheat_sheet.pdf
+
+            :octicon:`file;2em;sd-text-info`
+
+
+
     .. grid-item::
 
         .. card:: PyFluent
