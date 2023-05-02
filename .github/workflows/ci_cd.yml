@@ -30,6 +30,7 @@ jobs:
           python -m pip install -r requirements/requirements_doc.txt
           sudo apt-get update -y
           sudo apt-get install -y latexmk texlive-fonts-extra
+          sudo apt install graphicsmagick-imagemagick-compat
 
       - name: make pdf
         run: |
