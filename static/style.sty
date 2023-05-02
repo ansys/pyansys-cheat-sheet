@@ -15,6 +15,9 @@
 \RequirePackage{multirow}
 \RequirePackage{listings}
 \RequirePackage[x11names]{xcolor}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[default, scale=0.95]{sourcecodepro}
 %\RequirePackage[dvipsnames]{xcolor}
 \ProvidesPackage{pythonhighlight}[2011/09/19 python code highlighting; provided by Olivier Verdier <olivier.verdier@gmail.com>]
 %Path relative to the main .tex file
@@ -61,22 +64,21 @@
 \definecolor{blue}{RGB}{57,114,161}
 
 \lstdefinestyle{python_style}{
-	backgroundcolor=\color{silver},
-	%commentstyle=\color{white},
-	%keywordstyle=\color{gold},
-	%stringstyle=\color{cblack}
-	%backgroundcolor=\color{backcolour},   
+	backgroundcolor=\color{silver},   
 	commentstyle=\color{codegreen},
 	keywordstyle=\color{magenta},
 	numberstyle=\tiny\color{codegray},
 	stringstyle=\color{codepurple},
 	frame=single,
-	breaklines,
-	%basicstyle=\sffamily\footnotesize,
-	basicstyle=\sffamily\footnotesize,
-	showspaces=false,
+	basicstyle=\ttfamily\scale=0.95,
 	showstringspaces=false,
-    	showtabs=false,
+  	breaklines=true,
+  	rulecolor=\color{black},
+  	captionpos=b,
+  	%aboveskip=10pt,
+  	%belowskip=10pt,
+  	inputencoding=utf8,
+  	extendedchars=true
 	%tabsize=2
 }
 

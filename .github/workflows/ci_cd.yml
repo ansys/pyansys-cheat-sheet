@@ -54,14 +54,14 @@ jobs:
           retention-days: 7
 
       - name: Prepare files for gh-pages deployment
-        if: github.ref == 'refs/heads/main'
+        #if: github.ref == 'refs/heads/main'
         run: |
           mkdir build-pdf
           cp _build/*.pdf build-pdf/
           cp -r doc/_build/html/* build-pdf/
 
       - name: Deploy to gh-pages
-        if: github.ref == 'refs/heads/main'
+        #if: github.ref == 'refs/heads/main'
         uses: JamesIves/github-pages-deploy-action@4.1.5
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
