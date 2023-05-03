@@ -65,3 +65,21 @@ Cheat sheets
    :alt: pymapdl cheatsheet snapshot
    :width: 50%                   
    
+
+`download pyfluent cheatsheet pdf <https://cheatsheets.docs.pyansys.com/pyfluent_cheat_sheet.pdf>`_
+
+.. image:: https://cheatsheets.docs.pyansys.com/pyfluent_cheat_sheet.png
+   :alt: pyfluent cheatsheet snapshot
+   :width: 50%   
+
+`download pyaedt_API cheatsheet pdf <https://cheatsheets.docs.pyansys.com/pyaedt_API_cheat_sheet.pdf>`_
+
+.. image:: https://cheatsheets.docs.pyansys.com/pyaedt_API_cheat_sheet.png
+   :alt: pyaedt API cheatsheet snapshot
+   :width: 50%   
+
+`download pyedb API cheatsheet pdf <https://cheatsheets.docs.pyansys.com/pyedb_API_cheat_sheet.pdf>`_
+
+.. image:: https://cheatsheets.docs.pyansys.com/pymapdl_cheat_sheet.png
+   :alt: pyedb API cheatsheet snapshot
+   :width: 50%   
