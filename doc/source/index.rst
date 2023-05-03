@@ -17,10 +17,18 @@ PyAnsys cheat-sheets for different projects
 
     .. grid-item::
 
-        .. card:: PyAEDT
-            :img-top: https://cheatsheets.docs.pyansys.com/pyaedt_cheat_sheet.png
-            :link: https://cheatsheets.docs.pyansys.com/pyaedt_cheat_sheet.pdf
+        .. card:: PyAEDT-API
+            :img-top: https://cheatsheets.docs.pyansys.com/pyaedt_API_cheat_sheet.png
+            :link: https://cheatsheets.docs.pyansys.com/pyaedt_API_cheat_sheet.pdf
             
+
+    .. grid-item::
+
+        .. card:: PyEDB-API
+            :img-top: https://cheatsheets.docs.pyansys.com/pyedb_API_cheat_sheet.png
+            :link: https://cheatsheets.docs.pyansys.com/pyedb_API_cheat_sheet.pdf
+
+
     .. grid-item::
 
         .. card:: PyFluent
