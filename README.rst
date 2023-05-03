@@ -59,7 +59,8 @@ This command uses latexmk to compile your TeX file into a PDF, and then convert 
 Cheat sheets
 ~~~~~~~~~~~~
 
-[download pymapdl cheatsheet pdf](https://cheatsheets.docs.pyansys.com/pymapdl_cheat_sheet.pdf)
+`download pymapdl cheatsheet pdf <https://cheatsheets.docs.pyansys.com/pymapdl_cheat_sheet.pdf>`_
+
 .. image:: https://cheatsheets.docs.pyansys.com/pymapdl_cheat_sheet.png
    :alt: pymapdl cheatsheet snapshot
    :width: 50%                   
