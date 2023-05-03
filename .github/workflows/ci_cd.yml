@@ -55,7 +55,7 @@ jobs:
           retention-days: 7
 
       - name: Prepare files for gh-pages deployment
-        #if: github.ref == 'refs/heads/main'
+        if: github.ref == 'refs/heads/main'
         run: |
           mkdir build-pdf
           cp _build/{*.pdf,*.png} build-pdf/
