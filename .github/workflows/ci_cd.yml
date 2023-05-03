@@ -30,6 +30,7 @@ jobs:
           python -m pip install -r requirements/requirements_doc.txt
           sudo apt-get update -y
           sudo apt-get install -y latexmk texlive-fonts-extra
+          sudo apt install graphicsmagick-imagemagick-compat
 
       - name: make pdf
         run: |
@@ -50,14 +51,14 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: documentation-pdf
-          path: _build/*.pdf
+          path: _build/{*.pdf,*.png}
           retention-days: 7
 
       - name: Prepare files for gh-pages deployment
         if: github.ref == 'refs/heads/main'
         run: |
           mkdir build-pdf
-          cp _build/*.pdf build-pdf/
+          cp _build/{*.pdf,*.png} build-pdf/
           cp -r doc/_build/html/* build-pdf/
 
       - name: Deploy to gh-pages
