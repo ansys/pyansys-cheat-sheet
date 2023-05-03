@@ -72,7 +72,7 @@ Cheat sheets
    :alt: pyfluent cheatsheet snapshot
    :width: 50%
 
-`download pyaedt_API cheatsheet pdf <https://cheatsheets.docs.pyansys.com/pyaedt_API_cheat_sheet.pdf>`_
+`download pyaedt API cheatsheet pdf <https://cheatsheets.docs.pyansys.com/pyaedt_API_cheat_sheet.pdf>`_
 
 .. image:: https://cheatsheets.docs.pyansys.com/pyaedt_API_cheat_sheet.png
    :alt: pyaedt API cheatsheet snapshot
