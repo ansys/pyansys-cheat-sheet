@@ -17,30 +17,16 @@ PyAnsys cheat-sheets for different projects
 
     .. grid-item::
 
-        .. card:: PyAEDT
-            :img-top: https://cheatsheets.docs.pyansys.com/pyaedt_cheat_sheet.png
-            :link: https://cheatsheets.docs.pyansys.com/pyaedt_cheat_sheet.pdf
-            
-            :octicon:`file;2em;sd-text-info`
-
-
-
-    .. grid-item::
-
         .. card:: PyAEDT-API
+            :img-top: https://cheatsheets.docs.pyansys.com/pyaedt_API_cheat_sheet.png
             :link: https://cheatsheets.docs.pyansys.com/pyaedt_API_cheat_sheet.pdf
-
-            :octicon:`file;2em;sd-text-info`
-
-
+            
 
     .. grid-item::
 
         .. card:: PyEDB-API
+            :img-top: https://cheatsheets.docs.pyansys.com/pyedb_API_cheat_sheet.png
             :link: https://cheatsheets.docs.pyansys.com/pyedb_API_cheat_sheet.pdf
-
-            :octicon:`file;2em;sd-text-info`
-
 
 
     .. grid-item::
@@ -48,12 +34,6 @@ PyAnsys cheat-sheets for different projects
         .. card:: PyFluent
             :img-top: https://cheatsheets.docs.pyansys.com/pyfluent_cheat_sheet.png
             :link: https://cheatsheets.docs.pyansys.com/pyfluent_cheat_sheet.pdf
-
-    .. grid-item::
-
-        .. card:: PyEDB-API
-            :img-top: https://cheatsheets.docs.pyansys.com/pyedb_API_cheat_sheet.png
-            :link: https://cheatsheets.docs.pyansys.com/pyedb_API_cheat_sheet.pdf
             
 
 PyAnsys general cheat-sheet template
