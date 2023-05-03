@@ -25,7 +25,7 @@ if "%1" == "clean" goto clean
     goto end
 
 :pyaedt_API_cheat_sheet
-    pdflatex -include-directory="cheat_sheets\aedt_cheat_sheet"" -output-directory=%BUILDDIR% pyaedt_API_cheat_sheet.tex --interaction=nonstopmode
+    pdflatex -include-directory="cheat_sheets\aedt_cheat_sheet" -output-directory=%BUILDDIR% pyaedt_API_cheat_sheet.tex --interaction=nonstopmode
     goto end
 
 :pyedb_API_cheat_sheet

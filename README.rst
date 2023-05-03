@@ -59,26 +59,26 @@ This command uses latexmk to compile your TeX file into a PDF, and then convert 
 Cheat sheets
 ~~~~~~~~~~~~
 
-`download pymapdl cheatsheet pdf <https://cheatsheets.docs.pyansys.com/pymapdl_cheat_sheet.pdf>`_
+`download PyMAPDL cheatsheet pdf <https://cheatsheets.docs.pyansys.com/pymapdl_cheat_sheet.pdf>`_
 
 .. image:: https://cheatsheets.docs.pyansys.com/pymapdl_cheat_sheet.png
    :alt: pymapdl cheatsheet snapshot
    :width: 50%           
    
 
-`download pyfluent cheatsheet pdf <https://cheatsheets.docs.pyansys.com/pyfluent_cheat_sheet.pdf>`_
+`download PyFluent cheatsheet pdf <https://cheatsheets.docs.pyansys.com/pyfluent_cheat_sheet.pdf>`_
 
 .. image:: https://cheatsheets.docs.pyansys.com/pyfluent_cheat_sheet.png
    :alt: pyfluent cheatsheet snapshot
    :width: 50%
 
-`download pyaedt API cheatsheet pdf <https://cheatsheets.docs.pyansys.com/pyaedt_API_cheat_sheet.pdf>`_
+`download PyAEDT API cheatsheet pdf <https://cheatsheets.docs.pyansys.com/pyaedt_API_cheat_sheet.pdf>`_
 
 .. image:: https://cheatsheets.docs.pyansys.com/pyaedt_API_cheat_sheet.png
    :alt: pyaedt API cheatsheet snapshot
    :width: 50%
 
-`download pyedb API cheatsheet pdf <https://cheatsheets.docs.pyansys.com/pyedb_API_cheat_sheet.pdf>`_
+`download PyEDB API cheatsheet pdf <https://cheatsheets.docs.pyansys.com/pyedb_API_cheat_sheet.pdf>`_
 
 .. image:: https://cheatsheets.docs.pyansys.com/pymapdl_cheat_sheet.png
    :alt: pyedb API cheatsheet snapshot
