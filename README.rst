@@ -52,4 +52,11 @@ Generate cheat sheet
 
 #.  In ``makefile``, add this command to ``make all``.
 
+Cheat sheets
+~~~~~~~~~~~~
+
+[download pymapdl cheatsheet pdf](https://cheatsheets.docs.pyansys.com/pymapdl_cheat_sheet.pdf)
+.. image:: https://cheatsheets.docs.pyansys.com/pymapdl_cheat_sheet.png
+   :alt: pymapdl cheatsheet snapshot
+   :width: 50%                   
    
