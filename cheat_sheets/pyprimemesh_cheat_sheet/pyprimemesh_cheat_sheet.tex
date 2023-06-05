@@ -1,0 +1,87 @@
+\documentclass[9pt,landscape]{article}
+\usepackage{{./../static/style}}
+\pdfinfo{
+  /Title (PyPrimeMesh Cheat Sheet)
+  /Creator (TeX)
+  /Producer (pdfTeX 1.40.0)
+  /Author (Ansys)
+  /Subject (PyAnsys)
+  /Keywords (PyAnsys, Cheat sheet, template)}
+
+\begin{document}
+\raggedright
+\footnotesize
+
+% Cheat sheet for PyPrimeMesh
+% ----------------------------------------
+
+\begin{center}
+     \Huge{\textbf{Cheat sheet for PyAnsys}} \\
+\end{center}
+\AddToShipoutPicture*
+  {\put(670,577.5){\includegraphics[height = 1.2cm]{ansys.png}}}
+\AddToShipoutPictureBG*{\includegraphics[width=\paperwidth]{bground.png}}
+\vspace{-0.15cm}
+\noindent\makebox[\linewidth]{\rule{\paperwidth}{2pt}}
+
+\begin{multicols}{3}
+\setlength{\premulticols}{1pt}
+\setlength{\postmulticols}{1pt}
+\setlength{\multicolsep}{1pt}
+\setlength{\columnsep}{2pt}
+
+% session starts here. 
+% First colomn
+% --------------------------------------------------------------------------------
+
+\section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Add heading here}
+Add description of code block here
+\begin{lstlisting}[language=Python]
+
+Add code here
+
+\end{lstlisting}
+
+% Second column
+% --------------------------------------------------------------------------------
+
+\vfill
+\section{\includegraphics[height=\fontcharht\font`\S]{slash.png}  Add heading here}
+Add description of code block here
+\begin{lstlisting}[language=Python]
+
+Add code here
+
+\end{lstlisting} 
+
+% Third column
+% --------------------------------------------------------------------------------
+\vfill
+\section{\includegraphics[height=\fontcharht\font`\S]{slash.png}  Add heading here}
+Add description of code block here
+\begin{lstlisting}[language=Python]
+
+Add code here
+
+\end{lstlisting}
+
+% Add subsection
+% This section includes useful links to the documentation.
+% Examples: installation, API reference, commands, examples.
+% Replace 'name of link' with appropriate display text.
+
+\subsection{References from PyAnsys Documentation}
+\begin{itemize}
+\item \href{usefullinks}{\color{blue}{name of link}}
+\item \href{useful_links}{\color{blue}{name of link}}
+\item \href{useful_links}{\color{blue}{name of link}}
+\end{itemize}
+\end{multicols}
+
+% Footer session of the latex with link to documentation and GitHub page
+\vspace{-0.15cm}
+\noindent\makebox[\linewidth]{\rule{\paperwidth}{4pt}}
+\begin{center}
+Getting Started with PyAnsys \includegraphics[height=\fontcharht\font`\S]{slash.png} \href{https://github.com/pyansys}{\color{blue}{PyAnsys on GitHub}} \includegraphics[height=\fontcharht\font`\S]{slash.png} Visit \code{\href{https://dev.docs.pyansys.com/}}{\color{blue}{dev.docs.pyansys.com}}
+\end{center}
+\end{document}
