@@ -34,6 +34,13 @@ PyAnsys cheat-sheets for different projects
         .. card:: PyFluent
             :img-top: https://cheatsheets.docs.pyansys.com/pyfluent_cheat_sheet.png
             :link: https://cheatsheets.docs.pyansys.com/pyfluent_cheat_sheet.pdf
+
+
+    .. grid-item::
+
+        .. card:: PyPrimeMesh
+            :img-top: https://cheatsheets.docs.pyansys.com/pyprimemesh_cheat_sheet.png
+            :link: https://cheatsheets.docs.pyansys.com/pyprimemesh_cheat_sheet.pdf
             
 
 PyAnsys general cheat-sheet template
