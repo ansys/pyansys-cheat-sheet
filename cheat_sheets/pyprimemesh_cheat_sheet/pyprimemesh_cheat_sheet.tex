@@ -63,17 +63,17 @@ model = prime_client.model
 Read or import files of different formats based on file extension.
 An example for the same can be seen below\\
 \begin{lstlisting}[language=Python]
-#Import lucid class
+# Import lucid class
 from ansys.meshing.prime import lucid
-#Define mesher object
+# Define mesher object
 mesher = lucid.Mesh(model)
-#Read Mesh (*.msh) file
+# Read Mesh (*.msh) file
 mesh_file_name = "sample1_mesh.msh"
 mesher.read(mesh_file_name, append=False)
-#Import CAD (*.step) file
+# Import CAD (*.step) file
 cad_file_name = "sample2_CAD.stp"
 mesher.read(cad_file_name, append=False)
-#Write Mesh (*.cdb) file
+# Write Mesh (*.cdb) file
 cdb_file_name = "sample3_case.cdb
 mesher.write(cdb_file_name)
 \end{lstlisting}
