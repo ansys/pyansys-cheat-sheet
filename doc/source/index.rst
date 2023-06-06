@@ -38,7 +38,7 @@ PyAnsys cheat-sheets for different projects
 
     .. grid-item::
 
-        .. card:: PyPyPrimeMesh
+        .. card:: PyPrimeMesh
             :img-top: https://cheatsheets.docs.pyansys.com/pyprimemesh_cheat_sheet.png
             :link: https://cheatsheets.docs.pyansys.com/pyprimemesh_cheat_sheet.pdf
             
