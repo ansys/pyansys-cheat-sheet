@@ -1,0 +1,193 @@
+\documentclass[9pt,landscape]{article}
+\usepackage{{./../static/style}}
+\pdfinfo{
+  /Title (PyPrimeMesh Cheat Sheet)
+  /Creator (TeX)
+  /Producer (pdfTeX 1.40.0)
+  /Author (Ansys)
+  /Subject (PyAnsys)
+  /Keywords (PyAnsys, Cheat sheet, template)}
+
+\begin{document}
+\raggedright
+\footnotesize
+
+Cheat sheet for PyPrimeMesh
+% ----------------------------------------
+
+\begin{center}
+     \Huge{\textbf{Cheat sheet for PyPrimeMesh}} \\
+\end{center}
+\begin{center}
+  \small{\textbf{version:0.3.0 (stable) }} \\
+\end{center}
+\AddToShipoutPicture*
+  {\put(670,577.5){\includegraphics[height = 1.2cm]{ansys.png}}}
+\AddToShipoutPictureBG*{\includegraphics[width=\paperwidth]{bground.png}}
+\vspace{-0.15cm}
+\noindent\makebox[\linewidth]{\rule{\paperwidth}{2pt}}
+
+\begin{multicols}{3}
+\setlength{\premulticols}{1pt}
+\setlength{\postmulticols}{1pt}
+\setlength{\multicolsep}{1pt}
+\setlength{\columnsep}{2pt}
+
+% session starts here. 
+% First colomn
+% --------------------------------------------------------------------------------
+% row 1 col 1
+\vfill
+\section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Launch PyPrimeMesh Client}
+To launch and exit PyPrimeMesh server from Python in gRPC mode.\\
+\begin{lstlisting}[language=Python]
+# Launch PyPrimeMesh Server, 
+from ansys.meshing import prime
+with prime.launch_prime(timeout = 20) as prime_client:
+  # The Client class gets the model parameter 
+  model = prime_client.model
+  #Define  Script Here
+  # Disconnect from server
+  prime_client.exit() 
+\end{lstlisting}
+
+To launch an instance of PyPrimeMesh at IP
+127.0.0.1 and port 50055 with number of processes 4.
+\begin{lstlisting}[language=Python]
+ with prime.launch_prime(ip = "127.0.0.1", port = 50055, n_procs = 4) as prime_client:
+  model = prime_client.model
+\end{lstlisting}
+
+% row 2 col 1
+\section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Read and Write files }
+Read or Write files of different formats based on file extension.
+An example for the same can be seen below\\
+\begin{lstlisting}[language=Python]
+# Import lucid class
+from ansys.meshing.prime import lucid
+# Define mesher object
+mesher = lucid.Mesh(model)
+# Read Mesh (*.msh) file
+mesh_file_name = r"sample1_mesh.msh"
+mesher.read(mesh_file_name, append=False)
+# Import CAD (*.step) file
+cad_file_name = r"sample2_CAD.stp"
+mesher.read(cad_file_name, append=False)
+# Write Mesh (*.cdb) file
+cdb_file_name = r"sample3_case.cdb"
+  mesher.write(cdb_file_name)
+\end{lstlisting}
+
+% row 3 col 1
+\section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Defining Size controls }
+Sets the global sizing parameters , 
+
+\begin{lstlisting}[language=Python]
+# Define Global Size Controls
+model.set_global_sizing_params(prime.GlobalSizingParams(min = 0.5, max = 16.0,
+                       growth_rate= 1.2))
+\end{lstlisting}
+
+Curvature size control definition
+\begin{lstlisting}[language=Python]
+# Create Curvature Size Control
+curvature_control = model.control_data.create_size_control(prime.SizingType.CURVATURE)
+control_name = "Curvature_Size_Control"
+curvature_control.set_suggested_name(control_name)
+# Define Scope 
+scope= prime.ScopeDefinition(model, evaluation_type=prime.ScopeEvaluationType.LABELS,
+                            label_expression="*")
+curvature_control.set_scope(scope)
+# Define Curvature Control parameter
+curvature_control.set_curvature_sizing_params(prime.CurvatureSizingParams(model, normal_angle=18))
+\end{lstlisting}
+\section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Generate Wrapper Surface Mesh}
+Generate Wrapper Surface Mesh
+\begin{lstlisting}[language=Python]
+mesher.wrap(
+            min_size=0.2, max_size=1.0,
+            input_parts="flange,pipe",
+            use_existing_features=True,
+            recompute_remesh_sizes=True,
+            remesh_size_controls=[curvature_control],
+          )
+\end{lstlisting}
+
+\section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Generate Surface Mesh}
+Generate Surface Mesh based on min, max size  
+\begin{lstlisting}[language=Python]
+surface_scope = prime.ScopeDefinition(model, part_expression="*")
+mesher.surface_mesh(min_size=0.5, max_size=16, 
+                    generate_quads= True,
+                    scope = surface_scope)
+\end{lstlisting}
+
+Generate Surface Mesh based on size controls  
+\begin{lstlisting}[language=Python]
+control_name = "Curvature_Size_Control"
+mesher.surface_mesh_with_size_controls(
+                                    control_name, 
+                                    surface_scope
+                                    )
+\end{lstlisting}
+
+\section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Surface Mesh Analysis}
+Surface Mesh Diagnostics 
+\begin{lstlisting}[language=Python]
+diag = prime.SurfaceSearch(model)
+diag_params = prime.SurfaceDiagnosticSummaryParams(
+    model, scope=surface_scope,
+    compute_free_edges=True,
+) 
+diag_res = diag.get_surface_diagnostic_summary(diag_params)
+>>> print("Number of free faces : ", diag_res.n_free_faces)
+\end{lstlisting}
+
+Surface Mesh Quality Metrics
+\begin{lstlisting}[language=Python]
+face_quality_measures = prime.FaceQualityMeasure.SKEWNESS
+quality = prime.SurfaceSearch(model)
+quality_params = prime.SurfaceQualitySummaryParams(
+    model=model,
+    scope=surface_scope,
+    face_quality_measures=[face_quality_measures],
+    quality_limit=[0.9],
+)
+>>> print("Maximum surface skewness : ", qual_summary_res.quality_results[0].max_quality)
+\end{lstlisting}
+
+\section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Generate Volume Mesh}
+Generate Volume Mesh
+\begin{lstlisting}[language=Python]
+vol_scope = prime.ScopeDefinition(model, part_expression="*")
+mesher.volume_mesh(volume_fill_type=prime.VolumeFillType.HEXCOREPOLY,
+                  scope = vol_scope)
+\end{lstlisting}
+\section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Part Summary}
+Query for Part Sumamry
+\begin{lstlisting}[language=Python]
+part = model.get_part_by_name("sample_part")
+summary = part.get_summary(prime.PartSummaryParams(model))
+>>> print("Total number of cells: ",summary.n_cells)
+\end{lstlisting}
+
+% Add subsection
+% This section includes useful links to the documentation.
+% Examples: installation, API reference, commands, examples.
+% Replace 'name of link' with appropriate display text.
+
+\subsection{References from PyAnsys Documentation}
+\begin{itemize}
+\item \href{https://prime.docs.pyansys.com/version/stable/getting_started/index.html}{\color{blue}{PyPrimeMesh - Getting Started}}
+\item \href{https://prime.docs.pyansys.com/version/stable/user_guide/index.html}{\color{blue}{PyPrimeMesh - User guide}}
+\item \href{https://prime.docs.pyansys.com/version/stable/examples/index.html}{\color{blue}{PyPrimeMesh - Examples}}
+\end{itemize}
+\end{multicols}
+
+% Footer session of the latex with link to documentation and GitHub page
+\vspace{-0.15cm}
+\noindent\makebox[\linewidth]{\rule{\paperwidth}{4pt}}
+\begin{center}
+Getting Started with PyAnsys \includegraphics[height=\fontcharht\font`\S]{slash.png} \href{https://github.com/pyansys}{\color{blue}{PyAnsys on GitHub}} \includegraphics[height=\fontcharht\font`\S]{slash.png} Visit \code{\href{https://dev.docs.pyansys.com/}}{\color{blue}{dev.docs.pyansys.com}}
+\end{center}
+\end{document}
