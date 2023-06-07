@@ -19,7 +19,6 @@ Cheat sheet for PyPrimeMesh
      \Huge{\textbf{Cheat sheet for PyPrimeMesh}} \\
 \end{center}
 \begin{center}
-  \Large{\textbf{PyPrimeMesh API References}} \\
   \small{\textbf{version:0.3.0 (stable) }} \\
 \end{center}
 \AddToShipoutPicture*
@@ -44,23 +43,24 @@ To launch and exit PyPrimeMesh server from Python in gRPC mode.\\
 \begin{lstlisting}[language=Python]
 # Launch PyPrimeMesh Server, 
 from ansys.meshing import prime
-prime_client = prime.launch_prime(timeout = 20)
-# The Client class gets the model parameter 
-model = prime_client.model
-# Disconnect from server
-prime_client.exit() 
+with prime.launch_prime(timeout = 20) as prime_client:
+  # The Client class gets the model parameter 
+  model = prime_client.model
+  #Define  Script Here
+  # Disconnect from server
+  prime_client.exit() 
 \end{lstlisting}
 
-To connect to an existing instance of PyPrimeMesh at IP
+To launch an instance of PyPrimeMesh at IP
 127.0.0.1 and port 50055 with number of processes 4.
 \begin{lstlisting}[language=Python]
-prime_client = prime.launch_prime(ip="127.0.0.1", port=50055, n_procs=4)
-model = prime_client.model
+ with prime.launch_prime(ip = "127.0.0.1", port = 50055, n_procs = 4) as prime_client:
+  model = prime_client.model
 \end{lstlisting}
 
 % row 2 col 1
-\section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Read and Write of files }
-Read or import files of different formats based on file extension.
+\section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Read and Write files }
+Read or Write files of different formats based on file extension.
 An example for the same can be seen below\\
 \begin{lstlisting}[language=Python]
 # Import lucid class
@@ -68,14 +68,14 @@ from ansys.meshing.prime import lucid
 # Define mesher object
 mesher = lucid.Mesh(model)
 # Read Mesh (*.msh) file
-mesh_file_name = "sample1_mesh.msh"
+mesh_file_name = r"sample1_mesh.msh"
 mesher.read(mesh_file_name, append=False)
 # Import CAD (*.step) file
-cad_file_name = "sample2_CAD.stp"
+cad_file_name = r"sample2_CAD.stp"
 mesher.read(cad_file_name, append=False)
 # Write Mesh (*.cdb) file
-cdb_file_name = "sample3_case.cdb
-mesher.write(cdb_file_name)
+cdb_file_name = r"sample3_case.cdb"
+  mesher.write(cdb_file_name)
 \end{lstlisting}
 
 % row 3 col 1
@@ -84,7 +84,8 @@ Sets the global sizing parameters ,
 
 \begin{lstlisting}[language=Python]
 # Define Global Size Controls
-model.set_global_sizing_params(prime.GlobalSizingParams(min = 0.5, max = 16.0, growth_rate= 1.2))
+model.set_global_sizing_params(prime.GlobalSizingParams(min = 0.5, max = 16.0,
+                       growth_rate= 1.2))
 \end{lstlisting}
 
 Curvature size control definition
@@ -104,27 +105,30 @@ curvature_control.set_curvature_sizing_params(prime.CurvatureSizingParams(model,
 Generate Wrapper Surface Mesh
 \begin{lstlisting}[language=Python]
 mesher.wrap(
-  min_size=0.2,
-  max_size=1.0,
-  input_parts="flange,pipe",
-  use_existing_features=True,
-  recompute_remesh_sizes=True,
-  remesh_size_controls=[curvature_control],
-  )
+            min_size=0.2, max_size=1.0,
+            input_parts="flange,pipe",
+            use_existing_features=True,
+            recompute_remesh_sizes=True,
+            remesh_size_controls=[curvature_control],
+          )
 \end{lstlisting}
 
 \section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Generate Surface Mesh}
 Generate Surface Mesh based on min, max size  
 \begin{lstlisting}[language=Python]
 surface_scope = prime.ScopeDefinition(model, part_expression="*")
-mesher.surface_mesh(min_size=0.5, max_size=16, generate_quads= True , scope = surface_scope)
+mesher.surface_mesh(min_size=0.5, max_size=16, 
+                    generate_quads= True,
+                    scope = surface_scope)
 \end{lstlisting}
 
 Generate Surface Mesh based on size controls  
 \begin{lstlisting}[language=Python]
-surface_scope = prime.ScopeDefinition(model, part_expression="*")
 control_name = "Curvature_Size_Control"
-mesher.surface_mesh_with_size_controls(control_name, generate_quads= True, scope = surface_scope)
+mesher.surface_mesh_with_size_controls(
+                                    control_name, 
+                                    surface_scope
+                                    )
 \end{lstlisting}
 
 \section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Surface Mesh Analysis}
