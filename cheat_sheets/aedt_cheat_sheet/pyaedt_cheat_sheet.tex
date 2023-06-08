@@ -258,7 +258,7 @@ plotf = hfss.post.create_fieldplot_volume(object_list, quantityname, setup_name,
 my_data = hfss.post.get_solution_data(expression=trace_names) # This call return a SolutionData object
 standard_report = hfss.post.report_by_category.standard("db(S(1,1))") # This call returns a new standard report object
 standard_report.create() # This call reate a report
-sols = standard_report.get_solution_data()
+solution_data = standard_report.get_solution_data()
 \end{lstlisting}
 
 \section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Calling AEDT-API with PyAEDT}
