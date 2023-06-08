@@ -83,9 +83,7 @@ A box is drawn at (x\_pos, y\_pos, z\_pos) position with (x\_dim, y\_dim, z\_dim
 \begin{lstlisting}[language=Python]
 box = hfss.modeler.create_box([x_pos,y_pos,z_pos], [x_dim,y_dim,z_dim],name="airbox", matname="air")
 \end{lstlisting}
-
 A spiral geometry made of "copper" is created as follows
-
 \begin{lstlisting}[language=Python]
 ind = hfss.modeler.create_spiral(
 	internal_radius=rin, width=width,
@@ -94,6 +92,7 @@ ind = hfss.modeler.create_spiral(
 	material="copper",name="Inductor1")
 \end{lstlisting}
 \texttt{box}, \texttt{ind} are the \texttt{Object3d objects}, containing a lot of properties and methods related to that object including faces, vertices, colors, and materials.
+\vfill
 \columnbreak
 
 \section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Creating boundaries}
@@ -113,7 +112,6 @@ box1 = hfss.modeler.create_box([0,0,50], [10,10,5], "Box1","copper")
 box2 = hfss.modeler.create_box([0,0,60], [10,10,5], "Box2","copper")
 port_L = hfss.lumped_port(signal="Box1", reference="Box2", integration_line=hfss.AxisDir.XNeg, impedance=50, name="LumpedPort", renormalize=True, deembed=False)
 \end{lstlisting}
-
 Pythonic way of defining Wave guide-port is
 \begin{lstlisting}[language=Python]
 port_W = hfss.wave_port("Box1","Box2",name="WavePort",integration_line=1)
@@ -128,9 +126,7 @@ setup.props["Frequency"] = "50MHz"
 setup["MaximumPasses"] = 10
 hfss.create_linear_count_sweep(setupname="any",unit="MHz",freqstart=0.1,freqstop=100,num_of_freq_points=100, sweepname="sweep1",sweep_type="Interpolating", save_fields=False)
 \end{lstlisting}
-
 Parametric sweep and optimizations are accessed using following classes
-
 \begin{lstlisting}[language=Python]
 # returns the ParametericsSetups Class
 hfss.parametrics
@@ -175,12 +171,12 @@ omodule = hfss.odesign.GetModule("Optimetrics")
 
 \subsection{References from PyAEDT Documentation}
 \begin{itemize}
-\item \href{https://aedt.docs.pyansys.com/version/stable/Getting_started/index.html}{Getting Started}
-%\item \href{https://aedt.docs.pyansys.com/release/0.6/User_guide/index.html}{User Guide}
-%\item \href{https://aedt.docs.pyansys.com/release/0.6/API/index.html}{API Reference}
+\item \href{https://aedt.docs.pyansys.com/version/stable/Getting_started/index.html}{\color{blue}{Getting Started}}
+\item \href{https://aedt.docs.pyansys.com/version/stable/User_guide/index.html}{\color{blue}{User Guide}}
+\item \href{https://aedt.docs.pyansys.com/version/stable/API/index.html}{\color{blue}{API Reference}}
 \end{itemize}
 \end{multicols}
-\vspace{-0.5cm}
+\vspace{-0.15cm}
 \noindent\makebox[\linewidth]{\rule{\paperwidth}{4pt}}
 \begin{center}
 Getting Started With AEDT \includegraphics[height=\fontcharht\font`\S]{slash.png} Ansys Innovation Courses \includegraphics[height=\fontcharht\font`\S]{slash.png} %Visit \code{\href{https://courses.ansys.com/}{ansys.com/courses}}
