@@ -14,6 +14,7 @@ if "%1" == "pymapdl_cheat_sheet" goto pymapdl_cheat_sheet
 if "%1" == "pyfluent_cheat_sheet" goto pyfluent_cheat_sheet
 if "%1" == "pyaedt_API_cheat_sheet" goto pyaedt_API_cheat_sheet
 if "%1" == "pyedb_API_cheat_sheet" goto pyedb_API_cheat_sheet
+if "%1" == "pyprimemesh_cheat_sheet" goto pyedb_API_cheat_sheet
 if "%1" == "clean" goto clean
 
 :pymapdl_cheat_sheet
