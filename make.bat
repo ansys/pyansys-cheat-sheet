@@ -32,6 +32,10 @@ if "%1" == "clean" goto clean
     pdflatex -include-directory="cheat_sheets\aedt_cheat_sheet" -output-directory=%BUILDDIR% pyedb_API_cheat_sheet.tex --interaction=nonstopmode
     goto end
 
+:pyprimemesh_cheat_sheet
+    pdflatex -include-directory="cheat_sheets\pyprimesh_cheat_sheet" -output-directory=%BUILDDIR% pyprimemesh_cheat_sheet.tex --interaction=nonstopmode
+    goto end
+
 :clean
     rmdir /S /Q %BUILDDIR%
 

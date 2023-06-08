@@ -83,3 +83,9 @@ Cheat sheets
 .. image:: https://cheatsheets.docs.pyansys.com/pymapdl_cheat_sheet.png
    :alt: pyedb API cheatsheet snapshot
    :width: 50%   
+
+`download PyPrimeMesh API cheatsheet pdf <https://cheatsheets.docs.pyansys.com/pyprimemesh_cheat_sheet.pdf>`_
+
+.. image:: https://cheatsheets.docs.pyansys.com/pyprimemesh_cheat_sheet.png
+   :alt: PyPrimeMesh cheatsheet snapshot
+   :width: 50%   
