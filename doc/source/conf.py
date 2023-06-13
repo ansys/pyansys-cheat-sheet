@@ -34,7 +34,7 @@ html_theme_options = {
     "github_url": "https://github.com/pyansys/pyansys-cheat-sheet",
     "contact_mail": "pyansys.support@ansys.com",
     "additional_breadcrumbs": [
-        ("Ansys Internal Developer Portal", "https://dev.docs.ansys.com"),
+        ("PyAnsys", "https://docs.pyansys.com"),
     ],
 }
 
