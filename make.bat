@@ -3,7 +3,7 @@
 pushd %~dp0
 
 SET BUILDDIR=_build
-SET CHEATSHEETS=pymapdl_cheat_sheet pyansys_cheat_sheet pyfluent_cheat_sheet pyaedt_API_cheat_sheet pyedb_API_cheat_sheet
+SET CHEATSHEETS=pymapdl_cheat_sheet pyansys_cheat_sheet pyfluent_cheat_sheet pyaedt_API_cheat_sheet pyedb_API_cheat_sheet pydpf-core_cheat_sheet
 
 rem Note: If you are using make.bat file for building locally, change L2 of .tex files from 
 rem ``\usepackage{{./../static/style}}`` to ``\usepackage{{.\..\static\style}}``
@@ -15,6 +15,7 @@ if "%1" == "pyfluent_cheat_sheet" goto pyfluent_cheat_sheet
 if "%1" == "pyaedt_API_cheat_sheet" goto pyaedt_API_cheat_sheet
 if "%1" == "pyedb_API_cheat_sheet" goto pyedb_API_cheat_sheet
 if "%1" == "pyprimemesh_cheat_sheet" goto pyedb_API_cheat_sheet
+if "%1" == "pydpf-core" goto pydpf-core_cheat_sheet
 if "%1" == "clean" goto clean
 
 :pymapdl_cheat_sheet
@@ -35,6 +36,10 @@ if "%1" == "clean" goto clean
 
 :pyprimemesh_cheat_sheet
     pdflatex -include-directory="cheat_sheets\pyprimesh_cheat_sheet" -output-directory=%BUILDDIR% pyprimemesh_cheat_sheet.tex --interaction=nonstopmode
+    goto end
+
+:pydpf-core_cheat_sheet
+    pdflatex -include-directory="cheat_sheets\pydpf-core_cheat_sheet" -output-directory=%BUILDDIR% pydpf-core_cheat_sheet.tex --interaction=nonstopmode
     goto end
 
 :clean
