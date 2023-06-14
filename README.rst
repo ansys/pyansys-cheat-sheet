@@ -90,7 +90,7 @@ In ``index.rst`` in ``doc/source``, Add new grid item card for the new cheatshee
                :link: https://cheatsheets.docs.pyansys.com/<your_tex_file_name>.pdf
 
 
-Finally add the screenshot directly on readme.
+Finally add the screenshot on readme with proper links and references.
 
 
 Cheat sheets
@@ -114,6 +114,8 @@ Cheat sheets
 | |PyPrimeMesh cheatsheet snapshot|          |     |
 +--------------------------------------------+-----+
 
+
+.. Links and references
 
 .. _Download PyMAPDL cheatsheet pdf: https://cheatsheets.docs.pyansys.com/pymapdl_cheat_sheet.pdf  
 .. _Download PyFluent cheatsheet pdf: https://cheatsheets.docs.pyansys.com/pyfluent_cheat_sheet.pdf
