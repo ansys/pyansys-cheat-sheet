@@ -49,7 +49,7 @@ Generate cheat sheet
 
 #. In ``makefile``, add a new makefile command:
 
-   .. code:: TeX
+   .. code:: bash
 
         <your_project>_cheat_sheat:
 	        latexmk -f -pdf -use-make cheat_sheats/<your_folder_name>/<your_tex_file_name>.tex -cd -outdir=../../$(BUILD) -interaction=nonstopmode || true
@@ -64,7 +64,7 @@ Generate cheat sheet
 
 #. In ``make.bat``, add a new makefile command:
 
-   .. code:: TeX
+   .. code:: bash
 
          :<your_project>_cheat_sheet
             pdflatex -output-directory=%BUILDDIR% cheat_sheats/<your_folder_name>/<your_tex_file_name>.tex --interaction=nonstopmode
@@ -77,6 +77,18 @@ Generate cheat sheet
 
 Add cheat sheet in landing page
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+In ``index.rst`` in ``doc/source``, Add new grid item card for the new cheatsheet by adding command:
+
+
+.. code:: bash
+
+   .. grid-item::
+
+           .. card:: <Your_project_name>
+               :img-top: https://cheatsheets.docs.pyansys.com/<your_tex_file_name>.png
+               :link: https://cheatsheets.docs.pyansys.com/<your_tex_file_name>.pdf
+
 
 Cheat sheets
 ~~~~~~~~~~~~
