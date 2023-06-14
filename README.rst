@@ -132,7 +132,7 @@ Cheat sheets
 .. |pyaedt API cheatsheet snapshot| image:: https://cheatsheets.docs.pyansys.com/pyaedt_API_cheat_sheet.png
    :alt: pyaedt API cheatsheet snapshot
 
-.. |pyedb API cheatsheet snapshot| image:: https://cheatsheets.docs.pyansys.com/pymapdl_cheat_sheet.png
+.. |pyedb API cheatsheet snapshot| image:: https://cheatsheets.docs.pyansys.com/pyedb_API_cheat_sheet.png
    :alt: pyedb API cheatsheet snapshot
 
 .. |PyPrimeMesh cheatsheet snapshot| image:: https://cheatsheets.docs.pyansys.com/pyprimemesh_cheat_sheet.png
