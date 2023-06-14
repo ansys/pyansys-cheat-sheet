@@ -55,7 +55,7 @@ Generate cheat sheet
 	        latexmk -f -pdf -use-make cheat_sheats/<your_folder_name>/<your_tex_file_name>.tex -cd -outdir=../../$(BUILD) -interaction=nonstopmode || true
            convert -density 150 -scene 1 $(BUILD_DIR)/<your_tex_file_name>.pdf $(BUILD_DIR)/<your_tex_file_name>.png
 
-   Here, replace <your_project>, <your_folder_name>, and <your_tex_file_name> with your actual project name, folder name, and TeX file name, respectively.
+   Here, replace ``<your_project>``, ``<your_folder_name>``, and ``<your_tex_file_name>`` with your actual project name, folder name, and TeX file name, respectively.
    This command uses latexmk to compile your TeX file into a PDF, and then convert the first page of the PDF into a PNG file.
 
 #.  In ``makefile``, add this command to ``make all``.
@@ -70,7 +70,7 @@ Generate cheat sheet
             pdflatex -output-directory=%BUILDDIR% cheat_sheats/<your_folder_name>/<your_tex_file_name>.tex --interaction=nonstopmode
             goto end
 
-   Here, replace <your_project>, <your_folder_name>, and <your_tex_file_name> with your actual project name, folder name, and TeX file name, respectively.
+   Here, replace ``<your_project>``, ``<your_folder_name>``, and ``<your_tex_file_name>`` with your actual project name, folder name, and TeX file name, respectively.
    This command uses latexmk to compile your TeX file into a PDF.
 
 #.  In ``make.bat``, add this command to ``all``.
