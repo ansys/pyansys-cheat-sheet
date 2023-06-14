@@ -12,14 +12,14 @@
 \raggedright
 \footnotesize
 
-Cheat sheet for PyPrimeMesh
+PyPrimeMesh Cheat Sheet
 % ----------------------------------------
 
 \begin{center}
      \Huge{\textbf{PyPrimeMesh Cheat sheet}} \\
 \end{center}
 \begin{center}
-  \small{\textbf{version:0.3.0 (stable) }} \\
+  \small{\textbf{version:0.3.0 (stable)}} \\
 \end{center}
 \AddToShipoutPicture*
   {\put(670,577.5){\includegraphics[height = 1.2cm]{ansys.png}}}
@@ -54,7 +54,7 @@ with prime.launch_prime(timeout = 20) as prime_client:
 To launch an instance of PyPrimeMesh at IP
 127.0.0.1 and port 50055 with number of processes 4.
 \begin{lstlisting}[language=Python]
- with prime.launch_prime(ip = "127.0.0.1", port = 50055, n_procs = 4) as prime_client:
+  with prime.launch_prime(ip = "127.0.0.1", port = 50055, n_procs = 4) as prime_client:
   model = prime_client.model
 \end{lstlisting}
 
@@ -75,7 +75,7 @@ cad_file_name = r"sample2_CAD.stp"
 mesher.read(cad_file_name, append=False)
 # Write Mesh (*.cdb) file
 cdb_file_name = r"sample3_case.cdb"
-  mesher.write(cdb_file_name)
+mesher.write(cdb_file_name)
 \end{lstlisting}
 
 % row 3 col 1
