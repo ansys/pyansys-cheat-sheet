@@ -123,20 +123,15 @@ Cheat sheets
  
 .. |pymapdl cheatsheet snapshot| image:: https://cheatsheets.docs.pyansys.com/pymapdl_cheat_sheet.png
    :alt: pymapdl cheatsheet snapshot
-   :width: 100% 
 
 .. |pyfluent cheatsheet snapshot| image:: https://cheatsheets.docs.pyansys.com/pyfluent_cheat_sheet.png
    :alt: pyfluent cheatsheet snapshot
-   :width: 100%
 
 .. |pyaedt API cheatsheet snapshot| image:: https://cheatsheets.docs.pyansys.com/pyaedt_API_cheat_sheet.png
    :alt: pyaedt API cheatsheet snapshot
-   :width: 100%
 
 .. |pyedb API cheatsheet snapshot| image:: https://cheatsheets.docs.pyansys.com/pymapdl_cheat_sheet.png
    :alt: pyedb API cheatsheet snapshot
-   :width: 100% 
 
 .. |PyPrimeMesh cheatsheet snapshot| image:: https://cheatsheets.docs.pyansys.com/pyprimemesh_cheat_sheet.png
    :alt: PyPrimeMesh cheatsheet snapshot
-   :width: 100%  
