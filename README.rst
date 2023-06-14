@@ -43,6 +43,8 @@ You use a template to create a cheat sheet. Here is the procedure to follow:
 
 Generate cheat sheet
 ~~~~~~~~~~~~~~~~~~~~~~ 
+
+
 #. In ``makefile``, add a new makefile command:
 
    .. code:: TeX
@@ -51,8 +53,8 @@ Generate cheat sheet
 	        latexmk -f -pdf -use-make cheat_sheats/<your_folder_name>/<your_tex_file_name>.tex -cd -outdir=../../$(BUILD) -interaction=nonstopmode || true
            convert -density 150 -scene 1 $(BUILD_DIR)/<your_tex_file_name>.pdf $(BUILD_DIR)/<your_tex_file_name>.png
 
-Here, replace <your_project>, <your_folder_name>, and <your_tex_file_name> with your actual project name, folder name, and TeX file name, respectively.
-This command uses latexmk to compile your TeX file into a PDF, and then convert the first page of the PDF into a PNG file.
+  Here, replace <your_project>, <your_folder_name>, and <your_tex_file_name> with your actual project name, folder name, and TeX file name, respectively.
+  This command uses latexmk to compile your TeX file into a PDF, and then convert the first page of the PDF into a PNG file.
 
 #.  In ``makefile``, add this command to ``make all``.
 
