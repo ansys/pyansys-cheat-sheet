@@ -8,7 +8,7 @@
 \RequirePackage[defaultfam,tabular,lining]{montserrat} 
 \RequirePackage{float}
 \RequirePackage{tabularx}
-\RequirePackage{blindtext}\documentclass[9pt,landscape]{article}
+\RequirePackage{blindtext}
 \RequirePackage{multicol}
 \RequirePackage{calc}
 \RequirePackage{ifthen}
@@ -22,7 +22,7 @@
 %\RequirePackage[dvipsnames]{xcolor}
 \ProvidesPackage{pythonhighlight}[2011/09/19 python code highlighting; provided by Olivier Verdier <olivier.verdier@gmail.com>]
 %Path relative to the main .tex file
-\graphicspath{ {./../../static/} }
+\graphicspath{ {.\..\..\static} }
 
 % This sets page margins to .5 inch if using letter paper, and to 1cm
 % if using A4 paper. (This probably isn't strictly necessary.)
@@ -76,7 +76,7 @@
   	breaklines=true,
   	rulecolor=\color{black},
   	captionpos=b,
-	fontfamily=SourceCodePro-TLF,
+	% fontfamily=SourceCodePro-TLF,
   	%aboveskip=10pt,
   	%belowskip=10pt,
   	inputencoding=utf8,
