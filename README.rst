@@ -90,36 +90,53 @@ In ``index.rst`` in ``doc/source``, Add new grid item card for the new cheatshee
                :link: https://cheatsheets.docs.pyansys.com/<your_tex_file_name>.pdf
 
 
+Finally add the screenshot directly on readme.
+
+
 Cheat sheets
 ~~~~~~~~~~~~
 
-`download PyMAPDL cheatsheet pdf <https://cheatsheets.docs.pyansys.com/pymapdl_cheat_sheet.pdf>`_
++------------------------------------+-------------------------------------+
+| `Download PyMAPDL cheatsheet pdf`_ | `Download PyFluent cheatsheet PDF`_ |
++====================================+=====================================+
+| |pymapdl cheatsheet snapshot|      |  |pyfluent cheatsheet snapshot|     |
++------------------------------------+-------------------------------------+
 
-.. image:: https://cheatsheets.docs.pyansys.com/pymapdl_cheat_sheet.png
++---------------------------------------+--------------------------------------+
+| `Download PyAEDT API cheatsheet pdf`_ | `Download PyEDB API cheatsheet pdf`_ |
++=======================================+======================================+
+| |pyaedt API cheatsheet snapshot|      |   |pyedb API cheatsheet snapshot|    |
++---------------------------------------+--------------------------------------+
+
++--------------------------------------------+-----+
+| `Download PyPrimeMesh API cheatsheet pdf`_ |     |
++============================================+=====+
+| |PyPrimeMesh cheatsheet snapshot|          |     |
++--------------------------------------------+-----+
+
+
+.. _Download PyMAPDL cheatsheet pdf: https://cheatsheets.docs.pyansys.com/pymapdl_cheat_sheet.pdf  
+.. _Download PyFluent cheatsheet pdf: https://cheatsheets.docs.pyansys.com/pyfluent_cheat_sheet.pdf
+.. _Download PyAEDT API cheatsheet pdf: https://cheatsheets.docs.pyansys.com/pyaedt_API_cheat_sheet.pdf
+.. _Download PyEDB API cheatsheet pdf: https://cheatsheets.docs.pyansys.com/pyedb_API_cheat_sheet.pdf 
+.. _Download PyPrimeMesh API cheatsheet pdf: https://cheatsheets.docs.pyansys.com/pyprimemesh_cheat_sheet.pdf
+ 
+.. |pymapdl cheatsheet snapshot| image:: https://cheatsheets.docs.pyansys.com/pymapdl_cheat_sheet.png
    :alt: pymapdl cheatsheet snapshot
-   :width: 50%           
-   
+   :width: 100% 
 
-`download PyFluent cheatsheet pdf <https://cheatsheets.docs.pyansys.com/pyfluent_cheat_sheet.pdf>`_
-
-.. image:: https://cheatsheets.docs.pyansys.com/pyfluent_cheat_sheet.png
+.. |pyfluent cheatsheet snapshot| image:: https://cheatsheets.docs.pyansys.com/pyfluent_cheat_sheet.png
    :alt: pyfluent cheatsheet snapshot
-   :width: 50%
+   :width: 100%
 
-`download PyAEDT API cheatsheet pdf <https://cheatsheets.docs.pyansys.com/pyaedt_API_cheat_sheet.pdf>`_
-
-.. image:: https://cheatsheets.docs.pyansys.com/pyaedt_API_cheat_sheet.png
+.. |pyaedt API cheatsheet snapshot| image:: https://cheatsheets.docs.pyansys.com/pyaedt_API_cheat_sheet.png
    :alt: pyaedt API cheatsheet snapshot
-   :width: 50%
+   :width: 100%
 
-`download PyEDB API cheatsheet pdf <https://cheatsheets.docs.pyansys.com/pyedb_API_cheat_sheet.pdf>`_
-
-.. image:: https://cheatsheets.docs.pyansys.com/pymapdl_cheat_sheet.png
+.. |pyedb API cheatsheet snapshot| image:: https://cheatsheets.docs.pyansys.com/pymapdl_cheat_sheet.png
    :alt: pyedb API cheatsheet snapshot
-   :width: 50%   
+   :width: 100% 
 
-`download PyPrimeMesh API cheatsheet pdf <https://cheatsheets.docs.pyansys.com/pyprimemesh_cheat_sheet.pdf>`_
-
-.. image:: https://cheatsheets.docs.pyansys.com/pyprimemesh_cheat_sheet.png
+.. |PyPrimeMesh cheatsheet snapshot| image:: https://cheatsheets.docs.pyansys.com/pyprimemesh_cheat_sheet.png
    :alt: PyPrimeMesh cheatsheet snapshot
-   :width: 50%   
+   :width: 100%  
