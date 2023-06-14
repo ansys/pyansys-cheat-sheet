@@ -1,5 +1,5 @@
 BUILD_DIR     = _build
-CHEATSHEETS   = pymapdl_cheat_sheet pyansys_cheat_sheet pyfluent_cheat_sheet pyaedt_API_cheat_sheet pyedb_API_cheat_sheet pyprimemesh_cheat_sheet
+CHEATSHEETS   = pymapdl_cheat_sheet pyfluent_cheat_sheet pyaedt_API_cheat_sheet pyedb_API_cheat_sheet pyprimemesh_cheat_sheet
 
 .PHONY: all clean help
 

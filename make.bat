@@ -3,7 +3,7 @@
 pushd %~dp0
 
 SET BUILDDIR=_build
-SET CHEATSHEETS=pymapdl_cheat_sheet pyansys_cheat_sheet pyfluent_cheat_sheet pyaedt_API_cheat_sheet pyedb_API_cheat_sheet
+SET CHEATSHEETS=pymapdl_cheat_sheet pyfluent_cheat_sheet pyaedt_API_cheat_sheet pyedb_API_cheat_sheet
 
 rem Note: If you are using make.bat file for building locally, change L2 of .tex files from 
 rem ``\usepackage{{./../static/style}}`` to ``\usepackage{{.\..\static\style}}``
