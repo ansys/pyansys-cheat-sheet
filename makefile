@@ -27,7 +27,17 @@ pyprimemesh_cheat_sheet:
 
 clean:
 	rm -rf $(BUILD_DIR)
-	find . -type d -name "_autosummary" -exec rm -rf {} +
 
 help:
-	@$(SPHINXBUILD) -M help "$(SOURCEDIR)" "$(BUILD_DIR)" $(SPHINXOPTS) $(O)
+	@echo "Available targets:"
+	@echo "  all:         Build all cheat sheets"
+	@echo "  clean:       Remove the build directory and temporary files"
+	@echo "  help:        Show this help message"
+	@echo ""
+	@echo "Individual Cheat Sheet Targets:"
+	@echo "  pymapdl_cheat_sheet:       Build the pymapdl cheat sheet"
+	@echo "  pyfluent_cheat_sheet:      Build the pyfluent cheat sheet"
+	@echo "  pyaedt_API_cheat_sheet:    Build the pyaedt API cheat sheet"
+	@echo "  pyedb_API_cheat_sheet:     Build the pyedb API cheat sheet"
+	@echo "  pyprimemesh_cheat_sheet:   Build the pyprimemesh cheat sheet"
+	
