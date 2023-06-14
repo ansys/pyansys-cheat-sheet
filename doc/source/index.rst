@@ -42,15 +42,3 @@ PyAnsys cheat-sheets for different projects
             :img-top: https://cheatsheets.docs.pyansys.com/pyprimemesh_cheat_sheet.png
             :link: https://cheatsheets.docs.pyansys.com/pyprimemesh_cheat_sheet.pdf
             
-
-PyAnsys general cheat-sheet template
-------------------------------------
-
-.. grid:: 2 1 1 2
-
-    .. grid-item::
-        
-        .. card:: Cheat-sheat template
-            :link: https://cheatsheets.docs.pyansys.com/pyansys_general_cheat_sheet.pdf
-            
-            :octicon:`file;2em;sd-text-info`
