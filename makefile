@@ -9,10 +9,6 @@ pymapdl_cheat_sheet:
 	latexmk -f -pdf -use-make cheat_sheets/mapdl_cheat_sheet/pymapdl_cheat_sheet.tex -cd -outdir=../../$(BUILD_DIR) -interaction=nonstopmode || true
 	convert -density 150 -scene 1 $(BUILD_DIR)/pymapdl_cheat_sheet.pdf $(BUILD_DIR)/pymapdl_cheat_sheet.png
 
-pyansys_cheat_sheet:
-	latexmk -f -pdf -use-make cheat_sheets/general_cheat_sheet_template/pyansys_general_cheat_sheet.tex -cd -outdir=../../$(BUILD_DIR) -interaction=nonstopmode || true
-	convert -density 150 -scene 1 $(BUILD_DIR)/pyansys_general_cheat_sheet.pdf $(BUILD_DIR)/pyansys_general_cheat_sheet.png
-
 pyfluent_cheat_sheet:
 	latexmk -f -pdf -use-make cheat_sheets/pyfluent_cheat_sheet/pyfluent_cheat_sheet.tex -cd -outdir=../../$(BUILD_DIR) -interaction=nonstopmode || true
 	convert -density 150 -scene 1 $(BUILD_DIR)/pyfluent_cheat_sheet.pdf $(BUILD_DIR)/pyfluent_cheat_sheet.png
@@ -28,7 +24,6 @@ pyedb_API_cheat_sheet:
 pyprimemesh_cheat_sheet:
 	latexmk -f -pdf -use-make cheat_sheets/pyprimemesh_cheat_sheet/pyprimemesh_cheat_sheet.tex -cd -outdir=../../$(BUILD_DIR) -interaction=nonstopmode || true
 	convert -density 150 -scene 1 $(BUILD_DIR)/pyprimemesh_cheat_sheet.pdf $(BUILD_DIR)/pyprimemesh_cheat_sheet.png
-
 
 clean:
 	rm -rf $(BUILD_DIR)
