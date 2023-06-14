@@ -40,6 +40,5 @@ if "%1" == "clean" goto clean
 :clean
     rmdir /S /Q %BUILDDIR%
 
-
 :end
 popd
