@@ -36,6 +36,17 @@ html_theme_options = {
     "additional_breadcrumbs": [
         ("PyAnsys", "https://docs.pyansys.com"),
     ],
+    "show_prev_next": False,
+    "show_breadcrumbs": True,
+    "collapse_navigation": True,
+    "use_edit_page_button": True,
+    "icon_links": [
+        {
+            "name": "Support",
+            "url": "https://github.com/ansys/pyansys-cheat-sheet/discussions",
+            "icon": "fa fa-comment fa-fw",
+        },
+    ],
 }
 
 html_short_title = html_title = "PyAnsys Cheat sheets"
