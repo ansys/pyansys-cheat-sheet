@@ -10,7 +10,7 @@ if "%1" == "pyfluent_cheat_sheet" goto pyfluent_cheat_sheet
 if "%1" == "pyaedt_API_cheat_sheet" goto pyaedt_API_cheat_sheet
 if "%1" == "pyedb_API_cheat_sheet" goto pyedb_API_cheat_sheet
 if "%1" == "pyprimemesh_cheat_sheet" goto pyedb_API_cheat_sheet
-if "%1" == "pydpf-core" goto pydpf-core_cheat_sheet
+if "%1" == "pydpf-core_cheat_sheet" goto pydpf-core_cheat_sheet
 if "%1" == "clean" goto clean
 if "%1" == "help" goto help
 if "%1" == "" goto help
