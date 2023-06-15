@@ -1,5 +1,7 @@
 BUILD_DIR     = _build
-CHEATSHEETS   = pymapdl_cheat_sheet pyfluent_cheat_sheet pyaedt_API_cheat_sheet pyedb_API_cheat_sheet pyprimemesh_cheat_sheet
+
+CHEATSHEETS   = pymapdl_cheat_sheet pyfluent_cheat_sheet pyaedt_API_cheat_sheet pyedb_API_cheat_sheet pyprimemesh_cheat_sheet pydpf-core_cheat_sheet
+
 
 .PHONY: all clean help
 
@@ -24,6 +26,10 @@ pyedb_API_cheat_sheet:
 pyprimemesh_cheat_sheet:
 	latexmk -f -pdf -use-make cheat_sheets/pyprimemesh_cheat_sheet/pyprimemesh_cheat_sheet.tex -cd -outdir=../../$(BUILD_DIR) -interaction=nonstopmode || true
 	convert -density 150 -scene 1 $(BUILD_DIR)/pyprimemesh_cheat_sheet.pdf $(BUILD_DIR)/pyprimemesh_cheat_sheet.png
+
+pydpf-core_cheat_sheet:
+	latexmk -f -pdf -use-make cheat_sheets/pydpf-core_cheat_sheet/pydpf-core_cheat_sheet.tex -cd -outdir=../../$(BUILD_DIR) -interaction=nonstopmode || true
+	convert -density 150 -scene 1 $(BUILD_DIR)/pydpf-core_cheat_sheet.pdf $(BUILD_DIR)/pydpf-core_cheat_sheet.png
 
 clean:
 	rm -rf $(BUILD_DIR)
