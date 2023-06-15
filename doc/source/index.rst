@@ -44,7 +44,7 @@ PyAnsys cheat-sheets for different projects
 
     .. grid-item::
 
-        .. card:: PyDPF-core
+        .. card:: PyDPF-Core
             :img-top: https://cheatsheets.docs.pyansys.com/pydpf-core_cheat_sheet.png
             :link: https://cheatsheets.docs.pyansys.com/pydpf-core_cheat_sheet.pdf
             
