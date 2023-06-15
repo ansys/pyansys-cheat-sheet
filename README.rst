@@ -75,6 +75,13 @@ Generate cheat sheet
 
 #.  In ``make.bat``, add this command to ``all``.
 
+
+Generate cheat sheets using docker
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+`Cheatsheet Development Environment Using Docker <https://github.com/ansys/pyansys-cheat-sheet/tree/main/docker>_` contains
+the steps to build and run the Docker container, which includes all the necessary dependencies for cheatsheet development with PyAnsys.
+
 Add cheat sheet in landing page
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -90,3 +97,10 @@ In ``index.rst`` in ``doc/source``, Add new grid item card for the new cheatshee
                :link: https://cheatsheets.docs.pyansys.com/<your_tex_file_name>.pdf
 
 
+Cheat sheets
+~~~~~~~~~~~~~
+
+In the `Documentation <https://cheatsheets.docs.pyansys.com/>`_ page, you can find a comprehensive collection of cheat sheets specifically 
+designed for various PyANSYS products. These cheat sheets are carefully crafted to provide concise and practical information, serving as 
+valuable references for your development or learning journey with PyANSYS. Feel free to post issues and other questions 
+at `Pyansys cheat sheet issues <https://github.com/ansys/pyansys-cheat-sheet/issues>`_. This is the best place to post questions and code.
