@@ -85,7 +85,7 @@ the steps to build and run the Docker container, which includes all the necessar
 Add cheat sheet in landing page
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In ``index.rst`` in ``doc/source``, Add new grid item card for the new cheatsheet by adding command:
+In ``index.rst`` in ``doc/source``, add a new grid item card for your cheatsheet by adding the following command:
 
 
 .. code:: bash
