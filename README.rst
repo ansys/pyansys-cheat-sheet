@@ -42,50 +42,51 @@ You use a template to create a cheat sheet. Here is the procedure to follow:
         item \href{https://dev.docs.pyansys.com/}{\color{blue}{PyAnsys Developer's Guide}}
 
 Generate cheat sheet
-~~~~~~~~~~~~~~~~~~~~~~ 
+~~~~~~~~~~~~~~~~~~~~
+
+**For Linux users**
+
+
 #. In ``makefile``, add a new makefile command:
 
-   .. code:: TeX
+   .. code:: bash
 
-        <your_project>_cheatsheat:
+        <your_project>_cheat_sheat:
 	        latexmk -f -pdf -use-make cheat_sheats/<your_folder_name>/<your_tex_file_name>.tex -cd -outdir=../../$(BUILD) -interaction=nonstopmode || true
            convert -density 150 -scene 1 $(BUILD_DIR)/<your_tex_file_name>.pdf $(BUILD_DIR)/<your_tex_file_name>.png
 
-Here, replace <your_project>, <your_folder_name>, and <your_tex_file_name> with your actual project name, folder name, and TeX file name, respectively.
-This command uses latexmk to compile your TeX file into a PDF, and then convert the first page of the PDF into a PNG file.
+   Here, replace ``<your_project>``, ``<your_folder_name>``, and ``<your_tex_file_name>`` with your actual project name, folder name, and TeX file name, respectively.
+   This command uses latexmk to compile your TeX file into a PDF, and then convert the first page of the PDF into a PNG file.
 
 #.  In ``makefile``, add this command to ``make all``.
 
-Cheat sheets
-~~~~~~~~~~~~
+**For Windows users**
 
-`download PyMAPDL cheatsheet pdf <https://cheatsheets.docs.pyansys.com/pymapdl_cheat_sheet.pdf>`_
+#. In ``make.bat``, add a new makefile command:
 
-.. image:: https://cheatsheets.docs.pyansys.com/pymapdl_cheat_sheet.png
-   :alt: pymapdl cheatsheet snapshot
-   :width: 50%           
-   
+   .. code:: bash
 
-`download PyFluent cheatsheet pdf <https://cheatsheets.docs.pyansys.com/pyfluent_cheat_sheet.pdf>`_
+         :<your_project>_cheat_sheet
+            pdflatex -output-directory=%BUILDDIR% cheat_sheats/<your_folder_name>/<your_tex_file_name>.tex --interaction=nonstopmode
+            goto end
 
-.. image:: https://cheatsheets.docs.pyansys.com/pyfluent_cheat_sheet.png
-   :alt: pyfluent cheatsheet snapshot
-   :width: 50%
+   Here, replace ``<your_project>``, ``<your_folder_name>``, and ``<your_tex_file_name>`` with your actual project name, folder name, and TeX file name, respectively.
+   This command uses latexmk to compile your TeX file into a PDF.
 
-`download PyAEDT API cheatsheet pdf <https://cheatsheets.docs.pyansys.com/pyaedt_API_cheat_sheet.pdf>`_
+#.  In ``make.bat``, add this command to ``all``.
 
-.. image:: https://cheatsheets.docs.pyansys.com/pyaedt_API_cheat_sheet.png
-   :alt: pyaedt API cheatsheet snapshot
-   :width: 50%
+Add cheat sheet in landing page
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-`download PyEDB API cheatsheet pdf <https://cheatsheets.docs.pyansys.com/pyedb_API_cheat_sheet.pdf>`_
+In ``index.rst`` in ``doc/source``, Add new grid item card for the new cheatsheet by adding command:
 
-.. image:: https://cheatsheets.docs.pyansys.com/pymapdl_cheat_sheet.png
-   :alt: pyedb API cheatsheet snapshot
-   :width: 50%   
 
-`download PyPrimeMesh API cheatsheet pdf <https://cheatsheets.docs.pyansys.com/pyprimemesh_cheat_sheet.pdf>`_
+.. code:: bash
 
-.. image:: https://cheatsheets.docs.pyansys.com/pyprimemesh_cheat_sheet.png
-   :alt: PyPrimeMesh cheatsheet snapshot
-   :width: 50%   
+   .. grid-item::
+
+           .. card:: <Your_project_name>
+               :img-top: https://cheatsheets.docs.pyansys.com/<your_tex_file_name>.png
+               :link: https://cheatsheets.docs.pyansys.com/<your_tex_file_name>.pdf
+
+
