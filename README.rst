@@ -101,6 +101,6 @@ Cheat sheets
 ~~~~~~~~~~~~~
 
 In the `Documentation <https://cheatsheets.docs.pyansys.com/>`_ page, you can find a comprehensive collection of cheat sheets specifically 
-designed for various PyANSYS products. These cheat sheets are carefully crafted to provide concise and practical information, serving as 
-valuable references for your development or learning journey with PyANSYS. Feel free to post issues and other questions 
-at `Pyansys cheat sheet issues <https://github.com/ansys/pyansys-cheat-sheet/issues>`_. This is the best place to post questions and code.
+designed for various PyAnsys products. These cheat sheets are carefully crafted to provide concise and practical information, serving as 
+valuable references for your development or learning journey with PyAnsys. Feel free to post issues and other questions 
+at `PyAnsys cheat sheet issues <https://github.com/ansys/pyansys-cheat-sheet/issues>`_. This is the best place to post questions and code.
