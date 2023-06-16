@@ -1,14 +1,14 @@
-PyAnsys cheat sheets
-====================
+PyAnsys cheatsheets
+===================
 
 Introduction
 ------------
-This repository contains cheat sheets for PyAnsys libraries. Procedures follow for creating
-and deploying a cheat sheet.
+This repository contains cheatsheets for PyAnsys libraries. Procedures follow for creating
+and deploying a cheatsheet.
 
-Create cheat sheet
-~~~~~~~~~~~~~~~~~~
-You use a template to create a cheat sheet. Here is the procedure to follow:
+Create cheatsheet
+~~~~~~~~~~~~~~~~~
+You use a template to create a cheatsheet. Here is the procedure to follow:
 
 #. In the `<cheat_sheets>`_ folder, create a child folder with an appropriate project
    name. For example, ``pymapdl_cheat_sheet``.
@@ -18,10 +18,10 @@ You use a template to create a cheat sheet. Here is the procedure to follow:
    name. For example, ``pymapdl_cheat_sheet.tex``.
 #. Inside this LaTeX file, do the following:
 
-   #. Change the PDF title from ``PyAnsys Cheat Sheet`` to your project title.
+   #. Change the PDF title from ``PyAnsys cheatsheet`` to your project title.
    #. In ``pdfinfo``, add a subject and keywords.
-   #. Change the title of the cheat sheet from ``Cheat sheet for PyAnsys`` to
-      `Cheat sheet for <project title>``
+   #. Change the title of the cheatsheet from ``cheatsheet for PyAnsys`` to
+      `cheatsheet for <project title>``
    #. In ``Add heading here``, add the heading name.
    #. In ``Add description of code block here``, add a description.
    #. In the block ``Add code here``, add the Python code.
@@ -41,7 +41,7 @@ You use a template to create a cheat sheet. Here is the procedure to follow:
 
         item \href{https://dev.docs.pyansys.com/}{\color{blue}{PyAnsys Developer's Guide}}
 
-Generate cheat sheet
+Generate cheatsheet
 ~~~~~~~~~~~~~~~~~~~~
 
 **For Linux users**
@@ -76,14 +76,14 @@ Generate cheat sheet
 #.  In ``make.bat``, add this command to ``all``.
 
 
-Generate cheat sheets using docker
+Generate cheatsheets using docker
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 `Cheatsheet Development Environment Using Docker <https://github.com/ansys/pyansys-cheat-sheet/tree/main/docker>_` contains
 the steps to build and run the Docker container, which includes all the necessary dependencies for cheatsheet development with PyAnsys.
 
-Add cheat sheet in landing page
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Add cheatsheet in landing page
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In ``index.rst`` in ``doc/source``, add a new grid item card for your cheatsheet by adding the following command:
 
@@ -97,10 +97,10 @@ In ``index.rst`` in ``doc/source``, add a new grid item card for your cheatsheet
                :link: https://cheatsheets.docs.pyansys.com/<your_tex_file_name>.pdf
 
 
-Cheat sheets
-~~~~~~~~~~~~~
+Cheatsheets
+~~~~~~~~~~~
 
-In the `Documentation <https://cheatsheets.docs.pyansys.com/>`_ page, you can find a comprehensive collection of cheat sheets specifically 
-designed for various PyAnsys products. These cheat sheets are carefully crafted to provide concise and practical information, serving as 
+In the `Documentation <https://cheatsheets.docs.pyansys.com/>`_ page, you can find a comprehensive collection of cheatsheets specifically 
+designed for various PyAnsys products. These cheatsheets are carefully crafted to provide concise and practical information, serving as 
 valuable references for your development or learning journey with PyAnsys. Feel free to post issues and other questions 
-at `PyAnsys cheat sheet issues <https://github.com/ansys/pyansys-cheat-sheet/issues>`_. This is the best place to post questions and code.
+at `PyAnsys cheatsheet issues <https://github.com/ansys/pyansys-cheat-sheet/issues>`_. This is the best place to post questions and code.
