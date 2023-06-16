@@ -80,7 +80,7 @@ Generate cheatsheets using docker
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 `Cheatsheet Development Environment Using Docker <https://github.com/ansys/pyansys-cheat-sheet/tree/main/docker>_` contains
-the steps to build and run the Docker container, which includes all the necessary dependencies for cheatsheet development with PyAnsys.
+the steps to build and run a Docker container, which includes all the necessary dependencies for cheatsheet development with PyAnsys.
 
 Add cheatsheet in landing page
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
