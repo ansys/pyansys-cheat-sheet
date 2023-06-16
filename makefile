@@ -36,14 +36,14 @@ clean:
 
 help:
 	@echo "Available targets:"
-	@echo "  all:         Build all cheat sheets"
+	@echo "  all:         Build all cheatsheets"
 	@echo "  clean:       Remove the build directory and temporary files"
 	@echo "  help:        Show this help message"
 	@echo ""
-	@echo "Individual Cheat Sheet Targets:"
-	@echo "  pymapdl_cheat_sheet:       Build the pymapdl cheat sheet"
-	@echo "  pyfluent_cheat_sheet:      Build the pyfluent cheat sheet"
-	@echo "  pyaedt_API_cheat_sheet:    Build the pyaedt API cheat sheet"
-	@echo "  pyedb_API_cheat_sheet:     Build the pyedb API cheat sheet"
-	@echo "  pyprimemesh_cheat_sheet:   Build the pyprimemesh cheat sheet"
+	@echo "Individual cheatsheet Targets:"
+	@echo "  pymapdl_cheat_sheet:       Build the pymapdl cheatsheet"
+	@echo "  pyfluent_cheat_sheet:      Build the pyfluent cheatsheet"
+	@echo "  pyaedt_API_cheat_sheet:    Build the pyaedt API cheatsheet"
+	@echo "  pyedb_API_cheat_sheet:     Build the pyedb API cheatsheet"
+	@echo "  pyprimemesh_cheat_sheet:   Build the pyprimemesh cheatsheet"
 	
