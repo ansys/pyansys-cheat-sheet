@@ -42,7 +42,7 @@ You use a template to create a cheatsheet. Here is the procedure to follow:
         item \href{https://dev.docs.pyansys.com/}{\color{blue}{PyAnsys Developer's Guide}}
 
 Generate cheatsheet
-~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~
 
 **For Linux users**
 
