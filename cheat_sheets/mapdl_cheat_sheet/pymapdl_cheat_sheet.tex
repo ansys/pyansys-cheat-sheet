@@ -33,34 +33,31 @@
 \setlength{\columnsep}{2pt}
 
 \section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Launching PyMAPDL}
-To launch PyMAPDL instance locally and exit it.
+To launch a PyMAPDL instance locally and exit it
 \begin{lstlisting}[language=Python]
 # To launch an instance
 from ansys.mapdl.core import launch_mapdl
-mapdl=launch_mapdl()
+mapdl = launch_mapdl()
 # To exit the instance
 mapdl.exit()
 \end{lstlisting}
 
-To specify a jobname, number of processors, and working directory.
+To specify a job name, number of processors, and working directory
 \begin{lstlisting}[language=Python]
-jname='user_jobname'
-path='<path of directory>'
-mapdl=launch_mapdl(nproc=2, run_location=path,
-                   jobname=jname)
+jname = 'user_jobname'
+path = '<path of directory>'
+mapdl = launch_mapdl(nproc=2, run_location=path, jobname=jname)
 \end{lstlisting}
 
-To connect to an existing instance of MAPDL at IP 192.168.1.30 and port 50001.
+To connect to an existing instance of MAPDL at IP 192.168.1.30 and port 50001
 \begin{lstlisting}[language=Python]
-mapdl=launch_mapdl
-            (start_instance=False,
-             ip='192.168.1.30', port=50001)
+mapdl = launch_mapdl(start_instance=False, ip='192.168.1.30', 50001)
 \end{lstlisting}
-To create and exit a pool of instances.
+To create and exit a pool of instances
 \begin{lstlisting}[language=Python]
 # To create a pool of 10 instances
 from ansys.mapdl.core import LocalMapdlPool
-pool=mapdl.LocalMapdlPool(10)
+pool = mapdl.LocalMapdlPool(10)
 # To exit the pool
 pool.exit()
 \end{lstlisting}
@@ -71,13 +68,13 @@ PyMAPDL commands are Python statements that act as a wrapper for APDL commands. 
 mapdl.esel('s', 'type', vmin=1) 
 \end{lstlisting}
 
-Commands that start with * or / have those characters removed.
+Commands that start with * or / have those characters removed
 \begin{lstlisting}[language=Python]
 mapdl.prep7()	# /PREP7
 mapdl.get()	# *GET
 \end{lstlisting}
 
-In cases where removing * or / will cause conflict with other commands, a prefix "slash" or "star" is added.
+In cases where removing * or / will cause conflict with other commands, a prefix "slash" or "star" is added
 \begin{lstlisting}[language=Python]
 mapdl.solu()		# SOLU
 mapdl.slashsolu()	# /SOLU
@@ -87,61 +84,56 @@ mapdl.starvget()	# *VGET
 \end{lstlisting} 
 
 \columnbreak
-Converting an existing APDL script to PyMAPDL format.
+To convert an existing APDL script to PyMAPDL format
 \begin{lstlisting}[language=Python]
-inputfile='ansys_inputfile.inp'
-pyscript='pyscript.py'
+inputfile = 'ansys_inputfile.inp'
+pyscript = 'pyscript.py'
 mapdl.convert_script(inputfile, pyscript)
 \end{lstlisting} 
 
 \section{\includegraphics[height=\fontcharht\font`\S]{slash.png} MAPDL Class}
-Load a table from Python to MAPDL
+To load a table from Python to MAPDL
 \begin{lstlisting}[language=Python]
-mapdl.load_table(name,array,var1='', var2='',
-                 var3='', csysid='')
+mapdl.load_table(name, array)
 \end{lstlisting} 
 
-To access from or write parameters to MAPDL database.
+To access from or write parameters to MAPDL database
 \begin{lstlisting}[language=Python]
 # Save a parameter to a NumPy array nparray
-nparray=mapdl.parameters['displ_load']
+nparray = mapdl.parameters['displ_load']
 # Create a parameter from a NumPy array nparray
-mapdl.parameters['exp_disp']=nparray
+mapdl.parameters['exp_disp'] = nparray
 \end{lstlisting} 
 
-To access information using \code{*GET} and \code{*VGET} directly to NumPy arrays.
+To access information using \code{*GET} and \code{*VGET} storing directly to NumPy arrays
 \begin{lstlisting}[language=Python]
 # Runs *GET command and returns a Python value
-mapdl.get_value(entity='', entnum='',
-                item1='', it1num='',
-                item2='', it2num='', **kwargs)
+mapdl.get_value(entity='node', item1='count')
 
 # Runs *VGET command and returns a Python array
-mapdl.get_array(entity='', entnum='',
-                item1='', it1num='', item2='',
-                it2num='', kloop='', **kwargs)
+mapdl.get_array(entity='NODE', item1='NLIST')
 \end{lstlisting} 
 
 \section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Mesh Class}
-Store the finite element mesh as a VTK UnstructuredGrid data object.
+To store the finite element mesh as a VTK UnstructuredGrid data object
 \begin{lstlisting}[language=Python]
-grid=mapdl.mesh.grid
+grid = mapdl.mesh.grid
 \end{lstlisting} 
 
-Save element \& node numbers to Python arrays.
+To save element \& node numbers to Python arrays
 \begin{lstlisting}[language=Python]
 # Array of nodal coordinates
-nodes=mapdl.mesh.nodes
+nodes = mapdl.mesh.nodes
 
 # Save node numbers of selected nodes to array
-node_num=mapdl.mesh.nnum
+node_num = mapdl.mesh.nnum
 # Save node numbers of all nodes to array
-node_num_all=mapdl.mesh.nnum_all
+node_num_all = mapdl.mesh.nnum_all
 
-# Element numbs. of currently selected elements
-elem_num=mapdl.mesh.enum
-# All element numbers incl. those not selected
-elem_num_all=mapdl.mesh.enum_all
+# Element numbers of currently selected elements
+elem_num = mapdl.mesh.enum
+# All element numbers including those not selected
+elem_num_all = mapdl.mesh.enum_all
 \end{lstlisting} 
 \vfill
 
@@ -156,28 +148,29 @@ mapdl.set(1, 2)
 # Plot the nodal equivalent stress
 mapdl.post_processing.plot_nodal_eqv_stress()
 # Save nodal eqv. stresses to a Python array
-nod_eqv_stress=
-       mapdl.post_processing.nodal_eqv_stress()
+nod_eqv_stress = mapdl.post_processing.nodal_eqv_stress()
 # Plot contour legend using dictionary
 mapdl.allsel()
-sbar_kwargs={"color": "black",
-        "title": "Equivalent Stress (psi)",
-        "vertical": False,"n_labels": 6}
+sbar_kwargs = {"color": "black",
+               "title": "Equivalent Stress (psi)",
+	       "vertical": False,
+	       "n_labels": 6}
 mapdl.post_processing.plot_nodal_eqv_stress(
-        cpos='xy', background='white',
-        edge_color='black', show_edges=True,
-        scalar bar_args=sbar_kwargs, n_colors=9)
+    cpos='xy', background='white',
+    edge_color='black', show_edges=True,
+    scalar bar_args=sbar_kwargs, n_colors=9)
 \end{lstlisting} 
 \vfill
+
 \section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Plotting Class}
-Plotting is interpolated with PyVista by saving the resulting stress and storing wtihin the underlying UnstructuredGrid.
+Data is interpolated by PyVista, saving the resulting stress and storing within the underlying UnstructuredGrid.
 \begin{lstlisting}[language=Python]
-pl=pyvista.Plotter()
-pl0=mapdl.post_processing.plot_nodal_stress(
-      return_plotter=True)
+pl = pyvista.Plotter()
+pl0 = post_processing.plot_nodal_stress(return_plotter=True)
 pl.add(pl0.mesh)
 pl.show()
 \end{lstlisting} 
+
 \begin{lstlisting}[language=Python]
 # Plot the currently selected elements
 mapdl.eplot(show_node_numbering, vtk)
@@ -185,11 +178,9 @@ mapdl.eplot(show_node_numbering, vtk)
 mapdl.vplot(nv1, nv2, ninc, degen, scale, ...)
 # Display the selected areas
 mapdl.aplot(na1, na2, ninc, degen, scale, ...)
-# Display the selected lines without 
-# MAPDL plot symbols
+# Display the selected lines without MAPDL plot symbols
 mapdl.lplot(vtk=True, cpos='xy', line_width=10)
-# Save png file of line plot with MAPDL 
-# coordinate symbol
+# Save png file of line plot with MAPDL coordinate symbol
 mapdl.psymb('CS', 1)
 mapdl.lplot(vtk=False)
 \end{lstlisting} 
