@@ -157,9 +157,9 @@ hfss.analyze_setup("mysetup")
 Post-processing class has modules for creating and editing plots in AEDT. They are accessible through the post library
 \begin{lstlisting}[language=Python]
 plotf = hfss.post.create_fieldplot_volume(object_list, quantityname, setup_name, intrinsic_dict) # This call returns a FieldPlot object
-my_data = hfss.post.get_solution_data(expression=trace_names) # This call returns a SolutionData object
+my_data = hfss.post.get_solution_data(expression=trace_names) # This call returns a Solution Data object
 standard_report = hfss.post.report_by_category.standard("db(S(1,1))") # This call returns a new standard report object
-standard_report.create() # This call reate a report
+standard_report.create() # This call create a report
 solution_data = standard_report.get_solution_data()
 \end{lstlisting}
 
