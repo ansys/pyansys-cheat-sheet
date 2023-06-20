@@ -12,7 +12,10 @@
 \raggedright
 \footnotesize
 \begin{center}
-     \Huge{\textbf{Cheat sheet for PyMAPDL}} \\
+     \Huge{\textbf{PyMAPDL Cheat sheet}} \\
+\end{center}
+\begin{center}
+     \small{\textbf{version:0.65.0 (stable)}} \\
 \end{center}
 \AddToShipoutPicture*
 	{\put(670,577.5){\includegraphics[height = 1.2cm]{ansys.png}}}
@@ -30,7 +33,7 @@
 \setlength{\columnsep}{2pt}
 
 \section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Launching PyMAPDL}
-To launch PyMAPDL instance locally and exit it
+To launch PyMAPDL instance locally and exit it.
 \begin{lstlisting}[language=Python]
 # To launch an instance
 from ansys.mapdl.core import launch_mapdl
@@ -39,7 +42,7 @@ mapdl=launch_mapdl()
 mapdl.exit()
 \end{lstlisting}
 
-To specify a jobname, number of processors, and working directory
+To specify a jobname, number of processors, and working directory.
 \begin{lstlisting}[language=Python]
 jname='user_jobname'
 path='<path of directory>'
@@ -53,7 +56,7 @@ mapdl=launch_mapdl
             (start_instance=False,
              ip='192.168.1.30', port=50001)
 \end{lstlisting}
-To create and exit a pool of instances
+To create and exit a pool of instances.
 \begin{lstlisting}[language=Python]
 # To create a pool of 10 instances
 from ansys.mapdl.core import LocalMapdlPool
@@ -84,7 +87,7 @@ mapdl.starvget()	# *VGET
 \end{lstlisting} 
 
 \columnbreak
-Converting an existing APDL script to PyMAPDL format
+Converting an existing APDL script to PyMAPDL format.
 \begin{lstlisting}[language=Python]
 inputfile='ansys_inputfile.inp'
 pyscript='pyscript.py'
@@ -98,7 +101,7 @@ mapdl.load_table(name,array,var1='', var2='',
                  var3='', csysid='')
 \end{lstlisting} 
 
-To access from or write parameters to MAPDL database
+To access from or write parameters to MAPDL database.
 \begin{lstlisting}[language=Python]
 # Save a parameter to a NumPy array nparray
 nparray=mapdl.parameters['displ_load']
@@ -106,7 +109,7 @@ nparray=mapdl.parameters['displ_load']
 mapdl.parameters['exp_disp']=nparray
 \end{lstlisting} 
 
-To access information using \code{*GET} and \code{*VGET} directly to NumPy arrays
+To access information using \code{*GET} and \code{*VGET} directly to NumPy arrays.
 \begin{lstlisting}[language=Python]
 # Runs *GET command and returns a Python value
 mapdl.get_value(entity='', entnum='',
@@ -167,7 +170,7 @@ mapdl.post_processing.plot_nodal_eqv_stress(
 \end{lstlisting} 
 \vfill
 \section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Plotting Class}
-Plotting is interpolated with PyVista by saving the resulting stress and storing wtihin the underlying UnstructuredGrid
+Plotting is interpolated with PyVista by saving the resulting stress and storing wtihin the underlying UnstructuredGrid.
 \begin{lstlisting}[language=Python]
 pl=pyvista.Plotter()
 pl0=mapdl.post_processing.plot_nodal_stress(
@@ -194,14 +197,14 @@ mapdl.lplot(vtk=False)
 
 \subsection{References from PyMAPDL Documentation}
 \begin{itemize}
-\item \href{https://mapdldocs.pyansys.com/version/stable/getting_started/index.html}{\color{blue}{Getting Started}}
-\item \href{https://mapdldocs.pyansys.com/version/stable/mapdl_commands/index.html}{\color{blue}{MAPDL Commands}}
-\item \href{https://mapdldocs.pyansys.com/version/stable/api/index.html}{\color{blue}{API Reference}}
+\item \href{https://mapdl.docs.pyansys.com/version/stable/getting_started/index.html}{\color{blue}{Getting Started}}
+\item \href{https://mapdl.docs.pyansys.com/version/stable/mapdl_commands/index.html}{\color{blue}{MAPDL Commands}}
+\item \href{https://mapdl.docs.pyansys.com/version/stable/api/index.html}{\color{blue}{API Reference}}
 \end{itemize}
 \end{multicols}
 \vspace{-0.15cm}
 \noindent\makebox[\linewidth]{\rule{\paperwidth}{4pt}}
 \begin{center}
-Getting Started with PyMAPDL \includegraphics[height=\fontcharht\font`\S]{slash.png} \href{https://github.com/pyansys/pymapdl}{{\color{blue}PyMAPDL on GitHub}} \includegraphics[height=\fontcharht\font`\S]{slash.png} Visit \code{\href{https://mapdldocs.pyansys.com/}{{\color{blue}mapdldocs.pyansys.com}}}
+Getting Started with PyMAPDL \includegraphics[height=\fontcharht\font`\S]{slash.png} \href{https://github.com/ansys/pymapdl}{{\color{blue}PyMAPDL on GitHub}} \includegraphics[height=\fontcharht\font`\S]{slash.png} Visit \code{\href{https://mapdl.docs.pyansys.com/}{{\color{blue}mapdl.docs.pyansys.com}}}
 \end{center}
 \end{document}

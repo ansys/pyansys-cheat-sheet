@@ -23,7 +23,7 @@ html_logo = ansys_logo_black
 html_theme = "ansys_sphinx_theme"
 
 html_context = {
-    "github_user": "pyansys",
+    "github_user": "ansys",
     "github_repo": "pyansys-cheat-sheet",
     "github_version": "main",
     "doc_path": "doc/source",
@@ -31,14 +31,25 @@ html_context = {
 
 # specify the location of your github repo
 html_theme_options = {
-    "github_url": "https://github.com/pyansys/pyansys-cheat-sheet",
-    "contact_mail": "pyansys.support@ansys.com",
+    "github_url": "https://github.com/ansys/pyansys-cheat-sheet",
+    "contact_mail": "pyansys.core@ansys.com",
     "additional_breadcrumbs": [
-        ("Ansys Internal Developer Portal", "https://dev.docs.ansys.com"),
+        ("PyAnsys", "https://docs.pyansys.com"),
+    ],
+    "show_prev_next": False,
+    "show_breadcrumbs": True,
+    "collapse_navigation": True,
+    "use_edit_page_button": True,
+    "icon_links": [
+        {
+            "name": "Support",
+            "url": "https://github.com/ansys/pyansys-cheat-sheet/discussions",
+            "icon": "fa fa-comment fa-fw",
+        },
     ],
 }
 
-html_short_title = html_title = "Pyansys Cheat-sheet"
+html_short_title = html_title = "PyAnsys Cheat sheets"
 
 # Sphinx extensions
 extensions = [

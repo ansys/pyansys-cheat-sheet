@@ -12,14 +12,14 @@
 \raggedright
 \footnotesize
 
-Cheat sheet for PyPrimeMesh
+% PyPrimeMesh Cheat Sheet
 % ----------------------------------------
 
 \begin{center}
-     \Huge{\textbf{Cheat sheet for PyPrimeMesh}} \\
+     \Huge{\textbf{PyPrimeMesh Cheat sheet}} \\
 \end{center}
 \begin{center}
-  \small{\textbf{version:0.3.0 (stable) }} \\
+  \small{\textbf{version:0.3.0 (stable)}} \\
 \end{center}
 \AddToShipoutPicture*
   {\put(670,577.5){\includegraphics[height = 1.2cm]{ansys.png}}}
@@ -54,14 +54,14 @@ with prime.launch_prime(timeout = 20) as prime_client:
 To launch an instance of PyPrimeMesh at IP
 127.0.0.1 and port 50055 with number of processes 4.
 \begin{lstlisting}[language=Python]
- with prime.launch_prime(ip = "127.0.0.1", port = 50055, n_procs = 4) as prime_client:
+  with prime.launch_prime(ip = "127.0.0.1", port = 50055, n_procs = 4) as prime_client:
   model = prime_client.model
 \end{lstlisting}
 
 % row 2 col 1
 \section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Read and Write files }
 Read or Write files of different formats based on file extension.
-An example for the same can be seen below\\
+An example for the same can be seen below.\\
 \begin{lstlisting}[language=Python]
 # Import lucid class
 from ansys.meshing.prime import lucid
@@ -75,7 +75,7 @@ cad_file_name = r"sample2_CAD.stp"
 mesher.read(cad_file_name, append=False)
 # Write Mesh (*.cdb) file
 cdb_file_name = r"sample3_case.cdb"
-  mesher.write(cdb_file_name)
+mesher.write(cdb_file_name)
 \end{lstlisting}
 
 % row 3 col 1
@@ -88,7 +88,7 @@ model.set_global_sizing_params(prime.GlobalSizingParams(min = 0.5, max = 16.0,
                        growth_rate= 1.2))
 \end{lstlisting}
 
-Curvature size control definition
+Curvature size control definition.
 \begin{lstlisting}[language=Python]
 # Create Curvature Size Control
 curvature_control = model.control_data.create_size_control(prime.SizingType.CURVATURE)
@@ -102,7 +102,7 @@ curvature_control.set_scope(scope)
 curvature_control.set_curvature_sizing_params(prime.CurvatureSizingParams(model, normal_angle=18))
 \end{lstlisting}
 \section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Generate Wrapper Surface Mesh}
-Generate Wrapper Surface Mesh
+Generate Wrapper Surface Mesh.
 \begin{lstlisting}[language=Python]
 mesher.wrap(
             min_size=0.2, max_size=1.0,
@@ -114,7 +114,7 @@ mesher.wrap(
 \end{lstlisting}
 
 \section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Generate Surface Mesh}
-Generate Surface Mesh based on min, max size  
+Generate Surface Mesh based on min, max size. 
 \begin{lstlisting}[language=Python]
 surface_scope = prime.ScopeDefinition(model, part_expression="*")
 mesher.surface_mesh(min_size=0.5, max_size=16, 
@@ -122,7 +122,7 @@ mesher.surface_mesh(min_size=0.5, max_size=16,
                     scope = surface_scope)
 \end{lstlisting}
 
-Generate Surface Mesh based on size controls  
+Generate Surface Mesh based on size controls.  
 \begin{lstlisting}[language=Python]
 control_name = "Curvature_Size_Control"
 mesher.surface_mesh_with_size_controls(
@@ -132,7 +132,7 @@ mesher.surface_mesh_with_size_controls(
 \end{lstlisting}
 
 \section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Surface Mesh Analysis}
-Surface Mesh Diagnostics 
+Surface Mesh Diagnostics. 
 \begin{lstlisting}[language=Python]
 diag = prime.SurfaceSearch(model)
 diag_params = prime.SurfaceDiagnosticSummaryParams(
@@ -140,10 +140,10 @@ diag_params = prime.SurfaceDiagnosticSummaryParams(
     compute_free_edges=True,
 ) 
 diag_res = diag.get_surface_diagnostic_summary(diag_params)
->>> print("Number of free faces : ", diag_res.n_free_faces)
+print("Number of free faces : ", diag_res.n_free_faces)
 \end{lstlisting}
 
-Surface Mesh Quality Metrics
+Surface Mesh Quality Metrics.
 \begin{lstlisting}[language=Python]
 face_quality_measures = prime.FaceQualityMeasure.SKEWNESS
 quality = prime.SurfaceSearch(model)
@@ -153,22 +153,22 @@ quality_params = prime.SurfaceQualitySummaryParams(
     face_quality_measures=[face_quality_measures],
     quality_limit=[0.9],
 )
->>> print("Maximum surface skewness : ", qual_summary_res.quality_results[0].max_quality)
+print("Maximum surface skewness : ", qual_summary_res.quality_results[0].max_quality)
 \end{lstlisting}
 
 \section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Generate Volume Mesh}
-Generate Volume Mesh
+Generate Volume Mesh.
 \begin{lstlisting}[language=Python]
 vol_scope = prime.ScopeDefinition(model, part_expression="*")
 mesher.volume_mesh(volume_fill_type=prime.VolumeFillType.HEXCOREPOLY,
                   scope = vol_scope)
 \end{lstlisting}
 \section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Part Summary}
-Query for Part Sumamry
+Query for Part Summary.
 \begin{lstlisting}[language=Python]
 part = model.get_part_by_name("sample_part")
 summary = part.get_summary(prime.PartSummaryParams(model))
->>> print("Total number of cells: ",summary.n_cells)
+print("Total number of cells: ",summary.n_cells)
 \end{lstlisting}
 
 % Add subsection
@@ -188,6 +188,6 @@ summary = part.get_summary(prime.PartSummaryParams(model))
 \vspace{-0.15cm}
 \noindent\makebox[\linewidth]{\rule{\paperwidth}{4pt}}
 \begin{center}
-Getting Started with PyAnsys \includegraphics[height=\fontcharht\font`\S]{slash.png} \href{https://github.com/pyansys}{\color{blue}{PyAnsys on GitHub}} \includegraphics[height=\fontcharht\font`\S]{slash.png} Visit \code{\href{https://dev.docs.pyansys.com/}}{\color{blue}{dev.docs.pyansys.com}}
+Getting Started with PyPrimeMesh \includegraphics[height=\fontcharht\font`\S]{slash.png} \href{https://github.com/ansys/pyprimemesh}{\color{blue}{PyAnsys on GitHub}} \includegraphics[height=\fontcharht\font`\S]{slash.png} Visit \code{\href{https://prime.docs.pyansys.com/}}{\color{blue}{prime.docs.pyansys.com}}
 \end{center}
 \end{document}
