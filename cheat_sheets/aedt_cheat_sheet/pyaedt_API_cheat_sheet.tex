@@ -37,16 +37,17 @@
 \setlength{\columnsep}{2pt}
 
 \section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Launching PyAEDT}
-To launch HFSS instance locally and exit it
+To launch HFSS instance locally
 \begin{lstlisting}[language=Python]
-# To launch an instance
 import pyaedt
 hfss = pyaedt.Hfss(specified_version="2023.1",
 	non_graphical=False,
 	new_desktop_session=True,
 	projectname="Project_name",
 	designname="Design_name")
-# To exit the instance
+\end{lstlisting}
+\begin{lstlisting}[language=Python]
+To exit your local instance
 hfss.release_desktop()
 \end{lstlisting}
 
