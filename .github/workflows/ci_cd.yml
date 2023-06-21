@@ -40,7 +40,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: documentation-pdf
-          path: _build/{*.pdf,*.png}
+          path: _build/*.pdf
           retention-days: 7
 
       - name: make html
