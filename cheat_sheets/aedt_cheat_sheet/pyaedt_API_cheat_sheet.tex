@@ -128,7 +128,7 @@ port_W = hfss.wave_port("Box1","Box2",name="WavePort",integration_line=1)
 \end{lstlisting}
 
 \section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Setup Class}
-The \texttt{tt>hfss.create.setup} class is used to define the solution setup:
+The \texttt{hfss.create.setup} class is used to define the solution setup:
 
 \begin{lstlisting}[language=Python]
 setup = hfss.create_setup("MySetup")
@@ -146,7 +146,7 @@ hfss.optimizations
 \end{lstlisting}
 \columnbreak
 \section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Mesh Class}
-Mesh module manages the mesh functions in PyAEDT
+The \texttt{hfss.mesh} module manages the mesh functions
 \begin{lstlisting}[language=Python]
 hfss.mesh.assign_initial_mesh_from_slider(level=6) # setting the slider level to 6
 # assign model resolutions
