@@ -37,7 +37,7 @@
 \setlength{\columnsep}{2pt}
 
 \section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Launching PyAEDT}
-To launch HFSS instance locally
+To launch HFSS instance locally:
 \begin{lstlisting}[language=Python]
 import pyaedt
 hfss = pyaedt.Hfss(specified_version="2023.1",
@@ -46,33 +46,30 @@ hfss = pyaedt.Hfss(specified_version="2023.1",
 	projectname="Project_name",
 	designname="Design_name")
 \end{lstlisting}
+To exit your local instance:
 \begin{lstlisting}[language=Python]
-To exit your local instance
 hfss.release_desktop()
 \end{lstlisting}
-
 %Optionally, AEDT can be launched at the client server. To connect an existing instance of AEDT at  \textbf{"server\_name"} and port \textbf{"50001"}
 %\begin{lstlisting}[language=Python]
 %	cl1 = create_session("server_name", launch_aedt_on_server=True,
 %	aedt_port=50001, non_graphical=True)
 %\end{lstlisting}
-
-
 \section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Variable Class}
-To create a variable that only applies to this design
+\texttt{hfss.variable$\_$manager} class handles all the variables.
+\newline
+To create a variable that only applies to this design:
 \begin{lstlisting}[language=Python]
 hfss["dim"] = "1mm"
 \end{lstlisting}
+To create a variable that applies at a project level:
 \begin{lstlisting}[language=Python]
-To create a variable that applies at a project level
 hfss["$dim"] = "1mm"
 \end{lstlisting}
-\texttt{hfss.variable$\_$manager} is the class handles all the variables. It contains a lot of properties and methods useful for variable handling.
 \section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Material Class}
 The \texttt{hfss.materials} class is used to access the materials library.
 \newline
-\\
-To add a new material 
+To add a new material: 
 \begin{lstlisting}[language=Python]
 my_mat = hfss.materials.add_material("myMat")
 my_mat.permittivity = 3.5
@@ -89,11 +86,11 @@ my_mat.permeability = 1.5
 The \texttt{hfss.modeler} contains all properties and methods needed to edit a modeler, including primitives methods and properties.
 \newline
 \\
-To draw a box at (x\_pos, y\_pos, z\_pos) position with (x\_dim, y\_dim, z\_dim) dimensions
+To draw a box at (x\_pos, y\_pos, z\_pos) position with (x\_dim, y\_dim, z\_dim) dimensions:
 \begin{lstlisting}[language=Python]
 box = hfss.modeler.create_box([x_pos,y_pos,z_pos], [x_dim,y_dim,z_dim],name="airbox", matname="air")
 \end{lstlisting}
-To create a spiral geometry made of "copper"
+To create a spiral geometry made of "copper":
 \begin{lstlisting}[language=Python]
 ind = hfss.modeler.create_spiral(
 	internal_radius=rin, width=width,
@@ -101,16 +98,15 @@ ind = hfss.modeler.create_spiral(
 	faces=Np, thickness=thickness,
 	material="copper",name="Inductor1")
 \end{lstlisting}
-\texttt{box}, \texttt{ind} are the \texttt{Object3d objects}, containing a lot of properties and methods related to that object including faces, vertices, colors, and materials.
-\vfill
 \columnbreak
+\texttt{box}, \texttt{ind} are the \texttt{Object3d objects}, containing a lot of properties and methods related to that object including faces, vertices, colors, and materials.
 
 \section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Creating boundaries}
-To create an open region
+To create an open region:
 \begin{lstlisting}[language=Python]
 hfss.create_open_region(Frequency="1GHz")
 \end{lstlisting}
-To assign a radiation boundary
+To assign a radiation boundary:
 \begin{lstlisting}[language=Python]
 hfss.assign_radiation_boundary_to_objects("airbox")
 \end{lstlisting}
@@ -124,7 +120,7 @@ port_L = hfss.lumped_port(signal="Box1", reference="Box2", integration_line=hfss
 \end{lstlisting}
 Pythonic way of defining Wave guide-port is
 \begin{lstlisting}[language=Python]
-port_W = hfss.wave_port("Box1","Box2",name="WavePort",integration_line=1)
+port_W = hfss.wave_port("Box1", "Box2", name="WavePort", integration_line=1)
 \end{lstlisting}
 
 \section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Setup Class}
@@ -134,19 +130,19 @@ The \texttt{hfss.create.setup} class is used to define the solution setup:
 setup = hfss.create_setup("MySetup")
 setup.props["Frequency"] = "50MHz"
 setup["MaximumPasses"] = 10
-hfss.create_linear_count_sweep(setupname="any",unit="MHz",freqstart=0.1,freqstop=100,num_of_freq_points=100, sweepname="sweep1",sweep_type="Interpolating", save_fields=False)
+hfss.create_linear_count_sweep(setupname="any", unit="MHz", freqstart=0.1, freqstop=100, num_of_freq_points=100, sweepname="sweep1", sweep_type="Interpolating", save_fields=False)
 \end{lstlisting}
-To access the parametric sweep
+To access the parametric sweep:
 \begin{lstlisting}[language=Python]
 hfss.parametrics
 \end{lstlisting}
-To access the optimizations
+To access the optimizations:
 \begin{lstlisting}[language=Python]
 hfss.optimizations
 \end{lstlisting}
 \columnbreak
 \section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Mesh Class}
-The \texttt{hfss.mesh} module manages the mesh functions
+The \texttt{hfss.mesh} module manages the mesh functions:
 \begin{lstlisting}[language=Python]
 hfss.mesh.assign_initial_mesh_from_slider(level=6) # setting the slider level to 6
 # assign model resolutions
@@ -156,7 +152,7 @@ hfss.mesh.assign_length_mesh(names=object1.faces, isinside=False, maxlength=1, m
 \end{lstlisting}
 
 \section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Analysis Class}
-The solution setup (\texttt{mysetup}) in HFSS design is analyzed by calling the following Python command
+The solution setup (\texttt{mysetup}) in HFSS design is analyzed by calling the following Python command:
 \begin{lstlisting}[language=Python]
 hfss.analyze_setup("mysetup")
 \end{lstlisting}
@@ -190,6 +186,6 @@ omodule = hfss.odesign.GetModule("Optimetrics")
 \vspace{-0.15cm}
 \noindent\makebox[\linewidth]{\rule{\paperwidth}{4pt}}
 \begin{center}
-Getting Started With AEDT \includegraphics[height=\fontcharht\font`\S]{slash.png} Ansys Innovation Courses \includegraphics[height=\fontcharht\font`\S]{slash.png} %Visit \code{\href{https://courses.ansys.com/}{ansys.com/courses}}
+Getting started with AEDT \includegraphics[height=\fontcharht\font`\S]{slash.png} \href{https://github.com/ansys/pyaedt}{{\color{blue}PyAEDT on GitHub}} \includegraphics[height=\fontcharht\font`\S]{slash.png} Ansys Innovation Courses %Visit \code{\href{https://courses.ansys.com/}{ansys.com/courses}}
 \end{center}
 \end{document}
