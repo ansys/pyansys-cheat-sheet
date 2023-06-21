@@ -35,13 +35,6 @@ jobs:
       - name: make pdf
         run: |
           make all
-        
-      - name: "Upload PDF artifact"
-        uses: actions/upload-artifact@v3
-        with:
-          name: documentation-pdf
-          path: _build/*.pdf
-          retention-days: 7
 
       - name: make html
         run: |
@@ -52,6 +45,15 @@ jobs:
         with:
           name: documentation-html
           path: doc/_build/html
+          retention-days: 7
+
+      - name: "Upload PDF artifact"
+        uses: actions/upload-artifact@v3
+        with:
+          name: cheatsheet-pdf
+          path: |
+            _build/*.pdf
+            _build/*.png
           retention-days: 7
 
       - name: Prepare files for gh-pages deployment
