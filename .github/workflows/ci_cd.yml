@@ -50,8 +50,8 @@ jobs:
       - name: "Upload PDF artifact"
         uses: actions/upload-artifact@v3
         with:
-          name: documentation-pdf
-          path: _build/{*.pdf,*.png}
+          name: cheatsheet-pdf
+          path: _build/*.pdf
           retention-days: 7
 
       - name: Prepare files for gh-pages deployment
