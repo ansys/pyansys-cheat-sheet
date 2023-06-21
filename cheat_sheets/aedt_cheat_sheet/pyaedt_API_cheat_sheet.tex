@@ -70,7 +70,8 @@ hfss["$dim"] = "1mm"
 \texttt{hfss.variable$\_$manager} is the class handles all the variables. It contains a lot of properties and methods useful for variable handling.
 \section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Material Class}
 The \texttt{hfss.materials} class is used to access the materials library.
-
+\newline
+\\
 To add a new material 
 \begin{lstlisting}[language=Python]
 my_mat = hfss.materials.add_material("myMat")
@@ -85,14 +86,14 @@ my_mat.permeability = 1.5
 %\end{lstlisting}
 
 \section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Geometry Creation}
-\texttt{hfss.modeler} contains all properties and methods needed to edit a modeler, including primitives methods and properties.
+The \texttt{hfss.modeler} contains all properties and methods needed to edit a modeler, including primitives methods and properties.
 \newline
 \\
-A box is drawn at (x\_pos, y\_pos, z\_pos) position with (x\_dim, y\_dim, z\_dim) dimensions as
+To draw a box at (x\_pos, y\_pos, z\_pos) position with (x\_dim, y\_dim, z\_dim) dimensions
 \begin{lstlisting}[language=Python]
 box = hfss.modeler.create_box([x_pos,y_pos,z_pos], [x_dim,y_dim,z_dim],name="airbox", matname="air")
 \end{lstlisting}
-A spiral geometry made of "copper" is created as follows
+To create a spiral geometry made of "copper"
 \begin{lstlisting}[language=Python]
 ind = hfss.modeler.create_spiral(
 	internal_radius=rin, width=width,
@@ -105,11 +106,11 @@ ind = hfss.modeler.create_spiral(
 \columnbreak
 
 \section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Creating boundaries}
-In AEDT, open region is created as
+To create an open region
 \begin{lstlisting}[language=Python]
 hfss.create_open_region(Frequency="1GHz")
 \end{lstlisting}
-Assigning the radiation boundary to a box is as follows
+To assign a radiation boundary
 \begin{lstlisting}[language=Python]
 hfss.assign_radiation_boundary_to_objects("airbox")
 \end{lstlisting}
@@ -127,7 +128,7 @@ port_W = hfss.wave_port("Box1","Box2",name="WavePort",integration_line=1)
 \end{lstlisting}
 
 \section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Setup Class}
-Setup class is used to define the solution setup in the PyAEDT
+The \texttt{tt>hfss.create.setup} class is used to define the solution setup:
 
 \begin{lstlisting}[language=Python]
 setup = hfss.create_setup("MySetup")
@@ -135,11 +136,12 @@ setup.props["Frequency"] = "50MHz"
 setup["MaximumPasses"] = 10
 hfss.create_linear_count_sweep(setupname="any",unit="MHz",freqstart=0.1,freqstop=100,num_of_freq_points=100, sweepname="sweep1",sweep_type="Interpolating", save_fields=False)
 \end{lstlisting}
-Parametric sweep and optimizations are accessed using following classes
+To access the parametric sweep
 \begin{lstlisting}[language=Python]
-# returns the ParametericsSetups Class
 hfss.parametrics
-# returns the OptimizationSetups Class
+\end{lstlisting}
+To access the optimizations
+\begin{lstlisting}[language=Python]
 hfss.optimizations
 \end{lstlisting}
 \columnbreak
