@@ -59,14 +59,19 @@ hfss.release_desktop()
 
 
 \section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Variable Class}
-Creating a local and global variable in HFSS
+To create a variable that only applies to this design
 \begin{lstlisting}[language=Python]
-hfss["dim"] = "1mm"   # design variable
-hfss["$dim"] = "1mm"  # project variable
+hfss["dim"] = "1mm"
+\end{lstlisting}
+\begin{lstlisting}[language=Python]
+To create a variable that applies at a project level
+hfss["$dim"] = "1mm"
 \end{lstlisting}
 \texttt{hfss.variable$\_$manager} is the class handles all the variables. It contains a lot of properties and methods useful for variable handling.
 \section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Material Class}
-\texttt{hfss.materials} class is used to access the material library. A new material is added in HFSS as
+The \texttt{hfss.materials} class is used to access the materials library.
+
+To add a new material 
 \begin{lstlisting}[language=Python]
 my_mat = hfss.materials.add_material("myMat")
 my_mat.permittivity = 3.5
