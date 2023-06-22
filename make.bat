@@ -16,16 +16,18 @@ if "%1" == "help" goto help
 if "%1" == "" goto help
 
 :pymapdl_cheat_sheet
-pdflatex -output-directory=%BUILDDIR% cheat_sheets/mapdl_cheat_sheet/pymapdl_cheat_sheet.tex --interaction=nonstopmode
-if NOT EXIST %BUILDDIR%/pymapdl_cheat_sheet.pdf (
+cd "cheat_sheets/mapdl_cheat_sheet"
+pdflatex -output-directory=../../%BUILDDIR% pymapdl_cheat_sheet.tex --interaction=nonstopmode
+if NOT EXIST ../../%BUILDDIR%/pymapdl_cheat_sheet.pdf (
 Echo "no pdf generated!"
 exit /b 1)
 Echo "pdf generated!"
 goto end
 
 :pyfluent_cheat_sheet
-pdflatex -output-directory=%BUILDDIR% cheat_sheets/pyfluent_cheat_sheet/pyfluent_cheat_sheet.tex --interaction=nonstopmode
-if NOT EXIST %BUILDDIR%/pyfluent_cheat_sheet.pdf (
+cd "cheat_sheets/pyfluent_cheat_sheet"
+pdflatex -output-directory=../../%BUILDDIR% pyfluent_cheat_sheet.tex --interaction=nonstopmode
+if NOT EXIST ../../%BUILDDIR%/pyfluent_cheat_sheet.pdf (
 Echo "no pdf generated!"
 exit /b 1)
 Echo "pdf generated!"
@@ -33,32 +35,36 @@ goto end
 
 
 :pyaedt_API_cheat_sheet
-pdflatex -output-directory=%BUILDDIR% cheat_sheets/aedt_cheat_sheet/pyaedt_API_cheat_sheet.tex --interaction=nonstopmode
-if NOT EXIST %BUILDDIR%/pyaedt_API_cheat_sheet.pdf (
+cd "cheat_sheets/aedt_cheat_sheet"
+pdflatex -output-directory=../../%BUILDDIR% pyaedt_API_cheat_sheet.tex --interaction=nonstopmode
+if NOT EXIST ../../%BUILDDIR%/pyaedt_API_cheat_sheet.pdf (
 Echo "no pdf generated!"
 exit /b 1)
 Echo "pdf generated!"
 goto end
 
 :pyedb_API_cheat_sheet
-pdflatex -output-directory=%BUILDDIR% cheat_sheets/aedt_cheat_sheet/pyedb_API_cheat_sheet.tex --interaction=nonstopmode
-if NOT EXIST %BUILDDIR%/pyedb_API_cheat_sheet.pdf (
+cd "cheat_sheets/aedt_cheat_sheet"
+pdflatex -output-directory=../../%BUILDDIR% pyedb_API_cheat_sheet.tex --interaction=nonstopmode
+if NOT EXIST ../../%BUILDDIR%/pyedb_API_cheat_sheet.pdf (
 Echo "no pdf generated!"
 exit /b 1)
 Echo "pdf generated!"
 goto end
 
 :pyprimemesh_cheat_sheet
-pdflatex -output-directory=%BUILDDIR% cheat_sheets/pyprimemesh_cheat_sheet/pyprimemesh_cheat_sheet.tex --interaction=nonstopmode
-if NOT EXIST %BUILDDIR%/pyprimemesh_cheat_sheet.pdf (
+cd "cheat_sheets/pyprimemesh_cheat_sheet"
+pdflatex -output-directory=../../%BUILDDIR% pyprimemesh_cheat_sheet.tex --interaction=nonstopmode
+if NOT EXIST ../../%BUILDDIR%/pyprimemesh_cheat_sheet.pdf (
 Echo "no pdf generated!"
 exit /b 1)
 Echo "pdf generated!"
 goto end
 
 :pydpf-core_cheat_sheet
-pdflatex -output-directory=%BUILDDIR% cheat_sheets/pydpf-core_cheat_sheet/pydpf-core_cheat_sheet.tex --interaction=nonstopmode
-if NOT EXIST %BUILDDIR%/pydpf-core_cheat_sheet.pdf (
+cd "cheat_sheets/pydpf-core_cheat_sheet"
+pdflatex -output-directory=../../%BUILDDIR% pydpf-core_cheat_sheet.tex --interaction=nonstopmode
+if NOT EXIST ../../%BUILDDIR%/pydpf-core_cheat_sheet.pdf (
 Echo "no pdf generated!"
 exit /b 1)
 Echo "pdf generated!"
@@ -75,6 +81,7 @@ goto end
 
 :clean
     rmdir /S /Q %BUILDDIR%
+    goto end
 
 :help
 @echo off
