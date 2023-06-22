@@ -13,6 +13,7 @@ pymapdl_cheat_sheet:
 	(test -f $(BUILD_DIR)/pymapdl_cheat_sheet.pdf && echo pdf exists) || exit 1
 
 pyfluent_cheat_sheet:
+	python3 -c "from scripts.generate_code_snippet import generate_code_examples; generate_code_examples('cheat_sheets/pyfluent_cheat_sheet/pyfluent_script.py', 'scripts/build')"
 	latexmk -f -pdf -use-make cheat_sheets/pyfluent_cheat_sheet/pyfluent_cheat_sheet.tex -cd -outdir=../../$(BUILD_DIR) -interaction=nonstopmode || true
 	convert -density 150 -scene 1 $(BUILD_DIR)/pyfluent_cheat_sheet.pdf $(BUILD_DIR)/pyfluent_cheat_sheet.png
 	(test -f $(BUILD_DIR)/pyfluent_cheat_sheet.pdf && echo pdf exists) || exit 1
