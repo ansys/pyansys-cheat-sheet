@@ -44,7 +44,7 @@ The following method is used to start Fluent from Python in gRPC mode.\\
 This code starts Fluent in the background so that commands can be sent to Fluent from the Python interpreter.
 
 \begin{lstlisting}[language=Python]
-import ansys.fluent.core as pyfluent
+  import ansys.fluent.core as pyfluent
 
 solver = pyfluent.launch_fluent(mode="solver", show_gui=True)
 \end{lstlisting}
