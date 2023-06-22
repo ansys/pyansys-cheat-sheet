@@ -20,6 +20,9 @@
 \begin{center}
 \small{\textbf{version:0.6.78 (stable)}} \\
 \end{center}
+\begin{center}
+\small{\textbf{version:0.6.78 (stable) }} \\
+\end{center}
 \AddToShipoutPicture*
 	{\put(670,577.5){\includegraphics[height = 1.2cm]{ansys.png}}}
 \AddToShipoutPictureBG*{\includegraphics[width=\paperwidth]{bground.png}}
@@ -78,7 +81,7 @@ edb.nets.netlist
 edb.nets["net_name"].delete()
 \end{lstlisting}
 \section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Vias and padstacks}
-These containers contains the API references for padstack management. The main padstack object is called directly from main application using the property padstacks.
+These containers are the API references for padstack management. The main padstack object is called directly from main application using the property padstacks.
 %# edb.padstacks.create_padstack(padstackname="p_name", holediam="$via_hole_size", antipaddiam="$antipaddiam", paddiam="$paddiam")
 \begin{lstlisting}[language=Python]
 # Creating a via
@@ -133,7 +136,7 @@ sim_setup.solver_type sim_setup.SOLVER_TYPE.SiwaveSYZ
 sim_setup.batch_solve_settings.cutout_subdesign_expansion = 0.01
 sim_setup.batch_solve_settings.do_cutout_subdesign = True
 sim_setup.use_default_cutout = False
-sim_setup.batch_solve_settings.signal_nets = singl_net_list
+sim_setup.batch_solve_settings.signal_nets = signal_net_list
 sim_setup.batch_solve_settings.components = component_list
 sim_setup.batch_solve_settings.power_nets = power_nets_list
 
