@@ -1,5 +1,3 @@
-# This file holds the code snippets for cheat sheet.
-
 import ansys.fluent.core as pyfluent
 
 solver = pyfluent.launch_fluent(mode="solver", show_gui=True)
