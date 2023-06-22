@@ -45,7 +45,8 @@ This code starts Fluent in the background so that commands can be sent to Fluent
 
 \begin{lstlisting}[language=Python]
 import ansys.fluent.core as pyfluent
-solver = pyfluent.launch_fluent(mode = "solver", show_gui = True)
+
+solver = pyfluent.launch_fluent(mode="solver", show_gui=True)
 \end{lstlisting}
 
 The solver object contains attributes such as \textbf{file}, \textbf{setup}, \textbf{solution}, and \textbf{results}, 
@@ -57,18 +58,17 @@ which are also instances of settings objects.
 The following examples show how to read the available mesh file in Fluent Session.
 
 \begin{lstlisting}[language=Python]
-import_filename = 'example_file.msh.h5'
-solver.file.read(file_type="case", file_name=import_filename)
+mesh_filename = "example_file.msh.h5"
+solver.file.read(file_type="mesh", file_name=mesh_filename)
 \end{lstlisting}
 
-There are other specific APIs available for reading case files and
+There are other specific methods available for reading case files and
 reading case-data files. 
 
 \begin{lstlisting}[language=Python]
 # e.g., read_case(), read_case_data()
-
-import_filename = 'example_file.cas.h5'
-solver.file.read_case(file_type="case", file_name=import_filename)  
+case_filename = "example_file.cas.h5"
+solver.file.read_case(file_type="case", file_name=case_filename)
 \end{lstlisting}
 
 
@@ -86,11 +86,13 @@ solver.setup.models.energy.enabled = True
 \begin{lstlisting}[language=Python]
 >>> from pprint import pprint
 >>> pprint(solver.setup.models.energy())
-  {'enabled': True,
-  'inlet_diffusion': True,
-  'kinetic_energy': False,
-  'pressure_work': False,
-  'viscous_dissipation': False}  
+    {
+      "enabled": True,
+      "inlet_diffusion": True,
+      "kinetic_energy": False,
+      "pressure_work": False,
+      "viscous_dissipation": False,
+    }
 \end{lstlisting}
 
 
@@ -101,8 +103,12 @@ solver.setup.models.energy.enabled = True
 \section{\includegraphics[height=\fontcharht\font`\S]{slash.png}  Define materials}
 This example shows how you use Solver settings objects to define materials.
 \begin{lstlisting}[language=Python]
-solver.setup.materials.copy_database_material_by_name(type="fluid", name="water-liquid")
-solver.setup.cell_zone_conditions.fluid["elbow-fluid"].material = "water-liquid"
+solver.setup.materials.copy_database_material_by_name(
+    type="fluid", name="water-liquid"
+)
+solver.setup.cell_zone_conditions.fluid[
+    "elbow-fluid"
+].material = "water-liquid"
 \end{lstlisting} 
 
 % row 2 col 2
@@ -111,18 +117,24 @@ solver.setup.cell_zone_conditions.fluid["elbow-fluid"].material = "water-liquid"
 The examples in this section show how you use Solver settings objects to define boundary conditions.
 
 \begin{lstlisting}[language=Python]
-solver.setup.boundary_conditions.velocity_inlet["cold-inlet"].vmag = {
+solver.setup.boundary_conditions.velocity_inlet[
+    "cold-inlet"
+].vmag = {
     "option": "constant or expression",
     "constant": 0.4,
 }
 solver.setup.boundary_conditions.velocity_inlet[
     "cold-inlet"
 ].ke_spec = "Intensity and Hydraulic Diameter"
-solver.setup.boundary_conditions.velocity_inlet["cold-inlet"].turb_intensity = 5
+solver.setup.boundary_conditions.velocity_inlet[
+    "cold-inlet"
+].turb_intensity = 5
 solver.setup.boundary_conditions.velocity_inlet[
     "cold-inlet"
 ].turb_hydraulic_diam = "4 [in]"
-solver.setup.boundary_conditions.velocity_inlet["cold-inlet"].t = {
+solver.setup.boundary_conditions.velocity_inlet[
+    "cold-inlet"
+].t = {
     "option": "constant or expression",
     "constant": 293.15,
 }
@@ -132,9 +144,10 @@ solver.setup.boundary_conditions.velocity_inlet["cold-inlet"].t = {
 {\includegraphics[height=\fontcharht\font`\S]{slash.png}  Modify \textbf{cell zone} conditions} \\
 The examples in this section show how you use Solver settings objects to modify \textbf{cell zone} conditions.
 \begin{lstlisting}[language=Python]
-# Enabling Laminar Zone
-
-solver.setup.cell_zone_conditions.fluid["elbow-fluid"] = {"laminar": True}  
+# Enabling Laminar Zone  
+solver.setup.cell_zone_conditions.fluid["elbow-fluid"] = {
+    "laminar": True
+}
 \end{lstlisting}
 \vfill
 
@@ -156,12 +169,12 @@ solver.solution.run_calculation.iterate(number_of_iterations=150)
 PyFluent allows you to post-process data with \textbf{results} object. The following example shows you how to create and display contours on a plane.
 
 \begin{lstlisting}[language=Python]
-  solver.results.graphics.contour["contour"] = {}
-  solver.results.graphics.contour["contour"].print_state()
-  solver.results.graphics.contour["contour"].field = "temperature"
-  solver.results.graphics.contour["contour"].surfaces_list = [
-      "symmetry-xyplane",
-  ]
+solver.results.graphics.contour["contour"] = {}
+solver.results.graphics.contour["contour"].print_state()
+solver.results.graphics.contour["contour"].field = "temperature"
+solver.results.graphics.contour["contour"].surfaces_list = [
+    "symmetry-xyplane"
+]
 \end{lstlisting}
 \section{\includegraphics[height=\fontcharht\font`\S]{slash.png}  Temperature Contour}
 \includegraphics[scale=0.15]{mixing_elbow_pyfluent.jpg}
