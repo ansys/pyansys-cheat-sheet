@@ -55,7 +55,7 @@ hfss.release_desktop()
 %	cl1 = create_session("server_name", launch_aedt_on_server=True,
 %	aedt_port=50001, non_graphical=True)
 %\end{lstlisting}
-\section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Variable Class}
+\section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Variable class}
 \texttt{hfss.variable$\_$manager} class handles all the variables.
 \newline
 To create a variable that only applies to this design:
@@ -66,7 +66,7 @@ To create a variable that applies at a project level:
 \begin{lstlisting}[language=Python]
 hfss["$dim"] = "1mm"
 \end{lstlisting}
-\section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Material Class}
+\section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Material class}
 The \texttt{hfss.materials} class is used to access the materials library.
 \newline
 To add a new material: 
@@ -82,7 +82,7 @@ my_mat.permeability = 1.5
 %my_mat = hfss.materials.add_material("myMat2", props = dic)
 %\end{lstlisting}
 
-\section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Geometry Creation}
+\section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Geometry creation}
 The \texttt{hfss.modeler} contains all properties and methods needed to edit a modeler, including primitives methods and properties.
 \newline
 \\
@@ -112,18 +112,21 @@ hfss.assign_radiation_boundary_to_objects("airbox")
 \end{lstlisting}
 
 \section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Port definitions}
-Common port types in HFSS are Lumped-port and Wave guide-port. Pythonic way of defining the lumped-port is
+Common port types in HFSS are Lumped-port and Wave guide-port.
+\newline
+\\
+To define a lumped-port:
 \begin{lstlisting}[language=Python]
 box1 = hfss.modeler.create_box([0,0,50], [10,10,5], "Box1","copper")
 box2 = hfss.modeler.create_box([0,0,60], [10,10,5], "Box2","copper")
 port_L = hfss.lumped_port(signal="Box1", reference="Box2", integration_line=hfss.AxisDir.XNeg, impedance=50, name="LumpedPort", renormalize=True, deembed=False)
 \end{lstlisting}
-Pythonic way of defining Wave guide-port is
+To define a wave guide-port:
 \begin{lstlisting}[language=Python]
 port_W = hfss.wave_port("Box1", "Box2", name="WavePort", integration_line=1)
 \end{lstlisting}
 
-\section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Setup Class}
+\section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Setup class}
 The \texttt{hfss.create.setup} class is used to define the solution setup:
 
 \begin{lstlisting}[language=Python]
@@ -141,7 +144,7 @@ To access the optimizations:
 hfss.optimizations
 \end{lstlisting}
 \columnbreak
-\section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Mesh Class}
+\section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Mesh class}
 The \texttt{hfss.mesh} module manages the mesh functions:
 \begin{lstlisting}[language=Python]
 hfss.mesh.assign_initial_mesh_from_slider(level=6) # setting the slider level to 6
@@ -151,14 +154,14 @@ hfss.mesh.assign_model_resolution(names=[object1.name, object2.name], defeature_
 hfss.mesh.assign_length_mesh(names=object1.faces, isinside=False, maxlength=1, maxel=2000)
 \end{lstlisting}
 
-\section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Analysis Class}
-The solution setup (\texttt{mysetup}) in HFSS design is analyzed by calling the following Python command:
+\section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Analysis class}
+The solution setup (\texttt{mysetup}) in HFSS design is analyzed by calling:
 \begin{lstlisting}[language=Python]
 hfss.analyze_setup("mysetup")
 \end{lstlisting}
 %where, 'mysetup' is the solution setup
-\section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Post-processing Class}
-Post-processing class has modules for creating and editing plots in AEDT. They are accessible through the post library
+\section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Post-processing class}
+Post-processing class has modules for creating and editing plots in AEDT. They are accessible through the post library:
 \begin{lstlisting}[language=Python]
 plotf = hfss.post.create_fieldplot_volume(object_list, quantityname, setup_name, intrinsic_dict) # This call returns a FieldPlot object
 my_data = hfss.post.get_solution_data(expression=trace_names) # This call returns a Solution Data object
@@ -168,10 +171,10 @@ solution_data = standard_report.get_solution_data()
 \end{lstlisting}
 
 \section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Calling AEDT-API with PyAEDT}
-Most of the critical functionalities are captured in PyAEDT. However, the missing features from AEDT-API method can be converted to PyAEDT method.
+Most core functionality can be called directly through PyAEDT, but additional features can be added by converting the corresponding AEDT-API methods.
 \newline
 \\
-Example: AEDT-API module (\texttt{Optimetrics}), is accessible in PyAEDT as
+For example, to access the (\texttt{Optimetrics}) module:
 \begin{lstlisting}[language=Python]
 omodule = hfss.odesign.GetModule("Optimetrics")
 \end{lstlisting}
