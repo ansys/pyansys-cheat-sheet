@@ -83,10 +83,13 @@
   	extendedchars=true
 	%tabsize=2
 }
-
 \lstset{style=python_style, upquote=true}
 
 \def\code#1{\textit{}{#1}}
+
+\newcommand{\pythoncode}[2][]{%
+    \lstinputlisting[style=pythoncode, #1]{#2}%
+}
 
 % Define BibTeX command
 \def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em

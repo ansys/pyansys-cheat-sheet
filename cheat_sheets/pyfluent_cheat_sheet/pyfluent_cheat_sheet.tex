@@ -14,7 +14,6 @@
 
 % Add the title of cheat sheet here
 % ----------------------------------------
-
 \begin{center}
      \Huge{\textbf{PyFluent Cheat sheet}} \\
 \end{center}
@@ -40,17 +39,8 @@
 % --------------------------------------------------------------------------------
 \vfill
 \section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Launch Fluent locally}
-The following method is used to start Fluent from Python in gRPC mode.\\
-This code starts Fluent in the background so that commands can be sent to Fluent from the Python interpreter.
 
-\begin{lstlisting}[language=Python]
-import ansys.fluent.core as pyfluent
-
-solver = pyfluent.launch_fluent(mode="solver", show_gui=True)
-\end{lstlisting}
-
-The solver object contains attributes such as \textbf{file}, \textbf{setup}, \textbf{solution}, and \textbf{results}, 
-which are also instances of settings objects. 
+\pythoncode{scripts/generated_scripts/pyfluent_script_1.py}
 
 % row 2 col 1
 \section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Import mesh in launched session}
