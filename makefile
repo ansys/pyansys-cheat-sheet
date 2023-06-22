@@ -15,12 +15,12 @@ pymapdl_cheat_sheet:
 pyfluent_cheat_sheet:
 	latexmk -f -pdf -use-make cheat_sheets/pyfluent_cheat_sheet/pyfluent_cheat_sheet.tex -cd -outdir=../../$(BUILD_DIR) -interaction=nonstopmode || true
 	convert -density 150 -scene 1 $(BUILD_DIR)/pyfluent_cheat_sheet.pdf $(BUILD_DIR)/pyfluent_cheat_sheet.png
-	(test -f $(BUILD_DIR)/pymapdl_cheat_sheet.pdf && echo pdf exists) || exit 1
+	(test -f $(BUILD_DIR)/pyfluent_cheat_sheet.pdf && echo pdf exists) || exit 1
 
 pyaedt_API_cheat_sheet:
 	latexmk -f -pdf -use-make cheat_sheets/aedt_cheat_sheet/pyaedt_API_cheat_sheet.tex -cd -outdir=../../$(BUILD_DIR) -interaction=nonstopmode || true
 	convert -density 150 -scene 1 $(BUILD_DIR)/pyaedt_API_cheat_sheet.pdf $(BUILD_DIR)/pyaedt_API_cheat_sheet.png
-	(test -f $(BUILD_DIR)/pyfluent_cheat_sheet.pdf && echo pdf exists) || exit 1
+	(test -f $(BUILD_DIR)/pyaedt_API_cheat_sheet.pdf && echo pdf exists) || exit 1
 
 pyedb_API_cheat_sheet:
 	latexmk -f -pdf -use-make cheat_sheets/aedt_cheat_sheet/pyedb_API_cheat_sheet.tex -cd -outdir=../../$(BUILD_DIR) -interaction=nonstopmode || true
