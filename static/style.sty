@@ -108,11 +108,24 @@
 
 % Define custom style for Python code
 \lstdefinestyle{pythoncode}{
-    language=Python,
-    keywordstyle=\color{magenta},
-    stringstyle=\color{codepurple},
-    commentstyle=\color{codegreen},
-    numberstyle=\tiny\color{codegray},
+	language=Python,
+	backgroundcolor=\color{silver},   
+	commentstyle=\color{codegreen},
+	keywordstyle=\color{magenta},
+	numberstyle=\tiny\color{codegray},
+	stringstyle=\color{codepurple},
+	frame=single,
+	basicstyle=\ttfamily\scale=0.95,
+	showstringspaces=false,
+  	breaklines=true,
+  	rulecolor=\color{black},
+  	captionpos=b,
+	% fontfamily=SourceCodePro-TLF,
+  	%aboveskip=10pt,
+  	%belowskip=10pt,
+  	inputencoding=utf8,
+  	extendedchars=true
+	%tabsize=2
 }
 
 % Define the \pythoncode command
