@@ -105,3 +105,17 @@
 % My Environments
 \newtheorem{example}[section]{Example}
 % -----------------------------------------------------------------------
+
+% Define custom style for Python code
+\lstdefinestyle{pythoncode}{
+    language=Python,
+    keywordstyle=\color{magenta},
+    stringstyle=\color{codepurple},
+    commentstyle=\color{codegreen},
+    numberstyle=\tiny\color{codegray},
+}
+
+% Define the \pythoncode command
+\newcommand{\pythoncode}[2][]{%
+    \lstinputlisting[style=pythoncode, #1]{#2}%
+}
