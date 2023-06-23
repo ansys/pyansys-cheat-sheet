@@ -51,7 +51,8 @@ mapdl = launch_mapdl(nproc=2, run_location=path, jobname=jname)
 
 To connect to an existing instance of MAPDL at IP 192.168.1.30 and port 50001
 \begin{lstlisting}[language=Python]
-mapdl = launch_mapdl(start_instance=False, ip='192.168.1.30', 50001)
+mapdl = launch_mapdl(start_instance=False,
+    ip='192.168.1.30', 50001)
 \end{lstlisting}
 To create and exit a pool of instances
 \begin{lstlisting}[language=Python]
@@ -70,8 +71,8 @@ mapdl.esel('s', 'type', vmin=1)
 
 Commands that start with * or / have those characters removed
 \begin{lstlisting}[language=Python]
-mapdl.prep7()	# /PREP7
-mapdl.get()	# *GET
+mapdl.prep7()	        # /PREP7
+mapdl.get()	        # *GET
 \end{lstlisting}
 
 In cases where removing * or / will cause conflict with other commands, a prefix "slash" or "star" is added
@@ -143,19 +144,20 @@ elem_num_all = mapdl.mesh.enum_all
 %To plot results the general form is: \code{mapdl.postprocessing.result_name}
 This class is used for plotting and saving results to NumPy arrays.
 \begin{lstlisting}[language=Python]
+from ansys.mapdl.core import post_processing
 mapdl.post1()
 mapdl.set(1, 2)
 # Plot the nodal equivalent stress
 mapdl.post_processing.plot_nodal_eqv_stress()
 # Save nodal eqv. stresses to a Python array
-nod_eqv_stress = mapdl.post_processing.nodal_eqv_stress()
+nod_eqv_stress = post_processing.nodal_eqv_stress()
 # Plot contour legend using dictionary
 mapdl.allsel()
 sbar_kwargs = {"color": "black",
                "title": "Equivalent Stress (psi)",
 	       "vertical": False,
 	       "n_labels": 6}
-mapdl.post_processing.plot_nodal_eqv_stress(
+post_processing.plot_nodal_eqv_stress(
     cpos='xy', background='white',
     edge_color='black', show_edges=True,
     scalar bar_args=sbar_kwargs, n_colors=9)
