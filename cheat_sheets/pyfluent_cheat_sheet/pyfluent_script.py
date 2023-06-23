@@ -7,7 +7,6 @@ solver.file.read(file_type="mesh", file_name=mesh_filename)
 # ----------------------------------------------------------------
 
 # e.g., read_case(), read_case_data()
-
 case_filename = "example_file.cas.h5"
 solver.file.read_case(file_type="case", file_name=case_filename)
 # ----------------------------------------------------------------
