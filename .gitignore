@@ -19,7 +19,6 @@ build
 .venv
 .vscode
 __pycache__
-generated_script
 # Project files, such as `.project`, `.actionScriptProperties`, and `.flexProperties`
 # should not be excluded as they contain compiler settings and other important
 # information for Eclipse / Flash Builder.
