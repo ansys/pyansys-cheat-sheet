@@ -21,7 +21,7 @@ def generate_code_examples(file_path):
     script_name = os.path.splitext(os.path.basename(file_path))[0]
 
     for i, example in enumerate(examples):
-        file_name = f"{script_name}_{i+1}.py"
+        file_name = f"{script_name}_{i}.py"
         file_path = os.path.join(OUTPUT_PATH, file_name)
         with open(file_path, "w") as file:
             file.write(example.strip())
