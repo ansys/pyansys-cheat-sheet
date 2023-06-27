@@ -1,4 +1,3 @@
-"""Provides functions for generating code examples from a Python file."""
 import os
 import argparse
 
@@ -27,3 +26,10 @@ def generate_code_examples(file_path):
         with open(file_path, "w") as file:
             file.write(example.strip())
 
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description="Generate code examples from a Python file.")
+    parser.add_argument("file_path", help="Path to the Python file.")
+    args = parser.parse_args()
+
+    generate_code_examples(args.file_path)
