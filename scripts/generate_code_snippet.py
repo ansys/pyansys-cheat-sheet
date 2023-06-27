@@ -16,7 +16,7 @@ def generate_code_examples(file_path):
     with open(file_path, "r") as file:
         content = file.read()
 
-    examples = content.split("# ----------------------------------------------------------------")
+    examples = content.split("# BREAK BLOCK")
 
     script_name = os.path.splitext(os.path.basename(file_path))[0]
 
