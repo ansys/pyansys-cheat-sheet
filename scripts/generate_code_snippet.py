@@ -4,6 +4,7 @@ import argparse
 THIS_PATH = os.path.dirname(os.path.abspath(__file__))
 OUTPUT_PATH = os.path.join(THIS_PATH, "generated_scripts")
 
+
 def generate_code_examples(file_path):
     """Generate code examples from a Python file.
 

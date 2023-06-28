@@ -1,4 +1,4 @@
 # File to configure the black formatter
 [tool.black]  
-line-length = 65 
-target-version = ['py38']
+line-length = 65
+target-version = ['py310']

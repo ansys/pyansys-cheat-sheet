@@ -24,6 +24,8 @@ Echo "pdf generated!"
 goto end
 
 :pyfluent_cheat_sheet
+set SCRIPT_PATH=cheat_sheets/pyfluent_cheat_sheet/pyfluent_script.py
+CALL :run_script
 pdflatex -output-directory=%BUILDDIR% cheat_sheets/pyfluent_cheat_sheet/pyfluent_cheat_sheet.tex --interaction=nonstopmode
 if NOT EXIST %BUILDDIR%/pyfluent_cheat_sheet.pdf (
 Echo "no pdf generated!"
@@ -64,6 +66,10 @@ exit /b 1)
 Echo "pdf generated!"
 goto end
 
+:run_script
+python scripts\generate_code_snippet.py %SCRIPT_PATH%
+goto end
+
 :all
 CALL :pymapdl_cheat_sheet 
 CALL :pyaedt_API_cheat_sheet
@@ -74,8 +80,8 @@ CALL :pyfluent_cheat_sheet
 goto end
 
 :clean
-    rmdir /S /Q %BUILDDIR%
-    goto end
+rmdir /S /Q %BUILDDIR%
+goto end
 
 :help
 @echo off
