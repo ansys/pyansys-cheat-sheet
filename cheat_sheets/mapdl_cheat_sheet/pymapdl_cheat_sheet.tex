@@ -169,8 +169,7 @@ Data is interpolated by PyVista, saving the resulting stress and storing within 
 \begin{lstlisting}[language=Python]
 pl = pyvista.Plotter()
 pl0 = post_processing.plot_nodal_stress(
-    return_plotter=True
-)
+    return_plotter=True)
 pl.add(pl0.mesh)
 pl.show()
 \end{lstlisting} 
