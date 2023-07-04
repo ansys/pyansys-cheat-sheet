@@ -36,29 +36,24 @@
 % First colomn
 % --------------------------------------------------------------------------------
 \vfill
-\section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Connecting to Remote Mechanical Session)}
-METHOD 1 (local) :
-"Launch" Mechanical and "Connect" :
+\section{\includegraphics[height=\fontcharht\font`\S]{slash.png} # A. PyMechanical as a Client to a Remote Mechanical Session}
+
+\vspace{5mm} %5mm vertical space
+
+\section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Launch and Connect to a Session}
+
+(a). Local : "Launch"  and "Connect" to Mechanical
 
 \pythoncode{scripts/generated_scripts/pymechanical_script_0.py}
 
-METHOD 2 (local) :
-"Launch" Standalone Mechancial in server mode...
+(b). Local/Remote : "Launch" Mechanical .....
 
 \pythoncode{scripts/generated_scripts/pymechanical_script_1.py}
 
-... and manually "Connect" to it : Mechanical()
+... and then  manually "Connect" to it from a local client
 
 \pythoncode{scripts/generated_scripts/pymechanical_script_2.py}
 
-METHOD 3 (remote) :
-"Launch" Standalone Mechancial in server mode on a remote machine...
-
-\pythoncode{scripts/generated_scripts/pymechanical_script_3.py}
-
-... and manually "Connect" to it from a local client
-
-\pythoncode{scripts/generated_scripts/pymechanical_script_4.py}
 
 
 % row 2 col 1
@@ -66,18 +61,18 @@ METHOD 3 (remote) :
 
 Verify Version of Mechanical used:
 
-\pythoncode{scripts/generated_scripts/pymechanical_script_1.py}
+\pythoncode{scripts/generated_scripts/pymechanical_script_3.py}
 
-To Launch a Specefic Version of Mechanical
+Launch a Specific Version of Mechanical
 
-\pythoncode{scripts/generated_scripts/pymechanical_script_1.py}
+\pythoncode{scripts/generated_scripts/pymechanical_script_4.py}
 
 
 % row 3 col 1
-\section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Launch GUI}
+\section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Launch  Mechanical UI}
 
-To Observe the effect of your script by opening Mechanical UI:
-\pythoncode{scripts/generated_scripts/pymechanical_script_1.py}
+Observe the effect of your script by opening Mechanical UI:
+\pythoncode{scripts/generated_scripts/pymechanical_script_5.py}
 
 
 
@@ -87,57 +82,44 @@ To Observe the effect of your script by opening Mechanical UI:
 \vfill
 
 
-\section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Connecting to Remote Mechanical Session)}
-METHOD 1 (local) :
-"Launch" Mechanical and "Connect" :
+\section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Send Commands to Mechanical}
+Execute a Single command :
 
-\pythoncode{scripts/generated_scripts/pymechanical_script_0.py}
+\pythoncode{scripts/generated_scripts/pymechanical_script_6.py}
 
-METHOD 2 (local) :
-"Launch" Standalone Mechancial in server mode...
+Execute a Command Block:
 
-\pythoncode{scripts/generated_scripts/pymechanical_script_1.py}
+\pythoncode{scripts/generated_scripts/pymechanical_script_7.py}
 
-... and manually "Connect" to it : Mechanical()
+Execute a Python Script File :
 
-\pythoncode{scripts/generated_scripts/pymechanical_script_2.py}
+\pythoncode{scripts/generated_scripts/pymechanical_script_8.py}
 
-METHOD 3 (remote) :
-"Launch" Standalone Mechancial in server mode on a remote machine...
+Import a Mechdb File and print the count of bodies: 
 
-\pythoncode{scripts/generated_scripts/pymechanical_script_3.py}
+\pythoncode{scripts/generated_scripts/pymechanical_script_9.py}
 
-... and manually "Connect" to it from a local client
-
-\pythoncode{scripts/generated_scripts/pymechanical_script_4.py}
 
 % Third column
 % --------------------------------------------------------------------------------
 \vfill
 % row 1 col 3
-\section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Connecting to Remote Mechanical Session)}
-METHOD 1 (local) :
-"Launch" Mechanical and "Connect" :
+\section{\includegraphics[height=\fontcharht\font`\S]{slash.png}Project Specific Operations}
+Save Project and Exit Session :
 
-\pythoncode{scripts/generated_scripts/pymechanical_script_0.py}
+\pythoncode{scripts/generated_scripts/pymechanical_script_10.py}
 
-METHOD 2 (local) :
-"Launch" Standalone Mechancial in server mode...
+\section{\includegraphics[height=\fontcharht\font`\S]{slash.png} # B. PyMechanical to Embed a Mechanical Instance as a Python Object}
+\vspace{5mm} %5mm vertical space
 
-\pythoncode{scripts/generated_scripts/pymechanical_script_1.py}
+Embed Mechanical and set global variables
 
-... and manually "Connect" to it : Mechanical()
+\pythoncode{scripts/generated_scripts/pymechanical_script_11.py}
 
-\pythoncode{scripts/generated_scripts/pymechanical_script_2.py}
+Import a Mechdb File and Get body Count
 
-METHOD 3 (remote) :
-"Launch" Standalone Mechancial in server mode on a remote machine...
+\pythoncode{scripts/generated_scripts/pymechanical_script_12.py}
 
-\pythoncode{scripts/generated_scripts/pymechanical_script_3.py}
-
-... and manually "Connect" to it from a local client
-
-\pythoncode{scripts/generated_scripts/pymechanical_script_4.py}
 
 
 % Add subsection
