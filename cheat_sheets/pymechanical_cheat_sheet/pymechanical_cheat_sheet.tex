@@ -1,0 +1,162 @@
+\documentclass[9pt,landscape]{article}
+\usepackage{{./../static/style}}
+\pdfinfo{
+  /Title (PyMechanical Cheat Sheet)
+  /Creator (TeX)
+  /Producer (pdfTeX 1.40.0)
+  /Author (Ansys)
+  /Subject (PyAnsys)
+  /Keywords (PyAnsys, Cheat sheet, template, PyMechanical, Mechanical)}
+
+
+\begin{document}
+\raggedright
+\footnotesize
+
+% Add the title of cheat sheet here
+% ----------------------------------------
+\begin{center}
+     \Huge{\textbf{PyMechanical Cheat sheet}} \\
+\end{center}
+
+
+\AddToShipoutPicture*
+  {\put(670,577.5){\includegraphics[height = 1.2cm]{ansys.png}}}
+\AddToShipoutPictureBG*{\includegraphics[width=\paperwidth]{bground.png}}
+\vspace{-0.15cm}
+\noindent\makebox[\linewidth]{\rule{\paperwidth}{2pt}}
+
+\begin{multicols}{3}
+\setlength{\premulticols}{1pt}
+\setlength{\postmulticols}{1pt}
+\setlength{\multicolsep}{1pt}
+\setlength{\columnsep}{2pt}
+
+% session starts here. 
+% First colomn
+% --------------------------------------------------------------------------------
+\vfill
+\section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Connecting to Remote Mechanical Session)}
+METHOD 1 (local) :
+"Launch" Mechanical and "Connect" :
+
+\pythoncode{scripts/generated_scripts/pymechanical_script_0.py}
+
+METHOD 2 (local) :
+"Launch" Standalone Mechancial in server mode...
+
+\pythoncode{scripts/generated_scripts/pymechanical_script_1.py}
+
+... and manually "Connect" to it : Mechanical()
+
+\pythoncode{scripts/generated_scripts/pymechanical_script_2.py}
+
+METHOD 3 (remote) :
+"Launch" Standalone Mechancial in server mode on a remote machine...
+
+\pythoncode{scripts/generated_scripts/pymechanical_script_3.py}
+
+... and manually "Connect" to it from a local client
+
+\pythoncode{scripts/generated_scripts/pymechanical_script_4.py}
+
+
+% row 2 col 1
+\section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Launch by Version}
+
+Verify Version of Mechanical used:
+
+\pythoncode{scripts/generated_scripts/pymechanical_script_1.py}
+
+To Launch a Specefic Version of Mechanical
+
+\pythoncode{scripts/generated_scripts/pymechanical_script_1.py}
+
+
+% row 3 col 1
+\section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Launch GUI}
+
+To Observe the effect of your script by opening Mechanical UI:
+\pythoncode{scripts/generated_scripts/pymechanical_script_1.py}
+
+
+
+% Second column
+% --------------------------------------------------------------------------------
+% row 1 col 2
+\vfill
+
+
+\section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Connecting to Remote Mechanical Session)}
+METHOD 1 (local) :
+"Launch" Mechanical and "Connect" :
+
+\pythoncode{scripts/generated_scripts/pymechanical_script_0.py}
+
+METHOD 2 (local) :
+"Launch" Standalone Mechancial in server mode...
+
+\pythoncode{scripts/generated_scripts/pymechanical_script_1.py}
+
+... and manually "Connect" to it : Mechanical()
+
+\pythoncode{scripts/generated_scripts/pymechanical_script_2.py}
+
+METHOD 3 (remote) :
+"Launch" Standalone Mechancial in server mode on a remote machine...
+
+\pythoncode{scripts/generated_scripts/pymechanical_script_3.py}
+
+... and manually "Connect" to it from a local client
+
+\pythoncode{scripts/generated_scripts/pymechanical_script_4.py}
+
+% Third column
+% --------------------------------------------------------------------------------
+\vfill
+% row 1 col 3
+\section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Connecting to Remote Mechanical Session)}
+METHOD 1 (local) :
+"Launch" Mechanical and "Connect" :
+
+\pythoncode{scripts/generated_scripts/pymechanical_script_0.py}
+
+METHOD 2 (local) :
+"Launch" Standalone Mechancial in server mode...
+
+\pythoncode{scripts/generated_scripts/pymechanical_script_1.py}
+
+... and manually "Connect" to it : Mechanical()
+
+\pythoncode{scripts/generated_scripts/pymechanical_script_2.py}
+
+METHOD 3 (remote) :
+"Launch" Standalone Mechancial in server mode on a remote machine...
+
+\pythoncode{scripts/generated_scripts/pymechanical_script_3.py}
+
+... and manually "Connect" to it from a local client
+
+\pythoncode{scripts/generated_scripts/pymechanical_script_4.py}
+
+
+% Add subsection
+% This section includes useful links to the documentation.
+% Examples: installation, API reference, commands, examples.
+% Replace 'name of link' with appropriate display text.
+
+\subsection{References from PyMechanical Documentation}
+\begin{itemize}
+    \item \href{https://mechanical.docs.pyansys.com/version/stable/getting_started/index.html}{\color{blue}{Getting Started}}
+    \item \href{https://mechanical.docs.pyansys.com/version/stable/examples/index.html}{\color{blue}{Examples}}
+    \item \href{https://mechanical.docs.pyansys.com/version/stable/api/index.html}{\color{blue}{API Reference}}
+\end{itemize}
+\end{multicols}
+
+% Footer session of the latex with link to documentation and GitHub page
+\vspace{-0.15cm}
+\noindent\makebox[\linewidth]{\rule{\paperwidth}{4pt}}
+\begin{center}
+Getting Started with PyMechanical \includegraphics[height=\fontcharht\font`\S]{slash.png} \href{https://github.com/ansys/pymechanical}{\color{blue}{PyMechanical on GitHub}}} \includegraphics[height=\fontcharht\font`\S]{slash.png} Visit \code{\href{https://mechanical.docs.pyansys.com/}}{\color{blue}{mechanical.docs.pyansys.com}}
+\end{center}
+\end{document}
