@@ -62,21 +62,44 @@ mechanical.list_files()
 #Save
 mechanical.run_python_script("ExtAPI.DataModel.Project.Save(r'D:\\Workdir')")
 
+#Logging in two ways:
+mechanical._log.info("This is an useful message")
+mechanical.log_message('INFO', 'info message')
+
 #Exit 
 mechanical.exit(force=True)
 
 
-
+# BREAK BLOCK
+from ansys.mechanical.core import App
+app = App(version =232)
+print(app)
 
 
 # BREAK BLOCK
-from ansys.mechanical.core import App, global_variables
-app = App(version =232)
+from ansys.mechanical.core global_variables
 globals().update(global_variables(app))
-print(app)
+
+# BREAK BLOCK
+ExtAPI      # Application.ExtAPI
+DataModel   # Application.DataModel
+Model       # Application.DataModel.Project.Model
+Tree        # Application.DataModel.Tree
+Graphics    # Application.ExtAPI.Graphics
 
 # BREAK BLOCK
 file =  r'D:\\Workdir\\bracket.mechdb'
 app.open(file)
-allbodies=ExtAPI.DataModel.Project.Model.GetChildren( Ansys.Mechanical.DataModel.Enums.DataModelObjectCategory.Body,True)
+
+allbodies = DataModel.Project.Model.GetChildren( Ansys.Mechanical.DataModel.Enums.DataModelObjectCategory.Body,True)
 print(allbodies.Count)
+
+
+# BREAK BLOCK
+import logging
+from ansys.mechanical.core import App 
+from ansys.mechanical.core.embedding.logger import Configuration, Logger
+
+Configuration.configure(level=logging.WARNING, to_stdout=True)
+app = App(version= 232)
+Logger.error("message")
