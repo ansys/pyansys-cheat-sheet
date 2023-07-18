@@ -35,7 +35,6 @@ commands="""
 cu_mat__file_path = r'D:\Workdir\copper.xml'.replace("\\", "\\\\")
 materials = ExtAPI.DataModel.Project.Model.Materials
 materials.Import(cu_mat__file_path)"""
-
 mechanical.run_python_script(commands)
 # BREAK BLOCK
 mechanical.run_python_script_from_file(file_path)
