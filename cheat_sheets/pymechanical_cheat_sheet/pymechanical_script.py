@@ -15,9 +15,9 @@ mechanical = pymechanical.Mechanical("192.168.0.1", port=10000)
 
 # BREAK BLOCK
 print(mechanical)
-#or
-print(mechanical.version)
+
 # BREAK BLOCK
+from ansys.mechanical.core import find_mechanical
 wb_exe = find_mechanical(232)[0]
 # 'Ansys Inc\\v232\\aisol\\bin\\winx64\\AnsysWBU.exe'
 mechanical = launch_mechanical(exec_file=wb_exe, verbose_mechanical=True, batch=True)
