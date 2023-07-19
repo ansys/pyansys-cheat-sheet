@@ -48,3 +48,9 @@ PyAnsys cheat-sheets for different projects
             :img-top: https://cheatsheets.docs.pyansys.com/pydpf-core_cheat_sheet.png
             :link: https://cheatsheets.docs.pyansys.com/pydpf-core_cheat_sheet.pdf
             
+.. grid-item::
+
+        .. card:: PyDynamicReporting
+            :img-top: https://cheatsheets.docs.pyansys.com/pydynamicreporting_cheat_sheet.png
+            :link: https://cheatsheets.docs.pyansys.com/pydynamicreporting_cheat_sheet.pdf
+
