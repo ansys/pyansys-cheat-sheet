@@ -6,7 +6,7 @@ PyAnsys provides cheat-sheets for different projects as a quick reference guide.
 PyAnsys cheat-sheets for different projects
 -------------------------------------------
 
-.. grid:: 2 1 1 2
+.. grid:: 2 1 1 3
 
     .. grid-item::
 
