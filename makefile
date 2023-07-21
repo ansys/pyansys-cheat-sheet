@@ -43,11 +43,6 @@ pydynamicreporting_cheat_sheet:
 	convert -density 150 -scene 1 $(BUILD_DIR)/pydynamicreporting_cheat_sheet.pdf $(BUILD_DIR)/pydynamicreporting_cheat_sheet.png
 	(test -f $(BUILD_DIR)/pydynamicreporting_cheat_sheet.pdf && echo pdf exists) || exit 1
 
-pydynamicreporting_cheat_sheet:
-	latexmk -f -pdf -use-make -outdir=$(BUILD_DIR) cheat_sheets/pydynamicreporting_cheat_sheet/pydynamicreporting_cheat_sheet.tex  -interaction=nonstopmode || true
-	convert -density 150 -scene 1 $(BUILD_DIR)/pydynamicreporting_cheat_sheet.pdf $(BUILD_DIR)/pydynamicreporting_cheat_sheet.png
-	(test -f $(BUILD_DIR)/pydynamicreporting_cheat_sheet.pdf && echo pdf exists) || exit 1
-
 pymechanical_cheat_sheet:
 	make run_script SCRIPT_PATH='cheat_sheets/pymechanical_cheat_sheet/pymechanical_script.py'
 	latexmk -f -pdf -use-make -outdir=$(BUILD_DIR) cheat_sheets/pymechanical_cheat_sheet/pymechanical_cheat_sheet.tex -interaction=nonstopmode || true
