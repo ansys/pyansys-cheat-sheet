@@ -3,6 +3,7 @@ import ansys.mechanical.core as pymechanical
 mechanical = pymechanical.launch_mechanical()
 # BREAK BLOCK
 # Standalone Mechanical from Local or Remote Terminal
+
 "C:/Program Files/ANSYS Inc/v2xx/aisol/bin/winx64/AnsysWBU.exe" -DSApplet -AppModeMech  -nosplash -notabctrl -grpc 10000
 # BREAK BLOCK
 import ansys.mechanical.core as pymechanical
@@ -24,6 +25,7 @@ wb_exe = find_mechanical(232)[0]
 mechanical = launch_mechanical(
     exec_file=wb_exe, verbose_mechanical=True, batch=True
 )
+
 print(mechanical)
 # BREAK BLOCK
 mechanical = pymechanical.launch_mechanical(batch=False)
