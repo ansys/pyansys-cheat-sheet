@@ -124,6 +124,7 @@ echo   pyaedt_API_cheat_sheet:    Build the pyaedt API cheatsheet
 echo   pyedb_API_cheat_sheet:     Build the pyedb API cheatsheet
 echo   pyprimemesh_cheat_sheet:   Build the pyprimemesh cheatsheet
 echo   pymechanical_cheat_sheet:   Build the pymechanical cheatsheet
+echo   pydynamicreporting_cheat_sheet:   Build the pydynamicreporting cheatsheet
 
 :end
 popd

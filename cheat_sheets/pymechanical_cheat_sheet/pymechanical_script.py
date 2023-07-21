@@ -76,7 +76,7 @@ print(app)
 
 
 # BREAK BLOCK
-from ansys.mechanical.core global_variables
+from ansys.mechanical.core import global_variables
 globals().update(global_variables(app))
 
 # BREAK BLOCK
