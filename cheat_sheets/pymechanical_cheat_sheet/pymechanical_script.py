@@ -4,14 +4,14 @@ mechanical = pymechanical.launch_mechanical()
 # BREAK BLOCK
 # Standalone Mechanical from Local or Remote Terminal
 
-"C:/Program Files/ANSYS Inc/v2xx/aisol/bin/winx64/AnsysWBU.exe" -DSApplet -AppModeMech  -nosplash -notabctrl -grpc 10000
+"C:/Program Files/ANSYS Inc/v232/aisol/bin/winx64/AnsysWBU.exe" -DSApplet -AppModeMech  -nosplash -notabctrl -grpc 10000
 # BREAK BLOCK
 import ansys.mechanical.core as pymechanical
-
-# Local . default port is 10000
+# #Note: the default port below  is 10000 but you can specify an alternative port if required
+# Either Connect locally
 mechanical = pymechanical.Mechanical(port=10000)
 
-# Remote . IP address or hostname and port.
+# Or Connect Remotely . IP address or hostname and port.
 mechanical = pymechanical.Mechanical("192.168.0.1", port=10000)
 
 # BREAK BLOCK
@@ -57,6 +57,7 @@ mechanical.run_python_script("allbodies.Count")
 # BREAK BLOCK
 # Get the project directory
 mechanical.project_directory
+
 # List the files in the working directory.
 mechanical.list_files()
 # Save
@@ -76,8 +77,10 @@ from ansys.mechanical.core import App
 app = App(version=232)
 print(app)
 # BREAK BLOCK
-from ansys.mechanical.core import global_variables
 
+# Extract the global API entry points (available from built-in Mechanical scripting)
+from ansys.mechanical.core import global_variables
+# Merge them into your global Python global variables
 globals().update(global_variables(app))
 # BREAK BLOCK
 ExtAPI  # Application.ExtAPI
