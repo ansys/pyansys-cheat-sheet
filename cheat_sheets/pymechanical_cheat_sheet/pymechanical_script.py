@@ -8,6 +8,7 @@ mechanical = pymechanical.launch_mechanical()
 # BREAK BLOCK
 import ansys.mechanical.core as pymechanical
 # #Note: the default port below  is 10000 but you can specify an alternative port if required
+
 # Either Connect locally
 mechanical = pymechanical.Mechanical(port=10000)
 
