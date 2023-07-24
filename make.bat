@@ -11,6 +11,8 @@ if "%1" == "pyaedt_API_cheat_sheet" goto pyaedt_API_cheat_sheet
 if "%1" == "pyedb_API_cheat_sheet" goto pyedb_API_cheat_sheet
 if "%1" == "pyprimemesh_cheat_sheet" goto pyedb_API_cheat_sheet
 if "%1" == "pydpf-core_cheat_sheet" goto pydpf-core_cheat_sheet
+if "%1" == "pymechanical_cheat_sheet" goto pymechanical_cheat_sheet
+
 if "%1" == "pydynamicreporting_cheat_sheet" goto pydynamicreporting_cheat_sheet
 if "%1" == "clean" goto clean
 if "%1" == "help" goto help
@@ -74,6 +76,18 @@ Echo "no pdf generated!"
 exit /b 1)
 Echo "pdf generated!"
 goto end
+
+
+:pymechanical_cheat_sheet
+set SCRIPT_PATH=cheat_sheets/pymechanical_cheat_sheet/pymechanical_script.py
+CALL :run_script
+pdflatex -output-directory=%BUILDDIR% cheat_sheets/pymechanical_cheat_sheet/pymechanical_cheat_sheet.tex --interaction=nonstopmode
+if NOT EXIST %BUILDDIR%/pymechanical_cheat_sheet.pdf (
+Echo "no pdf generated!"
+exit /b 1)
+Echo "pdf generated!"
+goto end
+
    
 :run_script
 python scripts\generate_code_snippet.py %SCRIPT_PATH%
@@ -86,6 +100,7 @@ CALL :pyedb_API_cheat_sheet
 CALL :pyprimemesh_cheat_sheet
 CALL :pydpf-core_cheat_sheet
 CALL :pyfluent_cheat_sheet
+CALL :pymechanical_cheat_sheet
 CALL :pydynamicreporting_cheat_sheet
 goto end
 
@@ -108,6 +123,8 @@ echo   pyfluent_cheat_sheet:      Build the pyfluent cheatsheet
 echo   pyaedt_API_cheat_sheet:    Build the pyaedt API cheatsheet
 echo   pyedb_API_cheat_sheet:     Build the pyedb API cheatsheet
 echo   pyprimemesh_cheat_sheet:   Build the pyprimemesh cheatsheet
+echo   pymechanical_cheat_sheet:   Build the pymechanical cheatsheet
+echo   pydynamicreporting_cheat_sheet:   Build the pydynamicreporting cheatsheet
 
 :end
 popd

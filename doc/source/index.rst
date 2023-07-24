@@ -54,3 +54,9 @@ PyAnsys cheat-sheets for different projects
             :img-top: https://cheatsheets.docs.pyansys.com/pydynamicreporting_cheat_sheet.png
             :link: https://cheatsheets.docs.pyansys.com/pydynamicreporting_cheat_sheet.pdf
 
+    .. grid-item::
+
+        .. card:: PyMechanical
+            :img-top: https://cheatsheets.docs.pyansys.com/pymechanical_cheat_sheet.png
+            :link: https://cheatsheets.docs.pyansys.com/pymechanical_cheat_sheet.pdf
+

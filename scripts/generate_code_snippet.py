@@ -19,7 +19,9 @@ def generate_code_examples(file_path):
 
     examples = content.split("# BREAK BLOCK")
 
-    script_name = os.path.splitext(os.path.basename(file_path))[0]
+    script_name = os.path.splitext(os.path.basename(file_path))[
+        0
+    ]
 
     for i, example in enumerate(examples):
         file_name = f"{script_name}_{i}.py"
@@ -29,8 +31,12 @@ def generate_code_examples(file_path):
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Generate code examples from a Python file.")
-    parser.add_argument("file_path", help="Path to the Python file.")
+    parser = argparse.ArgumentParser(
+        description="Generate code examples from a Python file."
+    )
+    parser.add_argument(
+        "file_path", help="Path to the Python file."
+    )
     args = parser.parse_args()
 
     generate_code_examples(args.file_path)
