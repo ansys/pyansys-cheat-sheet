@@ -1,6 +1,6 @@
 BUILD_DIR     = _build
 
-CHEATSHEETS=pymapdl_cheat_sheet pyfluent_cheat_sheet pyaedt_API_cheat_sheet pyedb_API_cheat_sheet pyprimemesh_cheat_sheet pydpf-core_cheat_sheet pymechanical_cheat_sheet pydynamicreporting_cheat_sheet
+CHEATSHEETS=pymapdl_cheat_sheet pyfluent_cheat_sheet pyaedt_API_cheat_sheet pyedb_API_cheat_sheet pyprimemesh_cheat_sheet pydpf-core_cheat_sheet pymechanical_cheat_sheet pydynamicreporting_cheat_sheet pyensight_cheat_sheet
 
 .PHONY: all clean help
 
@@ -41,6 +41,12 @@ pydynamicreporting_cheat_sheet:
 	latexmk -f -pdf -use-make -outdir=$(BUILD_DIR) cheat_sheets/pydynamicreporting_cheat_sheet/pydynamicreporting_cheat_sheet.tex  -interaction=nonstopmode || true
 	convert -density 150 -scene 1 $(BUILD_DIR)/pydynamicreporting_cheat_sheet.pdf $(BUILD_DIR)/pydynamicreporting_cheat_sheet.png
 	(test -f $(BUILD_DIR)/pydynamicreporting_cheat_sheet.pdf && echo pdf exists) || exit 1
+
+pyensight_cheat_sheet:
+	make run_script SCRIPT_PATH='cheat_sheets/pyensight_cheat_sheet/pyensight_script.py'
+	latexmk -f -pdf -use-make -outdir=$(BUILD_DIR) cheat_sheets/pyensight_cheat_sheet/pyensight_cheat_sheet.tex  -interaction=nonstopmode || true
+	convert -density 150 -scene 1 $(BUILD_DIR)/pyensight_cheat_sheet.pdf $(BUILD_DIR)/pyensight_cheat_sheet.png
+	(test -f $(BUILD_DIR)/pyensight_cheat_sheet.pdf && echo pdf exists) || exit 1
 
 pymechanical_cheat_sheet:
 	make run_script SCRIPT_PATH='cheat_sheets/pymechanical_cheat_sheet/pymechanical_script.py'
