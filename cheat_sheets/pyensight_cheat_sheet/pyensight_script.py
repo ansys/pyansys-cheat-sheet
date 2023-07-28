@@ -62,7 +62,7 @@ new_ctx.load("state_on_file.ctxz")
 session.restore_context(new_ctx)
 # BREAK BLOCK
 sn = session.ensight.utils.support.scoped_name
-with sn(session.ensight) as ensight, sn(session.ensight.objs.core) as core::
+with sn(session.ensight) as ensight, sn(session.ensight.objs.core) as core:
     core.PARTS.set_attr("COLORBYPALETTE", "velocity")
     core.PARTS[0].setattr("COLORBYPALETTE", "pressure")
     core.PARTS["fluid_domain"].set_attr("COLORBYPALETTE", "tke")
