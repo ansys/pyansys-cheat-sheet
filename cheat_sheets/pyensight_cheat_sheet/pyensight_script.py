@@ -8,9 +8,8 @@ from ansys.pyensight.core import LocalLauncher
 install = "C:\\Program Files\\ANSYS Inc\\v232"
 session = LocalLauncher(
     ansys_installation=install,
-    batch=False,
+    batch=False, # Launch interactive GUI
 ).start()
-# Setting batch=False will also launch the full EnSight GUI.
 # BREAK BLOCK
 from ansys.pyensight.core import DockerLauncher
 
@@ -38,22 +37,21 @@ image.browser()
 session.show("deep_pixel")
 session.show("webgl")
 session.show("animation")
-# Use browser() to display the renderable in a browser
 
 # BREAK BLOCK
 session.show("remote").browser()
 session.show("remote").url
-# The "url" property is the URL to embed the Renderable in your application. It is available to all the Renderables
+# The "url" property is the URL to embed the Renderable in your application. It is available in all the Renderables, like browser()
 # BREAK BLOCK
 
 export = session.ensight.utils.export
 export.image("image.png")
-export.image("deep_image.tiff")
+export.image("deep_image.tiff", enhanced=True)
 export.animation("animation.mp4")
 # BREAK BLOCK
 
 parts = session.ensight.utils.parts
-parts.select_parts_by_dimension(3)
+parts.select_parts_by_dimension(3) # 3D parts
 
 # BREAK BLOCK
 views = session.ensight.utils.views
@@ -66,7 +64,7 @@ with sn(session.ensight.objs.core) as core:
     query.create_distance(
         "my_query",
         query.DISTANCE_PART1D,
-        [ensight_1D_object],
+        [ensight_1D_object], # ENS_PART
         core.VARIABLES["my_variable"][0],
         new_plotter=True,
     )
@@ -78,7 +76,7 @@ state.save("state_on_file.ctxz")
 session.restore_context(state)
 # BREAK BLOCK
 new_ctx = EnsContext()
-new_ctx.load("state_on_file.ctxz")
+new_ctx.load("state_in_file.ctxz")
 session.restore_context(new_ctx)
 # BREAK BLOCK
 attr = "COLORBYPALETTE"
@@ -87,13 +85,15 @@ with sn(session.ensight.objs.core) as core:
     core.PARTS.set_attr(attr, "velocity")
     core.PARTS[0].setattr(attr, "energy")
     core.PARTS["fluid_domain"].set_attr(attr, "tke")
-# set_attr() is a method available for a list of EnSight Objects, while setattr() is a method available for the single object
+# set_attr() is a method available for a list of EnSight Objects, while setattr() is a method available for a single object
 # BREAK BLOCK
 sn = session.ensight.utils.support.scoped_name
 with sn(session.ensight.objs.core) as core, sn(
     session.ensight.objs.enums
 ) as enums:
+    # 3D parts border, 2D full
     core.PARTS.set_attr("ELTREPRESENTATION", enums.BORD_FULL)
+    # High quality smooth shading
     core.PARTS.set_attr("SHADING", enums.SHAD_SMOOTH_REFINED)
 # BREAK BLOCK
 session.ensight.objs.core.HIDDENLINE = True
