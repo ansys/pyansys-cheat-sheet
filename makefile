@@ -1,6 +1,6 @@
 BUILD_DIR     = _build
 
-CHEATSHEETS   = pymapdl_cheat_sheet pyfluent_cheat_sheet pyaedt_API_cheat_sheet pyedb_API_cheat_sheet pyprimemesh_cheat_sheet pydpf-core_cheat_sheet
+CHEATSHEETS   = pymapdl_cheat_sheet pyfluent_cheat_sheet pyaedt_API_cheat_sheet pyedb_API_cheat_sheet pyprimemesh_cheat_sheet pydpf-core_cheat_sheet pymotorcad_cheat_sheet
 
 
 .PHONY: all clean help
@@ -37,6 +37,13 @@ pydpf-core_cheat_sheet:
 	convert -density 150 -scene 1 $(BUILD_DIR)/pydpf-core_cheat_sheet.pdf $(BUILD_DIR)/pydpf-core_cheat_sheet.png
 	(test -f $(BUILD_DIR)/pydpf-core_cheat_sheet.pdf && echo pdf exists) || exit 1
 
+pymotorcad_cheat_sheet:
+	make run_script SCRIPT_PATH='cheat_sheets/pymotorcad_cheat_sheet/pymotorcad_script.py'
+	latexmk -f -pdf -use-make -outdir=$(BUILD_DIR) cheat_sheets/pymotorcad_cheat_sheet/pymotorcad_cheat_sheet.tex -interaction=nonstopmode || true
+	convert -density 150 -scene 1 $(BUILD_DIR)/pymotorcad_cheat_sheet.pdf $(BUILD_DIR)/pymotorcad_cheat_sheet.png
+	(test -f $(BUILD_DIR)/pymotorcad_cheat_sheet.pdf && echo pdf exists) || (echo "Failed to generate PDF" && exit 1)
+
+
 clean:
 	rm -rf $(BUILD_DIR)
 
@@ -52,4 +59,4 @@ help:
 	@echo "  pyaedt_API_cheat_sheet:    Build the pyaedt API cheatsheet"
 	@echo "  pyedb_API_cheat_sheet:     Build the pyedb API cheatsheet"
 	@echo "  pyprimemesh_cheat_sheet:   Build the pyprimemesh cheatsheet"
-	
+	@echo "  pymotorcad_cheat_sheet:   Build the pymotorcad cheatsheet"

@@ -43,3 +43,4 @@ In these instructions, we will create a development environment using Docker. Th
 10. Once it is attached, it will open a new VSCode window. This window is attached to the docker container. Now, we can use this window to develop the cheatsheet.<br>
 ![VS Code Attached Container Instance](images/vscode_container_instance.png)<br>
 11. Open the `pyansys-cheat-sheet` folder in the new VSCode window from root `/`. This folder is mounted from the docker container. Do the development in this window and publish it on github.<br>
+12. Open a new terminal in the container vscode then issue command `make`
