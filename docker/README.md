@@ -6,7 +6,7 @@ In these instructions, we will create a development environment using Docker. Th
 - Basic environment setup for Python development. Please refer to [Developement Environment](https://github.com/ansys-internal/pyansys-trainings/raw/main/material/06-pyansys-examples/Contributing_to_PyAnsys_v1.0.pptx)
 - [Visual Studio Code](https://code.visualstudio.com/download)
 - [Docker VSCode Extension](https://code.visualstudio.com/docs/containers/overview)
-- [Docker Desktop](https://docs.docker.com/desktop/)
+- [Rancher](https://rancherdesktop.io/)
 - [VS Code WSL Remote Extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl)
 - [VS Code Dev Container Extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers)
 

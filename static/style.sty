@@ -22,7 +22,7 @@
 %\RequirePackage[dvipsnames]{xcolor}
 \ProvidesPackage{pythonhighlight}[2011/09/19 python code highlighting; provided by Olivier Verdier <olivier.verdier@gmail.com>]
 %Path relative to the main .tex file
-\graphicspath{ {../../static/} }
+\graphicspath{ {./../static/} }
 
 % This sets page margins to .5 inch if using letter paper, and to 1cm
 % if using A4 paper. (This probably isn't strictly necessary.)
@@ -83,10 +83,13 @@
   	extendedchars=true
 	%tabsize=2
 }
-
 \lstset{style=python_style, upquote=true}
 
 \def\code#1{\textit{}{#1}}
+
+\newcommand{\pythoncode}[2][]{%
+    \lstinputlisting[style=pythoncode, #1]{#2}%
+}
 
 % Define BibTeX command
 \def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
@@ -102,3 +105,26 @@
 % My Environments
 \newtheorem{example}[section]{Example}
 % -----------------------------------------------------------------------
+
+% Define custom style for Python code
+\lstdefinestyle{pythoncode}{
+	language=Python,
+	backgroundcolor=\color{silver},   
+	commentstyle=\color{codegreen},
+	keywordstyle=\color{magenta},
+	numberstyle=\tiny\color{codegray},
+	stringstyle=\color{codepurple},
+	frame=single,
+	basicstyle=\ttfamily\scale=0.95,
+	showstringspaces=false,
+  	breaklines=true,
+  	rulecolor=\color{black},
+  	captionpos=b,
+  	inputencoding=utf8,
+  	extendedchars=true
+}
+
+% Define the \pythoncode command
+\newcommand{\pythoncode}[2][]{%
+    \lstinputlisting[style=pythoncode, #1]{#2}%
+}
