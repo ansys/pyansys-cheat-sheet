@@ -4,7 +4,7 @@
 \pdfinfo{
   /Title (PyAnsys Cheatsheets)
   /Creator (TeX)
-  /Producer (pdfTeX 0.40.0)
+  /Producer (pdfTeX 1.40.0)
   /Author (Ansys Inc.,)
   /Subject (PyMotorCAD)
   /Keywords (PyMotorCAD)}
@@ -21,22 +21,19 @@
 	\small{\textbf{based on version:0.1 (stable)}} 
 \end{center}
 \AddToShipoutPicture*
-	{\put(670,577.5){\includegraphics[height = 1.2cm]{ansys.png}}}
-\AddToShipoutPictureBG*{\includegraphics[width=\paperwidth]{bground_2.png}}
+  {\put(670,577.5){\includegraphics[height = 1.2cm]{ansys.png}}}
+\AddToShipoutPictureBG*{\includegraphics[width=\paperwidth]{bground.png}}
 \vspace{-0.15cm}
 \noindent\makebox[\linewidth]{\rule{\paperwidth}{2pt}}
 
 \begin{multicols}{3}
-% multicol parameters
-% These lengths are set only within the two main columns
-%\setlength{\columnseprule}{0.25pt}
 \setlength{\premulticols}{1pt}
 \setlength{\postmulticols}{1pt}
 \setlength{\multicolsep}{1pt}
 \setlength{\columnsep}{2pt}
 
+\vfill
 \section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Launching MotorCAD using PyMotorCAD}
-\justifying
 To launch Motor-CAD instance locally and exit:
 \begin{lstlisting}[language=Python]
 import ansys.motorcad.core as pymotorcad
@@ -176,15 +173,19 @@ To use PyMotorCAD to connect to Motor-CAD, you replace the preceding code with t
 import ansys.motorcad.core as pymotorcad
 mcad = pymotorcad.MotorCADCompatibility()
 \end{lstlisting}	
+
+
 \subsection{References from PyMotorCad Documentation}
-\begin{center}
 \begin{itemize}
 \item \href{https://motorcad.docs.pyansys.com/version/stable/getting_started/index.html}{\color{blue}{Getting Started}}
 \item \href{https://motorcad.docs.pyansys.com/version/stable/examples/index.html}{\color{blue}{Examples}}
 \item \href{https://motorcad.docs.pyansys.com/version/stable/methods/index.html}{\color{blue}{API Reference}}
 \end{itemize}
-
-\end{center}
 \end{multicols}
+
+\vspace{-0.15cm}
 \noindent\makebox[\linewidth]{\rule{\paperwidth}{4pt}}
+\begin{center}
+Getting Started with PyMotorcad \includegraphics[height=\fontcharht\font`\S]{slash.png} \href{https://github.com/ansys/pymotorcad}{\color{blue}{PyMotorcad on GitHub}} \includegraphics[height=\fontcharht\font`\S]{slash.png} Visit \code{\href{motorcad.docs.pyansys.com}}{\color{blue}{motorcad.docs.pyansys.com}}
+\end{center}
 \end{document}

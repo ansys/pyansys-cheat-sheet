@@ -15,7 +15,6 @@ if "%1" == "pymechanical_cheat_sheet" goto pymechanical_cheat_sheet
 if "%1" == "pydynamicreporting_cheat_sheet" goto pydynamicreporting_cheat_sheet
 if "%1" == "pyensight_cheat_sheet" goto pyensight_cheat_sheet
 if "%1" == "pymotorcad_cheat_sheet" goto pymotorcad_cheat_sheet
-
 if "%1" == "clean" goto clean
 if "%1" == "help" goto help
 if "%1" == "" goto help
@@ -100,12 +99,11 @@ Echo "pdf generated!"
 goto end
 
 
-
 :pymotorcad_cheat_sheet
 set SCRIPT_PATH=cheat_sheets/pymotorcad_cheat_sheet/pymotorcad_script.py
 CALL :run_script
 pdflatex -output-directory=%BUILDDIR% cheat_sheets/pymotorcad_cheat_sheet/pymotorcad_cheat_sheet.tex --interaction=nonstopmode
-if NOT EXIST %BUILDDIR%/pymotorcad_cheat_sheat.pdf (
+if NOT EXIST %BUILDDIR%/pymotorcad_cheat_sheet.pdf(
 Echo "no pdf generated!"
 exit /b 1)
 Echo "pdf generated!"
