@@ -122,6 +122,7 @@ CALL :pyfluent_cheat_sheet
 CALL :pymechanical_cheat_sheet
 CALL :pydynamicreporting_cheat_sheet
 CALL :pyensight_cheat_sheet
+CALL :pydpf-post_cheat_sheet
 goto end
 
 :clean
