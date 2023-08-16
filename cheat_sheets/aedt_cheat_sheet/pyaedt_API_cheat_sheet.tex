@@ -2,12 +2,12 @@
 \usepackage{{./../static/style}}
 
 \pdfinfo{
-  /Title (PyAnsys Cheat sheet)
+  /Title (PyAnsys cheat sheet)
   /Creator (TeX)
   /Producer (pdfTeX 1.40.0)
   /Author (Ansys Inc.,)
   /Subject (PyAEDT)
-  /Keywords (PyAEDT, AEDT,Cheat sheet)}
+  /Keywords (PyAEDT, AEDT,cheat sheet)}
 
 % -----------------------------------------------------------------------
 
@@ -16,10 +16,10 @@
 \footnotesize
 \justifying
 \begin{center}
-     \Huge{\textbf{PyAEDT-API Cheat sheet}} \\
+     \Huge{\textbf{PyAEDT-API cheat sheet}} \\
 \end{center}
 \begin{center}
-\small{\textbf{version:0.6.78 (stable) }} \\
+\small{\textbf{Version: 0.6.78 (stable) }} \\
 \end{center}
 \AddToShipoutPicture*
 {\put(670,577.5){\includegraphics[height = 1.2cm]{ansys.png}}}
@@ -36,8 +36,8 @@
 \setlength{\multicolsep}{1pt}
 \setlength{\columnsep}{2pt}
 
-\section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Launching PyAEDT}
-To launch HFSS instance locally:
+\section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Launch PyAEDT}
+To launch an HFSS instance locally:
 \begin{lstlisting}[language=Python]
 import pyaedt
 hfss = pyaedt.Hfss(specified_version="2023.1",
@@ -56,7 +56,7 @@ hfss.release_desktop()
 %	aedt_port=50001, non_graphical=True)
 %\end{lstlisting}
 \section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Variable class}
-\texttt{hfss.variable$\_$manager} class handles all the variables.
+The \texttt{hfss.variable$\_$manager} class handles all variables.
 \newline
 To create a variable that only applies to this design:
 \begin{lstlisting}[language=Python]
@@ -67,9 +67,7 @@ To create a variable that applies at a project level:
 hfss["$dim"] = "1mm"
 \end{lstlisting}
 \section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Material class}
-The \texttt{hfss.materials} class is used to access the materials library.
-\newline
-To add a new material: 
+The \texttt{hfss.materials} class is used to access the materials library. To add a new material: 
 \begin{lstlisting}[language=Python]
 my_mat = hfss.materials.add_material("myMat")
 my_mat.permittivity = 3.5
@@ -83,14 +81,14 @@ my_mat.permeability = 1.5
 %\end{lstlisting}
 
 \section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Geometry creation}
-The \texttt{hfss.modeler} contains all properties and methods needed to edit a modeler, including primitives methods and properties.
+The \texttt{hfss.modeler} class contains all methods and properties needed to edit a modeler, including those for primitives.
 \newline
 \\
-To draw a box at (x\_pos, y\_pos, z\_pos) position with (x\_dim, y\_dim, z\_dim) dimensions:
+Draw a box at (x\_pos, y\_pos, z\_pos) position with (x\_dim, y\_dim, z\_dim) dimensions:
 \begin{lstlisting}[language=Python]
 box = hfss.modeler.create_box([x_pos,y_pos,z_pos], [x_dim,y_dim,z_dim],name="airbox", matname="air")
 \end{lstlisting}
-To create a spiral geometry made of "copper":
+Create a spiral geometry made of copper:
 \begin{lstlisting}[language=Python]
 ind = hfss.modeler.create_spiral(
 	internal_radius=rin, width=width,
@@ -99,29 +97,29 @@ ind = hfss.modeler.create_spiral(
 	material="copper",name="Inductor1")
 \end{lstlisting}
 \columnbreak
-\texttt{box}, \texttt{ind} are the \texttt{Object3d objects}, containing a lot of properties and methods related to that object including faces, vertices, colors, and materials.
+The \texttt{Object3d objects}, \texttt{box} and \texttt{ind}, contain a lot of methods and properties related to that object, including faces, vertices, colors, and materials.
 
-\section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Creating boundaries}
-To create an open region:
+\section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Boundary creation}
+Create an open region:
 \begin{lstlisting}[language=Python]
 hfss.create_open_region(Frequency="1GHz")
 \end{lstlisting}
-To assign a radiation boundary:
+Assign a radiation boundary:
 \begin{lstlisting}[language=Python]
 hfss.assign_radiation_boundary_to_objects("airbox")
 \end{lstlisting}
 
-\section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Port definitions}
-Common port types in HFSS are Lumped-port and Wave guide-port.
+\section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Port definition}
+Common port types in HFSS are lumped port and wave port.
 \newline
 \\
-To define a lumped-port:
+Define a lumped port:
 \begin{lstlisting}[language=Python]
 box1 = hfss.modeler.create_box([0,0,50], [10,10,5], "Box1","copper")
 box2 = hfss.modeler.create_box([0,0,60], [10,10,5], "Box2","copper")
 port_L = hfss.lumped_port(signal="Box1", reference="Box2", integration_line=hfss.AxisDir.XNeg, impedance=50, name="LumpedPort", renormalize=True, deembed=False)
 \end{lstlisting}
-To define a wave guide-port:
+Define a wave port:
 \begin{lstlisting}[language=Python]
 port_W = hfss.wave_port("Box1", "Box2", name="WavePort", integration_line=1)
 \end{lstlisting}
@@ -135,11 +133,11 @@ setup.props["Frequency"] = "50MHz"
 setup["MaximumPasses"] = 10
 hfss.create_linear_count_sweep(setupname="any", unit="MHz", freqstart=0.1, freqstop=100, num_of_freq_points=100, sweepname="sweep1", sweep_type="Interpolating", save_fields=False)
 \end{lstlisting}
-To access the parametric sweep:
+Access the parametric sweep:
 \begin{lstlisting}[language=Python]
 hfss.parametrics
 \end{lstlisting}
-To access the optimizations:
+Access the optimizations:
 \begin{lstlisting}[language=Python]
 hfss.optimizations
 \end{lstlisting}
@@ -147,43 +145,43 @@ hfss.optimizations
 \section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Mesh class}
 The \texttt{hfss.mesh} module manages the mesh functions:
 \begin{lstlisting}[language=Python]
-hfss.mesh.assign_initial_mesh_from_slider(level=6) # setting the slider level to 6
-# assign model resolutions
+hfss.mesh.assign_initial_mesh_from_slider(level=6) # Set the slider level to 6
+# Assign model resolutions
 hfss.mesh.assign_model_resolution(names=[object1.name, object2.name], defeature_length=None)
-# assigning the mesh length to the object1 faces
+# Assign mesh length to \texttt{object1} faces
 hfss.mesh.assign_length_mesh(names=object1.faces, isinside=False, maxlength=1, maxel=2000)
 \end{lstlisting}
 
-\section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Analysis class}
-The solution setup (\texttt{mysetup}) in HFSS design is analyzed by calling:
+\section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Analyze class}
+The \texttt{analyze] class is used to analyze a solution setup (\texttt{mysetup}) in an HFSS design:
 \begin{lstlisting}[language=Python]
 hfss.analyze_setup("mysetup")
 \end{lstlisting}
 %where, 'mysetup' is the solution setup
-\section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Post-processing class}
-Post-processing class has modules for creating and editing plots in AEDT. They are accessible through the post library:
+\section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Post class}
+The \texttt{post} class has methods for creating and editing plots in AEDT:
 \begin{lstlisting}[language=Python]
 plotf = hfss.post.create_fieldplot_volume(object_list, quantityname, setup_name, intrinsic_dict) # This call returns a FieldPlot object
-my_data = hfss.post.get_solution_data(expression=trace_names) # This call returns a Solution Data object
+my_data = hfss.post.get_solution_data(expression=trace_names) # This call returns a SolutionData object
 standard_report = hfss.post.report_by_category.standard("db(S(1,1))") # This call returns a new standard report object
-standard_report.create() # This call create a report
+standard_report.create() # This call creates a report
 solution_data = standard_report.get_solution_data()
 \end{lstlisting}
 
-\section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Calling AEDT-API with PyAEDT}
+\section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Call AEDT-API with PyAEDT}
 Most core functionality can be called directly through PyAEDT, but additional features can be added by converting the corresponding AEDT-API methods.
 \newline
 \\
-For example, to access the (\texttt{Optimetrics}) module:
+For example, to access the \texttt{Optimetrics} module:
 \begin{lstlisting}[language=Python]
 omodule = hfss.odesign.GetModule("Optimetrics")
 \end{lstlisting}
 
-\subsection{References from PyAEDT Documentation}
+\subsection{References from PyAEDT documentation}
 \begin{itemize}
-\item \href{https://aedt.docs.pyansys.com/version/stable/Getting_started/index.html}{\color{blue}{Getting Started}}
-\item \href{https://aedt.docs.pyansys.com/version/stable/User_guide/index.html}{\color{blue}{User Guide}}
-\item \href{https://aedt.docs.pyansys.com/version/stable/API/index.html}{\color{blue}{API Reference}}
+\item \href{https://aedt.docs.pyansys.com/version/stable/Getting_started/index.html}{\color{blue}{Getting started}}
+\item \href{https://aedt.docs.pyansys.com/version/stable/User_guide/index.html}{\color{blue}{User guide}}
+\item \href{https://aedt.docs.pyansys.com/version/stable/API/index.html}{\color{blue}{API reference}}
 \end{itemize}
 \end{multicols}
 \vspace{-0.15cm}
