@@ -1,10 +1,10 @@
 from ansys.dpf import post
 from ansys.dpf.post import examples
 
-sim = post.load_simulation(r"C:\Users\user\file.rst")
+sim = post.load_simulation(r'C:\Users\user\file.rst')
 # BREAK BLOCK
 
-sim = post.load_simulation(r"/home/user/file.rst")
+sim = post.load_simulation(r'/home/user/file.rst')
 # BREAK BLOCK
 
 example_path = examples.find_static_rst()
@@ -27,8 +27,10 @@ nodes_disp = simulation.displacement(node_ids=[1, 10, 100])
 elem_nodal_stress = simulation.stress()
 nodal_stress = simulation.stress_nodal()
 elemental_stress = simulation.stress_elemental()
-# Extract elemental stresses on specific elements
-elemental_stress = elemental_stress.select(element_ids=[5, 6, 7])
+# Extract elemental stresses on specific elements from result file
+elemental_stress = simulation.stress_elemental(element_ids=[5, 6, 7])
+# Nodal strain
+strain = simulation.elastic_strain_nodal()
 # BREAK BLOCK
 
 simulation = post.StaticMechanicalSimulation(example_path)
@@ -75,6 +77,8 @@ print(displacement_dataframe.columns)
 # BREAK BLOCK
 
 print(displacement_dataframe.columns.results_index)
+# BREAK BLOCK
+
 print(displacement_dataframe.columns[0].values)
 # BREAK BLOCK
 

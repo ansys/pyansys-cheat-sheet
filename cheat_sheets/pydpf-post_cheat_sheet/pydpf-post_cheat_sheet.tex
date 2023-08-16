@@ -40,7 +40,7 @@
 \vfill
 \section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Load Result File}
 
-Simulation object allows access to the result. The Simulation object must be instantiated with the path for the result file.
+To instantiate a simulation object with the path to the results file. 
 
 \vspace{2mm} %5mm vertical space
 % {\color{orange} \rule{\linewidth}{0.1mm}}
@@ -56,25 +56,23 @@ Simulation object allows access to the result. The Simulation object must be ins
 % row 2 col 1
 \section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Fetching Result Metadata}
 
-You can fetch Metadata information from Simulation object, such as the analysis type and the available results.
+To display metadata from the simulation object:
 
 \pythoncode{scripts/generated_scripts/pydpf-post_script_2.py}
 
 \section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Access Mesh}
 
-From the Simulation object, you can also access the mesh:
+To access the mesh:
 
 \pythoncode{scripts/generated_scripts/pydpf-post_script_3.py}
 
-
 \section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Access Results}
 
-Using Simulation object, you can access to the results data. You can query results using dedicated methods.
-For example, to get the displacement result as,
+To get the displacement result:
 
 \pythoncode{scripts/generated_scripts/pydpf-post_script_4.py}
 
-Similarly, you can extract the Stress, Strain and other results quantities as,
+To access the stress and strain results:
 
 \pythoncode{scripts/generated_scripts/pydpf-post_script_5.py}
 
@@ -86,29 +84,29 @@ Similarly, you can extract the Stress, Strain and other results quantities as,
 
 \section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Enable Auto-completion Results Quantities}
 
-You can use physics-oriented API for postprocessing which enable auto-completion of results quantities.
+To postprocess results quantities using physics-oriented API which enable auto-completion:
 
 \vspace{2mm} %5mm vertical space
 
-(a). To postprocess Static Simulation results:
+To return static simulation results:
 
 \pythoncode{scripts/generated_scripts/pydpf-post_script_6.py}
 
-(b). To postprocess Modal Simulation results:
+To return modal simulation results:
 
 \pythoncode{scripts/generated_scripts/pydpf-post_script_7.py}
 
-(c). To postprocess Transient Simulation results with animation:
+To return transient simulation results and create an animation:
 
 \pythoncode{scripts/generated_scripts/pydpf-post_script_8.py}
 
-(d). To postprocess Harmonic Simulation results:
+To return harmonic simulation results:
 
 \pythoncode{scripts/generated_scripts/pydpf-post_script_9.py}
 
 \section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Plot Results}
 
-You can plot the results, for example, total deformation (norm of the displacement vector field) with: 
+To plot the total deformation (norm of the displacement vector field) results:
 
 \pythoncode{scripts/generated_scripts/pydpf-post_script_10.py}
 
@@ -120,29 +118,33 @@ You can plot the results, for example, total deformation (norm of the displaceme
 \section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Create and Manipulate a DPF Dataframe}
 % \vspace{5mm} %5mm vertical space
 % {\color{orange} \rule{\linewidth}{0.1mm}}
-You can generate a Dataframe by extracting a result from a simulation, which can be manipulated and viewed differently.
+To generate a Dataframe by extracting a result from a simulation, which can be manipulated and viewed differently:
 
 \pythoncode{scripts/generated_scripts/pydpf-post_script_11.py}
 
-The Dataframe's column labels are defined in \underline{Dataframe.columns} as,
+To return the Dataframe's column labels:
 
 \pythoncode{scripts/generated_scripts/pydpf-post_script_12.py}
 
-A ResultIndex index defines the result stored in the Dataframe. You can also check values available for an Index.
+To display the results index:
 
 \pythoncode{scripts/generated_scripts/pydpf-post_script_13.py}
 
-You can change the number of data rows or columns displayed with:
+To display the values available in the index:
 
 \pythoncode{scripts/generated_scripts/pydpf-post_script_14.py}
 
-To select specific columns or rows, use the index names as arguments for the \underline{DataFrame.select} method, taking lists of values:
+To change the number of data rows or columns displayed with:
 
 \pythoncode{scripts/generated_scripts/pydpf-post_script_15.py}
 
-You can extract specific data as an array contains in Dataframe with:
+To select specific columns or rows, use the index names as arguments for the \underline{DataFrame.select} method, taking lists of values:
 
 \pythoncode{scripts/generated_scripts/pydpf-post_script_16.py}
+
+To extract displacement data as an array contains in Dataframe with:
+
+\pythoncode{scripts/generated_scripts/pydpf-post_script_17.py}
 
 % Add subsection
 % This section includes useful links to the documentation.
