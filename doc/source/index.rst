@@ -66,3 +66,9 @@ PyAnsys cheat-sheets for different projects
             :img-top: https://cheatsheets.docs.pyansys.com/pyensight_cheat_sheet.png
             :link: https://cheatsheets.docs.pyansys.com/pyensight_cheat_sheet.pdf
 
+    .. grid-item::
+
+        .. card:: PyDPF-Post
+            :img-top: https://cheatsheets.docs.pyansys.com/pydpf-post_cheat_sheet.png
+            :link: https://cheatsheets.docs.pyansys.com/pydpf-post_cheat_sheet.pdf
+
