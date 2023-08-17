@@ -47,7 +47,7 @@ simulation = post.TransientMechanicalSimulation(example_path)
 print(simulation)
 # Query the displacement vectorial field for all times
 displacement = simulation.displacement(all_sets=True)
-# Create animation showing the normal of vectorial fields with several components
+# Create animation showing the norm of vectorial fields with several components
 displacement.animate(deform=True, title="U")
 # BREAK BLOCK
 
