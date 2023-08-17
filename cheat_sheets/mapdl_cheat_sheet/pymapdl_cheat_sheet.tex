@@ -6,7 +6,7 @@
   /Producer (pdfTeX 1.40.0)
   /Author (Ansys Inc.,)
   /Subject (PyMAPDL)
-  /Keywords (PyMAPDL,MAPDL,ANSYS,FEA)}
+  /Keywords (PyMAPDL, MAPDL, FEA, cheat sheet, template)}
 
 \begin{document}
 \raggedright
@@ -33,7 +33,7 @@
 \setlength{\columnsep}{2pt}
 
 \section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Launch PyMAPDL}
-To launch a PyMAPDL instance locally and exit it:
+Launch a PyMAPDL instance locally and exit it:
 \begin{lstlisting}[language=Python]
 # Launch an instance
 from ansys.mapdl.core import launch_mapdl
@@ -42,19 +42,19 @@ mapdl = launch_mapdl()
 mapdl.exit()
 \end{lstlisting}
 
-To specify a job name, number of processors, and working directory:
+Specify a job name, number of processors, and working directory:
 \begin{lstlisting}[language=Python]
 jname = 'user_jobname'
 path = '<path of directory>'
 mapdl = launch_mapdl(nproc=2, run_location=path, jobname=jname)
 \end{lstlisting}
 
-To connect to an existing instance of MAPDL at IP 192.168.1.30 and port 50001:
+Connect to an existing instance of MAPDL at IP address 192.168.1.30 and port 50001:
 \begin{lstlisting}[language=Python]
 mapdl = launch_mapdl(start_instance=False,
     ip='192.168.1.30', 50001)
 \end{lstlisting}
-To create and exit a pool of instances:
+Create and exit a pool of instances:
 \begin{lstlisting}[language=Python]
 # Create a pool of 10 instances
 from ansys.mapdl.core import LocalMapdlPool
@@ -69,13 +69,13 @@ PyMAPDL commands are Python statements that act as a wrapper for APDL commands. 
 mapdl.esel('s', 'type', vmin=1) 
 \end{lstlisting}
 
-Commands that start with * or / have those characters removed:
+Commands that start with * or / have these characters removed:
 \begin{lstlisting}[language=Python]
 mapdl.prep7()	        # /PREP7
 mapdl.get()	        # *GET
 \end{lstlisting}
 
-In cases where removing * or / cause conflicts with other commands, a prefix "slash" or "star" is added:
+In cases where removing * or / causes conflicts with other commands, a prefix "slash" or "star" is added:
 \begin{lstlisting}[language=Python]
 mapdl.solu()		# SOLU
 mapdl.slashsolu()	# /SOLU
@@ -85,7 +85,7 @@ mapdl.starvget()	# *VGET
 \end{lstlisting} 
 
 \columnbreak
-To convert an existing APDL script to PyMAPDL format:
+Convert an existing APDL script to PyMAPDL format:
 \begin{lstlisting}[language=Python]
 inputfile = 'ansys_inputfile.inp'
 pyscript = 'pyscript.py'
@@ -93,12 +93,12 @@ mapdl.convert_script(inputfile, pyscript)
 \end{lstlisting} 
 
 \section{\includegraphics[height=\fontcharht\font`\S]{slash.png} MAPDL class}
-To load a table from Python to MAPDL:
+Load a table from Python to MAPDL:
 \begin{lstlisting}[language=Python]
 mapdl.load_table(name, array)
 \end{lstlisting} 
 
-To access from or write parameters to the MAPDL database:
+Access from or write parameters to the MAPDL database:
 \begin{lstlisting}[language=Python]
 # Save a parameter to a NumPy array
 nparray = mapdl.parameters['displ_load']
@@ -106,7 +106,7 @@ nparray = mapdl.parameters['displ_load']
 mapdl.parameters['exp_disp'] = nparray
 \end{lstlisting} 
 
-To access information using \code{*GET} and \code{*VGET}, storing directly to NumPy arrays:
+Access information using \code{*GET} and \code{*VGET} and store it in NumPy arrays:
 \begin{lstlisting}[language=Python]
 # Run *GET command and return a Python value
 mapdl.get_value(entity='NODE', item1='COUNT')
@@ -116,12 +116,12 @@ mapdl.get_array(entity='NODE', item1='NLIST')
 \end{lstlisting} 
 
 \section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Mesh class}
-To store the finite element mesh as a VTK \textt{UnstructuredGrid} data object:
+Store the finite element mesh as a VTK \textt{UnstructuredGrid} data object:
 \begin{lstlisting}[language=Python]
 grid = mapdl.mesh.grid
 \end{lstlisting} 
 
-To save element and node numbers to Python arrays:
+Save element and node numbers to Python arrays:
 \begin{lstlisting}[language=Python]
 # Get an array of the nodal coordinates
 nodes = mapdl.mesh.nodes

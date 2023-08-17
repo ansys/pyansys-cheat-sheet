@@ -7,7 +7,7 @@
   /Producer (pdfTeX 1.40.0)
   /Author (Ansys Inc.,)
   /Subject (PyAEDT)
-  /Keywords (PyAEDT, AEDT,cheat sheet)}
+  /Keywords (PyAEDT, AEDT, cheat sheet, template)}
 
 % -----------------------------------------------------------------------
 
@@ -19,7 +19,7 @@
      \Huge{\textbf{PyAEDT-API cheat sheet}} \\
 \end{center}
 \begin{center}
-\small{\textbf{Version: 0.6.78 (stable) }} \\
+\small{\textbf{Version: 0.6.78 (stable)}} \\
 \end{center}
 \AddToShipoutPicture*
 {\put(670,577.5){\includegraphics[height = 1.2cm]{ansys.png}}}
@@ -37,7 +37,7 @@
 \setlength{\columnsep}{2pt}
 
 \section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Launch PyAEDT}
-To launch an HFSS instance locally:
+Launch an HFSS instance locally:
 \begin{lstlisting}[language=Python]
 import pyaedt
 hfss = pyaedt.Hfss(specified_version="2023.1",
@@ -46,7 +46,7 @@ hfss = pyaedt.Hfss(specified_version="2023.1",
 	projectname="Project_name",
 	designname="Design_name")
 \end{lstlisting}
-To exit your local instance:
+Exit your local instance:
 \begin{lstlisting}[language=Python]
 hfss.release_desktop()
 \end{lstlisting}
@@ -58,16 +58,18 @@ hfss.release_desktop()
 \section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Variable class}
 The \texttt{hfss.variable$\_$manager} class handles all variables.
 \newline
-To create a variable that only applies to this design:
+Create a variable that only applies to this design:
 \begin{lstlisting}[language=Python]
 hfss["dim"] = "1mm"
 \end{lstlisting}
-To create a variable that applies at a project level:
+Create a variable that applies at a project level:
 \begin{lstlisting}[language=Python]
 hfss["$dim"] = "1mm"
 \end{lstlisting}
 \section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Material class}
-The \texttt{hfss.materials} class is used to access the materials library. To add a new material: 
+The \texttt{hfss.materials} class is used to access the materials library.
+\newline
+Add a new material: 
 \begin{lstlisting}[language=Python]
 my_mat = hfss.materials.add_material("myMat")
 my_mat.permittivity = 3.5
@@ -172,7 +174,7 @@ solution_data = standard_report.get_solution_data()
 Most core functionality can be called directly through PyAEDT, but additional features can be added by converting the corresponding AEDT-API methods.
 \newline
 \\
-For example, to access the \texttt{Optimetrics} module:
+For example, access the \texttt{Optimetrics} module:
 \begin{lstlisting}[language=Python]
 omodule = hfss.odesign.GetModule("Optimetrics")
 \end{lstlisting}

@@ -6,7 +6,7 @@
   /Producer (pdfTeX 1.40.0)
   /Author (Ansys)
   /Subject (PyAnsys)
-  /Keywords (PyAnsys, cheat sheet, template)}
+  /Keywords (PyAnsys, PyPrimeMesh, cheat sheet, template)}
 
 \begin{document}
 \raggedright
@@ -38,10 +38,10 @@
 % --------------------------------------------------------------------------------
 % row 1 col 1
 \vfill
-\section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Launch PyPrimeMesh Client}
+\section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Launch PyPrimeMesh client}
 Launch and exit PyPrimeMesh server from Python in gRPC mode:\\
 \begin{lstlisting}[language=Python]
-# Launch PyPrimeMesh Server 
+# Launch PyPrimeMesh server 
 from ansys.meshing import prime
 
 with prime.launch_prime(timeout=20) as prime_client:
@@ -60,8 +60,8 @@ with prime.launch_prime(
 \end{lstlisting}
 
 % row 2 col 1
-\section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Read and write files }
-Read or write files of different formats based on the file extension:\\
+\section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Read and write files}
+Read or write files of different formats based on file extensions:\\
 \begin{lstlisting}[language=Python]
 from ansys.meshing.prime import lucid
 
@@ -84,7 +84,7 @@ print("Total number of cells: ", summary.n_cells)
 \end{lstlisting}
 
 \section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Define size controls}
-Set the global sizing parameters: 
+Set global sizing parameters: 
 
 \begin{lstlisting}[language=Python]
 model.set_global_sizing_params(
@@ -92,7 +92,7 @@ model.set_global_sizing_params(
 )
 \end{lstlisting}
 
-Define curvature size control:
+Define the curvature size control:
 \begin{lstlisting}[language=Python]
 curvature_control = model.control_data.create_size_control(
   prime.SizingType.CURVATURE
