@@ -12,6 +12,7 @@ if "%1" == "pyedb_API_cheat_sheet" goto pyedb_API_cheat_sheet
 if "%1" == "pyprimemesh_cheat_sheet" goto pyedb_API_cheat_sheet
 if "%1" == "pydpf-core_cheat_sheet" goto pydpf-core_cheat_sheet
 if "%1" == "pymechanical_cheat_sheet" goto pymechanical_cheat_sheet
+if "%1" == "pydpf-post_cheat_sheet" goto pydpf-post_cheat_sheet
 if "%1" == "pydynamicreporting_cheat_sheet" goto pydynamicreporting_cheat_sheet
 if "%1" == "pyensight_cheat_sheet" goto pyensight_cheat_sheet
 if "%1" == "pymotorcad_cheat_sheet" goto pymotorcad_cheat_sheet
@@ -98,12 +99,20 @@ exit /b 1)
 Echo "pdf generated!"
 goto end
 
-
 :pymotorcad_cheat_sheet
 set SCRIPT_PATH=cheat_sheets/pymotorcad_cheat_sheet/pymotorcad_script.py
 CALL :run_script
 pdflatex -output-directory=%BUILDDIR% cheat_sheets/pymotorcad_cheat_sheet/pymotorcad_cheat_sheet.tex --interaction=nonstopmode
 if NOT EXIST %BUILDDIR%/pymotorcad_cheat_sheet.pdf(
+Echo "no pdf generated!"
+exit /b 1)
+Echo "pdf generated!"
+
+:pydpf-post_cheat_sheet
+set SCRIPT_PATH=cheat_sheets/pydpf-post_cheat_sheet/pydpf-post_script.py
+CALL :run_script
+pdflatex -output-directory=%BUILDDIR% cheat_sheets/pydpf-post_cheat_sheet/pydpf-post_cheat_sheet.tex --interaction=nonstopmode
+if NOT EXIST %BUILDDIR%/pydpf-post_cheat_sheet.pdf (
 Echo "no pdf generated!"
 exit /b 1)
 Echo "pdf generated!"
@@ -120,7 +129,7 @@ CALL :pymechanical_cheat_sheet
 CALL :pydynamicreporting_cheat_sheet
 CALL :pyensight_cheat_sheet
 CALL :pymotorcad_cheat_sheet
-
+CALL :pydpf-post_cheat_sheet
 goto end
 
 :run_script

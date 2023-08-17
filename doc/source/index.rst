@@ -72,3 +72,10 @@ PyAnsys cheat-sheets for different projects
         .. card:: PyMotorCAD
             :img-top: https://cheatsheets.docs.pyansys.com/pymotorcad_cheat_sheet.png
             :link: https://cheatsheets.docs.pyansys.com/pymotorcad_cheat_sheet.pdf
+
+    .. grid-item::
+
+        .. card:: PyDPF-Post
+            :img-top: https://cheatsheets.docs.pyansys.com/pydpf-post_cheat_sheet.png
+            :link: https://cheatsheets.docs.pyansys.com/pydpf-post_cheat_sheet.pdf
+
