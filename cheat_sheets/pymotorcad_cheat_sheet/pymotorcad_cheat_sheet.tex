@@ -22,7 +22,7 @@
 \end{center}
 \AddToShipoutPicture*
 	{\put(670,577.5){\includegraphics[height = 1.2cm]{ansys.png}}}
-\AddToShipoutPictureBG*{\includegraphics[width=\paperwidth]{bground_2.png}}
+\AddToShipoutPictureBG*{\includegraphics[width=\paperwidth]{bground.png}}
 \vspace{-0.15cm}
 \noindent\makebox[\linewidth]{\rule{\paperwidth}{2pt}}
 
@@ -58,7 +58,7 @@ mcad.quit()
 %\end{lstlisting}
 
 \section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Geometrical properties}
-To set the motor geometry:
+To specify the motor geometry:
 \begin{lstlisting}[language=Python]
 mcad.set_variable("Slot_Number", 24)
 mcad.set_variable("Tooth_Width", 6)
@@ -105,13 +105,13 @@ mcad.set_variable("Speedinc_MotorLAB", 250)
 mcad.set_variable("SpeedMin_MotorLAB", 500)
 mcad.set_variable("Imax_MotorLAB", 480)	
 \end{lstlisting}
-To calculate e-magnetic performance:
+To calculate the E-Magnetic performance:
 \begin{lstlisting}[language=Python]
 mcad.calculate_magnetic_lab()
 \end{lstlisting}
 
 \section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Operating Point Calculation}
- To set operating point for calculations:
+ To set the operating point variables:
 \begin{lstlisting}[language=Python]
 mcad.set_variable("OpPointSpec_MotorLAB", 1)
 mcad.set_variable("StatorCurrentDemand_Lab", 480)
@@ -160,18 +160,18 @@ shaft_power = data["Shaft_Power"]
 \section{\includegraphics[height=\fontcharht\font`\S]{slash.png} PyMotorCAD Scripting in MATLAB}
 The Python version that MATLAB is using has the \textit{ansys.motorcad.core} package installed, PyMotorCAD is available to use in MATLAB.
 
-To import the ansys.motorcad.core module as pymotorcad for use in scripts
+To import the \textit{ansys.motorcad.core} python package for use in MATLAB:
 \begin{lstlisting}[language=Python]
 pymotorcad = py.importlib.import_module('ansys.motorcad.core')	
 \end{lstlisting}
 
 \section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Backwards Compatibility}
-Old ActiveX scripts use this code to connect to Motor-CAD
+To use ActiveX scripts to connect to Motor-CAD:
 \begin{lstlisting}[language=Python]
 import win32com.client
 mcad = win32com.client.Dispatch("MotorCAD.AppAutomation")
 \end{lstlisting}
-To use PyMotorCAD to connect to Motor-CAD, you replace the preceding code with this code:	
+To use PyMotorCAD to connect to Motor-CAD:
 \begin{lstlisting}[language=Python]
 import ansys.motorcad.core as pymotorcad
 mcad = pymotorcad.MotorCADCompatibility()
