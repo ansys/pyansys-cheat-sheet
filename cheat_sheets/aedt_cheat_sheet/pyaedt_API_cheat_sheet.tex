@@ -50,7 +50,7 @@ Exit your local instance:
 \begin{lstlisting}[language=Python]
 hfss.release_desktop()
 \end{lstlisting}
-%Optionally, AEDT can be launched at the client server. To connect an existing instance of AEDT at  \textbf{"server\_name"} and port \textbf{"50001"}
+%Optionally, AEDT can be launched at the client server. To connect an existing instance of AEDT at  \texttt{"server\_name"} and port \texttt{"50001"}.
 %\begin{lstlisting}[language=Python]
 %	cl1 = create_session("server_name", launch_aedt_on_server=True,
 %	aedt_port=50001, non_graphical=True)
@@ -155,7 +155,7 @@ hfss.mesh.assign_length_mesh(names=object1.faces, isinside=False, maxlength=1, m
 \end{lstlisting}
 
 \section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Analyze class}
-The \texttt{analyze] class is used to analyze a solution setup (\texttt{mysetup}) in an HFSS design:
+The \texttt{analyze} class is used to analyze a solution setup (\texttt{mysetup}) in an HFSS design:
 \begin{lstlisting}[language=Python]
 hfss.analyze_setup("mysetup")
 \end{lstlisting}
