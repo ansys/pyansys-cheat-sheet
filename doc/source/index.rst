@@ -29,6 +29,13 @@ Clicking a link for a cheat sheet opens the a PDF file.
 
     .. grid-item::
 
+        .. card:: PyDPF-Post
+            :img-top: https://cheatsheets.docs.pyansys.com/pydpf-post_cheat_sheet.png
+            :link: https://cheatsheets.docs.pyansys.com/pydpf-post_cheat_sheet.pdf
+
+
+    .. grid-item::
+
         .. card:: PyDynamicReporting
             :img-top: https://cheatsheets.docs.pyansys.com/pydynamicreporting_cheat_sheet.png
             :link: https://cheatsheets.docs.pyansys.com/pydynamicreporting_cheat_sheet.pdf

@@ -1,6 +1,6 @@
 BUILD_DIR     = _build
 
-CHEATSHEETS=pymapdl_cheat_sheet pyfluent_cheat_sheet pyaedt_API_cheat_sheet pyedb_API_cheat_sheet pyprimemesh_cheat_sheet pydpf-core_cheat_sheet pymechanical_cheat_sheet pydynamicreporting_cheat_sheet pyensight_cheat_sheet
+CHEATSHEETS=pymapdl_cheat_sheet pyfluent_cheat_sheet pyaedt_API_cheat_sheet pyedb_API_cheat_sheet pyprimemesh_cheat_sheet pydpf-core_cheat_sheet pymechanical_cheat_sheet pydynamicreporting_cheat_sheet pyensight_cheat_sheet pydpf-post_cheat_sheet
 
 .PHONY: all clean help
 
@@ -54,6 +54,12 @@ pymechanical_cheat_sheet:
 	convert -density 150 -scene 1 $(BUILD_DIR)/pymechanical_cheat_sheet.pdf $(BUILD_DIR)/pymechanical_cheat_sheet.png
 	(test -f $(BUILD_DIR)/pymechanical_cheat_sheet.pdf && echo pdf exists) || (echo "Failed to generate PDF" && exit 1)
 
+pydpf-post_cheat_sheet:
+	make run_script SCRIPT_PATH='cheat_sheets/pydpf-post_cheat_sheet/pydpf-post_script.py'
+	latexmk -f -pdf -use-make -outdir=$(BUILD_DIR) cheat_sheets/pydpf-post_cheat_sheet/pydpf-post_cheat_sheet.tex  -interaction=nonstopmode || true
+	convert -density 150 -scene 1 $(BUILD_DIR)/pydpf-post_cheat_sheet.pdf $(BUILD_DIR)/pydpf-post_cheat_sheet.png
+	(test -f $(BUILD_DIR)/pydpf-post_cheat_sheet.pdf && echo pdf exists) || exit 1
+
     
 run_script:
 	python3 scripts/generate_code_snippet.py $(SCRIPT_PATH)
@@ -75,4 +81,5 @@ help:
 	@echo "  pyprimemesh_cheat_sheet:          Build the pyprimemesh cheatsheet"
 	@echo "  pymechanical_cheat_sheet:   Build the pymechanical cheatsheet"
 	@echo "  pydynamicreporting_cheat_sheet:   Build the pydynamicreporting cheatsheet"
+	@echo "  pydpf-post_cheat_sheet:   Build the pydpf-post cheatsheet"
 
