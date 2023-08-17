@@ -6,7 +6,7 @@ PyAnsys provides cheat-sheets for different projects as a quick reference guide.
 PyAnsys cheat-sheets for different projects
 -------------------------------------------
 
-.. grid:: 2 1 1 2
+.. grid:: 3 1 1 3
 
     .. grid-item::
 
@@ -48,7 +48,25 @@ PyAnsys cheat-sheets for different projects
             :img-top: https://cheatsheets.docs.pyansys.com/pydpf-core_cheat_sheet.png
             :link: https://cheatsheets.docs.pyansys.com/pydpf-core_cheat_sheet.pdf
             
-    
+    .. grid-item::
+
+        .. card:: PyDynamicReporting
+            :img-top: https://cheatsheets.docs.pyansys.com/pydynamicreporting_cheat_sheet.png
+            :link: https://cheatsheets.docs.pyansys.com/pydynamicreporting_cheat_sheet.pdf
+
+    .. grid-item::
+
+        .. card:: PyMechanical
+            :img-top: https://cheatsheets.docs.pyansys.com/pymechanical_cheat_sheet.png
+            :link: https://cheatsheets.docs.pyansys.com/pymechanical_cheat_sheet.pdf
+
+    .. grid-item::
+
+        .. card:: PyEnSight
+            :img-top: https://cheatsheets.docs.pyansys.com/pyensight_cheat_sheet.png
+            :link: https://cheatsheets.docs.pyansys.com/pyensight_cheat_sheet.pdf
+
+
     .. grid-item::
 
         .. card:: PyMotorCAD

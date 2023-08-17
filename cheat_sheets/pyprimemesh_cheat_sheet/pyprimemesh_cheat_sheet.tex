@@ -114,8 +114,8 @@ curvature_control.set_curvature_sizing_params(
 Generate Wrapper Surface Mesh.
 \begin{lstlisting}[language=Python]
 mesher.wrap(
-  min_size=0.2,
-  max_size=1.0,
+  min_size=0.5,
+  max_size=16,
   input_parts="flange,pipe",
   use_existing_features=True,
   recompute_remesh_sizes=True,
@@ -126,12 +126,10 @@ mesher.wrap(
 \section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Generate Surface Mesh}
 Generate Surface Mesh based on min, max size. 
 \begin{lstlisting}[language=Python]
-surface_scope = prime.ScopeDefinition(model, part_expression="*")
 mesher.surface_mesh(
     min_size=0.5,
     max_size=16,
     generate_quads=True,
-    scope=surface_scope,
 )
 \end{lstlisting}
 
@@ -139,13 +137,14 @@ Generate Surface Mesh based on size controls.
 \begin{lstlisting}[language=Python]
 control_name = "Curvature_Size_Control"
 mesher.surface_mesh_with_size_controls(
-    control_name, surface_scope
+    control_name,
 )
 \end{lstlisting}
 
 \section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Surface Mesh Analysis}
 Surface Mesh Diagnostics. 
 \begin{lstlisting}[language=Python]
+surface_scope = prime.ScopeDefinition(model, part_expression="*")
 diag = prime.SurfaceSearch(model)
 diag_params = prime.SurfaceDiagnosticSummaryParams(
     model,
@@ -153,7 +152,7 @@ diag_params = prime.SurfaceDiagnosticSummaryParams(
     compute_free_edges=True,
 )
 diag_res = diag.get_surface_diagnostic_summary(diag_params)
-print("Number of free faces : ", diag_res.n_free_faces)
+print("Number of free faces : ", diag_res.n_free_edges)
 \end{lstlisting}
 
 Surface Mesh Quality Metrics.
@@ -166,6 +165,7 @@ quality_params = prime.SurfaceQualitySummaryParams(
     face_quality_measures=[face_quality_measures],
     quality_limit=[0.9],
 )
+qual_summary_res = quality.get_surface_quality_summary(quality_params)
 print(
     "Maximum surface skewness : ",
     qual_summary_res.quality_results[0].max_quality,
@@ -175,10 +175,8 @@ print(
 \section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Generate Volume Mesh}
 Generate Volume Mesh.
 \begin{lstlisting}[language=Python]
-vol_scope = prime.ScopeDefinition(model, part_expression="*")
 mesher.volume_mesh(
     volume_fill_type=prime.VolumeFillType.HEXCOREPOLY,
-    scope=vol_scope,
 )
 \end{lstlisting}
 
