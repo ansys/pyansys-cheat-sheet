@@ -25,11 +25,11 @@ session.load_data("dataset.encas")
 session.load_data("dataset.dvs")
 session.load_data("out.cas.h5", result_file="data.dat.h5")
 session.load_data("dataset.rst", new_case=True)
-# The "new_case" option allows to create a new case and load multiple datasets in the same EnSight session.
+# The "new_case" option allows you to create a new case and load multiple datasets in the same EnSight session.
 # BREAK BLOCK
 
 image = session.show("image")
-# image is a Renderable object. Any object returned by show is a Renderable.
+# "image" is a renderable object. Any object returned by the "show()" method is a renderable.
 image.browser()
 
 
@@ -41,7 +41,7 @@ session.show("animation")
 # BREAK BLOCK
 session.show("remote").browser()
 session.show("remote").url
-# The "url" property is the URL to embed the Renderable in your application. It is available in all the Renderables, like browser()
+# The "url" property is the URL for embedding the renderable in your application. It is available in all renderables, like ``browser()``.
 # BREAK BLOCK
 
 export = session.ensight.utils.export
@@ -85,7 +85,7 @@ with sn(session.ensight.objs.core) as core:
     core.PARTS.set_attr(attr, "velocity")
     core.PARTS[0].setattr(attr, "energy")
     core.PARTS["fluid_domain"].set_attr(attr, "tke")
-# set_attr() is a method available for a list of EnSight Objects, while setattr() is a method available for a single object
+# The "set_attr()" method is available for a list of EnSight objects, while the "setattr()" method is available for a single object.
 # BREAK BLOCK
 sn = session.ensight.utils.support.scoped_name
 with sn(session.ensight.objs.core) as core, sn(
@@ -93,7 +93,7 @@ with sn(session.ensight.objs.core) as core, sn(
 ) as enums:
     # 3D parts border, 2D full
     core.PARTS.set_attr("ELTREPRESENTATION", enums.BORD_FULL)
-    # High quality smooth shading
+    # High-quality smooth shading
     core.PARTS.set_attr("SHADING", enums.SHAD_SMOOTH_REFINED)
 # BREAK BLOCK
 session.ensight.objs.core.HIDDENLINE = True

@@ -20,14 +20,14 @@ disp = simulation.displacement()
 x_disp = simulation.displacement(components=["X"])
 # Extract displacement on specific nodes from already extracted large data set
 nodes_disp = disp.select(node_ids=[1, 10, 100])
-# Extract displacement on specific nodes from result file
+# Extract displacement on specific nodes from results file
 nodes_disp = simulation.displacement(node_ids=[1, 10, 100])
 # BREAK BLOCK
 
 elem_nodal_stress = simulation.stress()
 nodal_stress = simulation.stress_nodal()
 elemental_stress = simulation.stress_elemental()
-# Extract elemental stresses on specific elements from result file
+# Extract elemental stresses on specific elements from results file
 elemental_stress = simulation.stress_elemental(element_ids=[5, 6, 7])
 # Nodal strain
 strain = simulation.elastic_strain_nodal()
@@ -47,7 +47,7 @@ simulation = post.TransientMechanicalSimulation(example_path)
 print(simulation)
 # Query the displacement vectorial field for all times
 displacement = simulation.displacement(all_sets=True)
-# Animation shows the norm of vectorial fields with several components
+# Create animation showing the norm of vectorial fields with several components
 displacement.animate(deform=True, title="U")
 # BREAK BLOCK
 
@@ -69,7 +69,7 @@ displacement_norm.plot(screenshot="total_disp.png")
 # BREAK BLOCK
 
 simulation = post.StaticMechanicalSimulation(example_path)
-# Extract a result as a Dataframe
+# Extract a result as a dataframe
 displacement_dataframe = simulation.displacement(all_sets=True)
 # BREAK BLOCK
 
@@ -93,8 +93,8 @@ print(disp_X_1)
 # BREAK BLOCK
 
 print(disp_X_1.array)
-# Plot a Dataframe
+# Plot a dataframe
 displacement_dataframe.plot()
-# Animate a transient Dataframe
+# Animate a transient dataframe
 displacement_dataframe.animate()
 # BREAK BLOCK

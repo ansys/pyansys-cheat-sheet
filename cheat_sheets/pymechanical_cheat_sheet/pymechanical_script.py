@@ -2,16 +2,16 @@ import ansys.mechanical.core as pymechanical
 
 mechanical = pymechanical.launch_mechanical()
 # BREAK BLOCK
-# Standalone Mechanical from Local or Remote Terminal
+# Standalone Mechanical from a local or remote terminal
 "C:/Program Files/ANSYS Inc/v232/aisol/bin/winx64/AnsysWBU.exe" -DSApplet -AppModeMech  -nosplash -notabctrl -grpc 10000
 # BREAK BLOCK
 import ansys.mechanical.core as pymechanical
-# #Note: the default port below  is 10000 but you can specify an alternative port if required
+# #Note: The following code uses port 10000, but you can specify an alternative port if required.
 
-# Either Connect locally
+# Either connect locally
 mechanical = pymechanical.Mechanical(port=10000)
 
-# Or Connect Remotely . IP address or hostname and port.
+# Or connect remotely, specifying the IP address or hostname and port.
 mechanical = pymechanical.Mechanical("192.168.0.1", port=10000)
 
 # BREAK BLOCK
@@ -24,7 +24,6 @@ wb_exe = find_mechanical(232)[0]
 # 'Ansys Inc\\v232\\aisol\\bin\\winx64\\AnsysWBU.exe'
 mechanical = launch_mechanical(
     exec_file=wb_exe, verbose_mechanical=True, batch=True)
-
 print(mechanical)
 # BREAK BLOCK
 mechanical = pymechanical.launch_mechanical(batch=False)
@@ -37,7 +36,7 @@ mechanical.run_python_script(
     "Model.AddStaticStructuralAnalysis()"
 )
 # BREAK BLOCK
-# To Import a  Material
+# Import a  material
 commands = """
 cu_mat__file_path = r'D:\Workdir\copper.xml'.replace("\\", "\\\\")
 materials = ExtAPI.DataModel.Project.Model.Materials
@@ -61,8 +60,8 @@ mechanical.list_files()
 # Save
 mechanical.run_python_script(
     "ExtAPI.DataModel.Project.Save(r'D:\\Workdir')")
-# Logging in two ways:
-mechanical._log.info("This is an useful message")
+# Log in two ways:
+mechanical._log.info("This is a useful message.")
 mechanical.log_message("INFO", "info message")
 # Exit
 mechanical.exit(force=True)
@@ -77,7 +76,7 @@ print(app)
 
 # Extract the global API entry points (available from built-in Mechanical scripting)
 from ansys.mechanical.core import global_variables
-# Merge them into your global Python global variables
+# Merge them into your Python global variables
 globals().update(global_variables(app))
 # BREAK BLOCK
 ExtAPI  # Application.ExtAPI
