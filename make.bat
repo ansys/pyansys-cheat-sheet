@@ -98,6 +98,15 @@ exit /b 1)
 Echo "pdf generated!"
 goto end
 
+:pydpf-post_cheat_sheet
+set SCRIPT_PATH=cheat_sheets/pydpf-post_cheat_sheet/pydpf-post_script.py
+CALL :run_script
+pdflatex -output-directory=%BUILDDIR% cheat_sheets/pydpf-post_cheat_sheet/pydpf-post_cheat_sheet.tex --interaction=nonstopmode
+if NOT EXIST %BUILDDIR%/pydpf-post_cheat_sheet.pdf (
+Echo "no pdf generated!"
+exit /b 1)
+Echo "pdf generated!"
+goto end
 
 :pymotorcad_cheat_sheet
 set SCRIPT_PATH=cheat_sheets/pymotorcad_cheat_sheet/pymotorcad_script.py
@@ -119,6 +128,7 @@ CALL :pyfluent_cheat_sheet
 CALL :pymechanical_cheat_sheet
 CALL :pydynamicreporting_cheat_sheet
 CALL :pyensight_cheat_sheet
+CALL :pydpf-post_cheat_sheet
 CALL :pymotorcad_cheat_sheet
 
 goto end
