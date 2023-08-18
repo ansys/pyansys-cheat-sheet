@@ -24,7 +24,6 @@ wb_exe = find_mechanical(232)[0]
 # 'Ansys Inc\\v232\\aisol\\bin\\winx64\\AnsysWBU.exe'
 mechanical = launch_mechanical(
     exec_file=wb_exe, verbose_mechanical=True, batch=True)
-
 print(mechanical)
 # BREAK BLOCK
 mechanical = pymechanical.launch_mechanical(batch=False)
