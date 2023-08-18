@@ -14,6 +14,7 @@ if "%1" == "pydpf-core_cheat_sheet" goto pydpf-core_cheat_sheet
 if "%1" == "pymechanical_cheat_sheet" goto pymechanical_cheat_sheet
 if "%1" == "pydynamicreporting_cheat_sheet" goto pydynamicreporting_cheat_sheet
 if "%1" == "pyensight_cheat_sheet" goto pyensight_cheat_sheet
+if "%1" == "pydpf-post_cheat_sheet" goto pydpf-post_cheat_sheet
 if "%1" == "pymotorcad_cheat_sheet" goto pymotorcad_cheat_sheet
 if "%1" == "clean" goto clean
 if "%1" == "help" goto help
@@ -130,7 +131,6 @@ CALL :pydynamicreporting_cheat_sheet
 CALL :pyensight_cheat_sheet
 CALL :pydpf-post_cheat_sheet
 CALL :pymotorcad_cheat_sheet
-CALL :pydpf-post_cheat_sheet
 goto end
 
 :run_script
