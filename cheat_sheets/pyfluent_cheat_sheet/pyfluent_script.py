@@ -7,6 +7,7 @@ solver.file.read(file_type="mesh", file_name=mesh_filename)
 # BREAK BLOCK
 
 # e.g., read_case(), read_case_data()
+
 case_filename = "example_file.cas.h5"
 solver.file.read_case(file_type="case", file_name=case_filename)
 # BREAK BLOCK
@@ -16,6 +17,7 @@ solver.setup.models.energy.enabled = True
 
 # >>> from pprint import pprint
 # >>> pprint(solver.setup.models.energy())
+
 {
     "enabled": True,
     "inlet_diffusion": True,
@@ -39,15 +41,19 @@ solver.setup.boundary_conditions.velocity_inlet[
     "option": "constant or expression",
     "constant": 0.4,
 }
+
 solver.setup.boundary_conditions.velocity_inlet[
     "cold-inlet"
 ].ke_spec = "Intensity and Hydraulic Diameter"
+
 solver.setup.boundary_conditions.velocity_inlet[
     "cold-inlet"
 ].turb_intensity = 5
+
 solver.setup.boundary_conditions.velocity_inlet[
     "cold-inlet"
 ].turb_hydraulic_diam = "4 [in]"
+
 solver.setup.boundary_conditions.velocity_inlet[
     "cold-inlet"
 ].t = {

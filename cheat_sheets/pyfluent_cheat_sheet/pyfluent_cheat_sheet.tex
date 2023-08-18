@@ -38,11 +38,10 @@
 % First colomn
 % --------------------------------------------------------------------------------
 \vfill
-\section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Launch Fluent locally}
 
+\section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Launch Fluent locally} 
 \pythoncode{scripts/generated_scripts/pyfluent_script_0.py}
 
-% row 2 col 1
 \section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Import mesh in launched session}
 
 Read the available mesh file in the Fluent session:
@@ -54,7 +53,6 @@ Use specific methods to read case files and case data files:
 \pythoncode{scripts/generated_scripts/pyfluent_script_2.py}
 
 
-% row 3 col 1
 \section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Enable heat transfer physics}
 
 Enable heat transfer by activating the energy equation:
@@ -64,7 +62,7 @@ Enable heat transfer by activating the energy equation:
 \section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Access the object state using \texttt{pprint}}:
 
 \pythoncode{scripts/generated_scripts/pyfluent_script_4.py}
-
+\vfill
 
 % Second column
 % --------------------------------------------------------------------------------
@@ -81,7 +79,7 @@ Use \texttt{solver} settings objects to define boundary conditions:
 \pythoncode{scripts/generated_scripts/pyfluent_script_6.py}
 
 \vfill
-\section{\includegraphics[height=\fontcharht\font`\S]{slash.png}  Modify cell zone conditions} \\
+\section{\includegraphics[height=\fontcharht\font`\S]{slash.png}  Modify cell zone conditions} 
 Use \texttt{solver} settings objects to modify cell zone conditions.
 \pythoncode{scripts/generated_scripts/pyfluent_script_7.py}
 \vfill
@@ -90,8 +88,9 @@ Use \texttt{solver} settings objects to modify cell zone conditions.
 % --------------------------------------------------------------------------------
 \vfill
 % row 1 col 3
+
 \section{\includegraphics[height=\fontcharht\font`\S]{slash.png}  Apply solution settings}
-Use \texttt{solver] settings objects to apply solution settings, initialize, and solve.
+Use \texttt{solver} settings objects to apply solution settings, initialize, and solve.
 
 \pythoncode{scripts/generated_scripts/pyfluent_script_8.py}
 
@@ -103,7 +102,6 @@ Postprocess data with the \texttt{results} object. For example, create and displ
 \section{\includegraphics[height=\fontcharht\font`\S]{slash.png}  Temperature contour}
 \includegraphics[scale=0.15]{mixing_elbow_pyfluent.jpg}
 \centering
-
 
 % Add subsection
 % This section includes useful links to the documentation.
