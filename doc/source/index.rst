@@ -78,6 +78,12 @@ Clicking a link for a cheat sheet opens the a PDF file.
 
     .. grid-item::
 
+<<<<<<< HEAD
+        .. card:: PyFluent
+            :img-top: https://cheatsheets.docs.pyansys.com/pyfluent_cheat_sheet.png
+            :link: https://cheatsheets.docs.pyansys.com/pyfluent_cheat_sheet.pdf
+
+=======
         .. card:: PyMotorCAD
             :img-top: https://cheatsheets.docs.pyansys.com/pymotorcad_cheat_sheet.png
             :link: https://cheatsheets.docs.pyansys.com/pymotorcad_cheat_sheet.pdf
