@@ -12,9 +12,10 @@ if "%1" == "pyedb_API_cheat_sheet" goto pyedb_API_cheat_sheet
 if "%1" == "pyprimemesh_cheat_sheet" goto pyedb_API_cheat_sheet
 if "%1" == "pydpf-core_cheat_sheet" goto pydpf-core_cheat_sheet
 if "%1" == "pymechanical_cheat_sheet" goto pymechanical_cheat_sheet
-if "%1" == "pydpf-post_cheat_sheet" goto pydpf-post_cheat_sheet
 if "%1" == "pydynamicreporting_cheat_sheet" goto pydynamicreporting_cheat_sheet
 if "%1" == "pyensight_cheat_sheet" goto pyensight_cheat_sheet
+if "%1" == "pydpf-post_cheat_sheet" goto pydpf-post_cheat_sheet
+if "%1" == "pymotorcad_cheat_sheet" goto pymotorcad_cheat_sheet
 if "%1" == "clean" goto clean
 if "%1" == "help" goto help
 if "%1" == "" goto help
@@ -107,9 +108,15 @@ Echo "no pdf generated!"
 exit /b 1)
 Echo "pdf generated!"
 goto end
-   
-:run_script
-python scripts\generate_code_snippet.py %SCRIPT_PATH%
+
+:pymotorcad_cheat_sheet
+set SCRIPT_PATH=cheat_sheets/pymotorcad_cheat_sheet/pymotorcad_script.py
+CALL :run_script
+pdflatex -output-directory=%BUILDDIR% cheat_sheets/pymotorcad_cheat_sheet/pymotorcad_cheat_sheet.tex --interaction=nonstopmode
+if NOT EXIST %BUILDDIR%/pymotorcad_cheat_sheet.pdf(
+Echo "no pdf generated!"
+exit /b 1)
+Echo "pdf generated!"
 goto end
 
 :all
@@ -123,6 +130,11 @@ CALL :pymechanical_cheat_sheet
 CALL :pydynamicreporting_cheat_sheet
 CALL :pyensight_cheat_sheet
 CALL :pydpf-post_cheat_sheet
+CALL :pymotorcad_cheat_sheet
+goto end
+
+:run_script
+python scripts\generate_code_snippet.py %SCRIPT_PATH%
 goto end
 
 :clean
@@ -147,6 +159,7 @@ echo   pyprimemesh_cheat_sheet:   Build the pyprimemesh cheatsheet
 echo   pymechanical_cheat_sheet:   Build the pymechanical cheatsheet
 echo   pydynamicreporting_cheat_sheet:   Build the pydynamicreporting cheatsheet
 echo   pyensight_cheat_sheet:   Build the pydynamicreporting cheatsheet
+echo   pymotorcad_cheat_sheat:    Build the pymotorcad cheatsheet
 
 :end
 popd
