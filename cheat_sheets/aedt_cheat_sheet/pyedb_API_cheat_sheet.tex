@@ -2,7 +2,7 @@
 \usepackage{{./../static/style}}
 
 \pdfinfo{
-  /Title (PyAnsys Cheatsheets)
+  /Title (PyAnsys cheat sheets)
   /Creator (TeX)
   /Producer (pdfTeX 0.40.0)
   /Author (Ansys Inc.,)
@@ -15,13 +15,10 @@
 \raggedright
 \footnotesize
 \begin{center}
-     \Huge{\textbf{PyAEDT EDB-API Cheat sheet}} \\
+     \Huge{\textbf{PyAEDT EDB-API cheat sheet}} \\
 \end{center}
 \begin{center}
-\small{\textbf{version:0.6.78 (stable)}} \\
-\end{center}
-\begin{center}
-\small{\textbf{version:0.6.78 (stable) }} \\
+\small{\textbf{Version: 0.6.78 (stable)}} \\
 \end{center}
 \AddToShipoutPicture*
 	{\put(670,577.5){\includegraphics[height = 1.2cm]{ansys.png}}}
@@ -38,11 +35,11 @@
 \setlength{\multicolsep}{1pt}
 \setlength{\columnsep}{2pt}
 
-\section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Launching EDB-API using PyAEDT}
+\section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Launch EDB-API using PyAEDT}
 \justifying
-EDB manager manages the AEDB Database. An AEDB database is a folder that contains the database representing any part of a PCB. It can be opened and edited using the Edb class.
+EDB manager manages the AEDB database. An AEDB database is a folder that contains the database representing any part of a PCB. It can be opened and edited using the \texttt{Edb} class.
 \begin{lstlisting}[language=Python]
-# To launch an instance
+# Launch an instance
 import pyaedt
 edb = pyaedt.Edb(edbversion="2023.1", edbpath= aedb_path)
 edb.save_edb() # Save the edb file
@@ -52,61 +49,61 @@ edb.close_edb() # exits the edb file
 \section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Stackup and Layers}
 These classes are the containers of the layer and stackup manager of the EDB API.
 \begin{lstlisting}[language=Python]
-# Adding a stackup layer
+# Add a stackup layer
 edb.stakup.add_layer("Name")
-# To get the names of the all layers
+# Get the names of the all layers
 edb.stackup.stackup_layers.keys()
 \end{lstlisting}
 \section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Modeler and primitives}
 These classes are the containers of primitives and all relative methods. Primitives are planes, lines, rectangles, and circles.
 \begin{lstlisting}[language=Python]
-# Creating a polygon by defining points
+# Create a polygon by defining points
 points = [[0.0, 1e-3], [0.0, 10e-3], [100e-3, 10e-3], [100e-3, 1e-3], [0.0, 1e-3]]
 edb.modeler.create_polygon_from_points(points, layer_name = "Name")
 \end{lstlisting}
 \section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Components}
-Component class contains API references for net management. The main component object is called directly from main application using the property components.
+The \texttt{components} class contains API references for net management. The main component object is called directly from the main application using property components.
 \begin{lstlisting}[language=Python]
-# To get the list of components
+# Get the list of components
 edb.components.components.keys()
-# To get the net information of a component
+# Get the net information of a component
 edb.components.get_component_net_connection_info("Q13N")
 \end{lstlisting}
 \section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Nets}
-The Net class contains API references for net management. The main net object is called directly from main application using the property nets.
+The \texttt{nets} class contains API references for net management. The main net object is called directly from the main application using the property nets.
 \begin{lstlisting}[language=Python]
-# List of all nets in available in AEDB file
+# List all nets available in AEDB file
 edb.nets.netlist
-# To delete a net
+# Delete a net
 edb.nets["net_name"].delete()
 \end{lstlisting}
 \section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Vias and padstacks}
-These containers are the API references for padstack management. The main padstack object is called directly from main application using the property padstacks.
+These containers are the API references for padstack management. The main padstack object is called directly from the main application using the property padstacks.
 %# edb.padstacks.create_padstack(padstackname="p_name", holediam="$via_hole_size", antipaddiam="$antipaddiam", paddiam="$paddiam")
 \begin{lstlisting}[language=Python]
-# Creating a via
+# Create a via
 edb.padstacks.place(position = [5e-3, 5e-3], "MyVia")
-# To get the pad parameters
+# Get pad parameters
 edb.padstacks.get_pad_parameters()
 \end{lstlisting}
 
-\section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Sources and Excitation}
-These classes are the containers of sources methods of the EDB for both HFSS and Siwave
+\section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Sources and excitation}
+These classes are the containers of sources methods of the EDB for both HFSS and Siwave.
 % edb.hfss.create_differential_wave_port(trace_p[0].id, ["0.0", "($ms_width+$ms_spacing)/2"], trace_n[0].id, ["0.0", "-($ms_width+$ms_spacing)/2"], )
 
 \begin{lstlisting}[language=Python]
-# To get the Dictionary of EDB excitations
+# Get the dictionary of EDB excitations
 edb.excitations
-# To create differential port
+# Create a differential port
 edb.hfss.create_differential_wave_port(positive_primitive_id = trace_p[0].id, positive_points_on_edge = p1_points, negative_primitive_id = trace_n[0].id, negative_points_on_edge = n1_points, name = "wave_port_1")
 
 
 \end{lstlisting}
 
-\section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Simulation Setup}
-These classes are the containers of setup classes in EDB for both HFSS and Siwave.
+\section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Simulation setup}
+These classes are the containers of \texttt{setup} classes in EDB for both HFSS and Siwave.
 \begin{lstlisting}[language=Python]
-# HFSS simulation setup
+# Set up HFSS simulation
 setup = edb.create_hfss_setup(name = "my_setup")
 setup.set_solution_single_frequency()
 setup.hfss_solver_settings.enhanced_low_freq_accuracy = True
@@ -115,22 +112,22 @@ setup.adaptive_settings.add_adaptive_frequency_data("5GHz",8,"0.01")
 \end{lstlisting}
 
 \begin{lstlisting}[language=Python]
-# SiWave Simulation setup
+# Set up SiWave simulation
 setup = edb.siwave.add_siwave_dc_analysis(name = "myDCIR_4")
 setup.use_dc_custom_settings = True
 setup.dc_slider_position = 0
 setup.add_source_terminal_to_ground("V1", 1)
 solve_edb = edb.solve_siwave()
 \end{lstlisting}
-\section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Simulation Configuration}
+\section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Simulation configuration}
 These classes are the containers of simulation configuration constructors for the EDB.
 \begin{lstlisting}[language=Python]
-# AC settings
-Sim_setup.ac_settings.start_freq = "100Hz"
+# Specify AC settings
+sim_setup.ac_settings.start_freq = "100Hz"
 sim_setup.ac_settings.stop_freq = "6GHz"
 sim_setup.ac_settings.step_freq = "10MHz"
 
-# Batch solve
+# Run batch solve
 sim_setup=edbapp.new_simulation_configuration()
 sim_setup.solver_type sim_setup.SOLVER_TYPE.SiwaveSYZ
 sim_setup.batch_solve_settings.cutout_subdesign_expansion = 0.01
@@ -140,12 +137,12 @@ sim_setup.batch_solve_settings.signal_nets = signal_net_list
 sim_setup.batch_solve_settings.components = component_list
 sim_setup.batch_solve_settings.power_nets = power_nets_list
 
-# Saving config file
+# Save configuration file
 sim_setup.export_json(os.path.join(project_path, "configuration.json"))
 edbapp.build_simulation_project(sim_setup)
 \end{lstlisting}
-\section{\includegraphics[height=\fontcharht\font`\S]{slash.png} SiWave Manger}
-Siwave is a specialized tool for power integrity, signal integrity, and EMI analysis of IC packages and PCB. This tool solves power delivery systems and high-speed channels in electronic devices. It can be accessed from PyAEDT in Windows only. All setups can be implemented through EDB API.
+\section{\includegraphics[height=\fontcharht\font`\S]{slash.png} SiWave Manager}
+Siwave is a specialized tool for power integrity, signal integrity, and EMI analysis of IC packages and PCBs. This tool solves power delivery systems and high-speed channels in electronic devices. It can be accessed from PyAEDT in Windows only. All setups can be implemented through the EDB API.
 \begin{lstlisting}[language=Python]
 from pyaedt.siwave import Siwave
 # this call returns the Edb class initialized on 2023 R1
@@ -156,7 +153,7 @@ siwave.close_project()
 \end{lstlisting}
 
 
-\subsection{References from PyAEDT Documentation}
+\subsection{References from PyAEDT documentation}
 \begin{itemize}
 \item \href{https://aedt.docs.pyansys.com/version/stable/EDBAPI/index.html}{EDB API}
 \end{itemize}
@@ -164,6 +161,6 @@ siwave.close_project()
 \vspace{-0.15cm}
 \noindent\makebox[\linewidth]{\rule{\paperwidth}{4pt}}
 \begin{center}
-Getting Started With AEDT \includegraphics[height=\fontcharht\font`\S]{slash.png} Ansys Innovation Courses \includegraphics[height=\fontcharht\font`\S]{slash.png} %Visit \code{\href{https://courses.ansys.com/}{ansys.com/courses}}
+Getting started with AEDT \includegraphics[height=\fontcharht\font`\S]{slash.png} Ansys Innovation Courses \includegraphics[height=\fontcharht\font`\S]{slash.png} %Visit \code{\href{https://courses.ansys.com/}{ansys.com/courses}}
 \end{center}
 \end{document}

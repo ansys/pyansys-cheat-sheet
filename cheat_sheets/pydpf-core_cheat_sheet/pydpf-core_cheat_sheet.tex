@@ -1,12 +1,12 @@
 \documentclass[9pt,landscape]{article}
 \usepackage{{./../static/style}}
 \pdfinfo{
-  /Title (PyDPF-Core Cheat Sheet)
+  /Title (PyDPF-Core cheat sheet)
   /Creator (TeX)
   /Producer (pdfTeX 1.40.0)
   /Author (Ansys)
   /Subject (PyDPF)
-  /Keywords (PyAnsys, PyDPF, DPF, Cheat sheet, template)}
+  /Keywords (PyAnsys, PyDPF, DPF, cheat sheet, template)}
 
 \begin{document}
 \raggedright
@@ -16,10 +16,10 @@
 % ----------------------------------------
 
 \begin{center}
-     \Huge{\textbf{PyDPF-Core Cheat sheet}} \\
+     \Huge{\textbf{PyDPF-Core cheat sheet}} \\
 \end{center}
 \begin{center}
-\small{\textbf{based on version:0.8.1 (stable) - API may be subjected to change}} \
+\small{\textbf{Version: 0.8.1 (stable) - API is subject to change}} \
 \end{center}
 \AddToShipoutPicture*
   {\put(670,577.5){\includegraphics[height = 1.2cm]{ansys.png}}}
@@ -37,8 +37,8 @@
 % First colomn
 % --------------------------------------------------------------------------------
 
-\section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Importing a Model}
-The DPF Model gives an overview of the result files content.
+\section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Import a model}
+Import a DPF model to see an overview of the content in its results file:
 \begin{lstlisting}[language=Python]
 from ansys.dpf import core as dpf
 model = dpf.Model(r"D:\Path\to\my\file.rst")
@@ -46,26 +46,26 @@ print(model)
 \end{lstlisting}
 
 
-\section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Fetching Metadata}
-Fetch all the results available in the results file.
+\section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Fetch metadata}
+Fetch all the results available in the results file:
 \begin{lstlisting}[language=Python]
 metadata = model.metadata
 print(metadata.result_info)
 \end{lstlisting}
 
-Print the time or frequency of the results.
+Print the time or frequency of the results:
 \begin{lstlisting}[language=Python]
 print(metadata.time_freq_support)
 \end{lstlisting}
 
-Print available named selections.
+Print available named selections:
 \begin{lstlisting}[language=Python]
 print(metadata.available_named_selections)
 \end{lstlisting}
 
 
-\section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Managing Data Sources}
-Manage result files by creating a DPF DataSources object from scratch or from  a model.
+\section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Manage data sources}
+Manage results files by creating a DPF \texttt{DataSources} object from scratch or from  a model:
 \begin{lstlisting}[language=Python]
 from ansys.dpf import core as dpf
 data_src = dpf.DataSources(r"D:\Path\to\my\file.rst")
@@ -74,15 +74,15 @@ data_src = model.metadata.data_sources
 \end{lstlisting}
 
 
-\section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Read Results }
-Read displacement results by instantiating a displacement operator and print the fields container.
+\section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Read results}
+Read displacement results by instantiating a displacement operator and then print the fields container:
 \begin{lstlisting}[language=Python]
 disp_op = model.results.displacement()
 disp = disp_op.outputs.fields_container()
 print(disp)
 \end{lstlisting}
 
-Get field by Time ID = 1.
+Get field by Time ID = 1:
 \begin{lstlisting}[language=Python]
 disp_1 = disp.get_field_by_time_id(1).data
 print(disp_1)
@@ -93,8 +93,8 @@ print(disp_1)
 \vfill
 \columnbreak
 
-\section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Read the Mesh }
-Get mesh information, get the list of node IDs, get the list of element IDs.
+\section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Read the mesh}
+Get mesh information, the list of node IDs, and the list of element IDs:
 \begin{lstlisting}[language=Python]
 mesh = metadata.meshed_region
 print(mesh)
@@ -102,7 +102,7 @@ node_IDs = mesh.nodes.scoping.ids
 element_IDs = mesh.elements.scoping.ids
 \end{lstlisting}
 
-Get node and element using their IDs.
+Get a node and an element using their IDs:
 \begin{lstlisting}[language=Python]
 # Node ID 1
 node = mesh.nodes.node_by_id(1)
@@ -111,15 +111,15 @@ element = mesh.elements.element_by_id(1)
 \end{lstlisting}
 
 
-\section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Scope Results over Time/Space Domains }
-Scoping results over particular time IDs make data fetching faster.
+\section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Scope results over time/space domains}
+Scope results over particular time IDs to make fetching data faster:
 \begin{lstlisting}[language=Python]
 time_sets = [1, 3, 10]  # Data for time IDs
 disp_op = model.results.displacement()
 disp_op.inputs.time_scoping(time_sets)
 \end{lstlisting}
 
-Scoping over particular elements.
+Scope over particular elements:
 \begin{lstlisting}[language=Python]
 eids = range(262, 272)  # Element scoping
 element_scoping = dpf.Scoping(ids=eids)
@@ -129,15 +129,15 @@ s_y = dpf.operators.result.stress_Y()
 s_y.inputs.mesh_scoping.connect(element_scoping)
 \end{lstlisting}
 
-Retrieve a mesh from a scoping.
+Retrieve a mesh from a scoping:
 \begin{lstlisting}[language=Python]
 mesh_from_scoping_op = dpf.operators.mesh.from_scoping(mesh, element_scoping)
 cropped_mesh = mesh_from_scoping_op.outputs.mesh()
 \end{lstlisting}
 
 
-\section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Get a data Field }
-Apply operators and extract the resulting data Field.
+\section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Get a data field}
+Apply operators and extract the resulting data field:
 \begin{lstlisting}[language=Python]
 norm_op2 = dpf.operators.math.norm_fc()
 disp = model.results.displacement()
@@ -150,20 +150,20 @@ field_norm_disp = norm_op2.outputs.fields_container()[0]
 \vfill
 \columnbreak
 
-\section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Plot Contour Results }
-Plot a Field on its mesh, show the minimum and maximum.
+\section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Plot contour results}
+Plot a field on its mesh and show the minimum and maximum values:
 \begin{lstlisting}[language=Python]
 field_norm_disp.plot(show_max=True, show_min=True,
     title='Field', text='Field plot')
 \end{lstlisting}
-Take a screenshot from a specific camera position.
+Take a screenshot from a specific camera position:
 \begin{lstlisting}[language=Python]
 cpos = [(0.123, 0.095, 1.069), (-0.121, -0.149, 0.825), (0.0, 0.0, 1.0)]
 field.plot(off_screen=True, notebook=False, screenshot='field_plot.png', cpos=cpos)
 \end{lstlisting}
 
-\section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Workflows }
-Combine operators to create Workflows.
+\section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Workflows}
+Combine operators to create workflows:
 \begin{lstlisting}[language=Python]
 disp_op = dpf.operators.result.displacement()
 max_fc_op = dpf.operators.min_max.min_max_fc(disp_op)
@@ -174,7 +174,7 @@ workflow.set_output_name("min", max_fc_op.outputs.field_min)
 workflow.set_output_name("max", max_fc_op.outputs.field_max)
 \end{lstlisting}
 
-Use the workflow.
+Use the workflow:
 \begin{lstlisting}[language=Python]
 data_src = dpf.data_sources.DataSources(r"D:\Path\to\my\file.rst")
 workflow.connect("data_sources", data_src)
@@ -188,12 +188,12 @@ max = workflow.get_output("max", dpf.types.field)
 % Examples: installation, API reference, commands, examples.
 % Replace 'name of link' with appropriate display text.
 
-\subsection{References from PyDPF-Core Documentation}
+\subsection{References from PyDPF-Core documentation}
 \begin{itemize}
-\item \href{https://dpf.docs.pyansys.com/version/stable/getting_started/index.html}{\color{blue}{Getting Started}}
+\item \href{https://dpf.docs.pyansys.com/version/stable/getting_started/index.html}{\color{blue}{Getting started}}
 \item \href{https://dpf.docs.pyansys.com/version/stable/examples/index.html}{\color{blue}{Examples}}
-\item \href{https://dpf.docs.pyansys.com/version/stable/api/index.html}{\color{blue}{API Reference}}
-\item \href{https://dpf.docs.pyansys.com/version/stable/operator_reference.html}{\color{blue}{Operators Reference}}
+\item \href{https://dpf.docs.pyansys.com/version/stable/api/index.html}{\color{blue}{API reference}}
+\item \href{https://dpf.docs.pyansys.com/version/stable/operator_reference.html}{\color{blue}{Operators}}
 \end{itemize}
 \end{multicols}
 
@@ -201,6 +201,6 @@ max = workflow.get_output("max", dpf.types.field)
 \vspace{-0.15cm}
 \noindent\makebox[\linewidth]{\rule{\paperwidth}{4pt}}
 \begin{center}
-Getting Started with PyDPF-Core \includegraphics[height=\fontcharht\font`\S]{slash.png} \href{https://github.com/ansys/pydpf-core}{{\color{blue}PyDPF-Core on GitHub}} \includegraphics[height=\fontcharht\font`\S]{slash.png} Visit \code{\href{https://dpf.docs.pyansys.com/}}{{\color{blue}dpf.docs.pyansys.com}}
+Getting started with PyDPF-Core \includegraphics[height=\fontcharht\font`\S]{slash.png} \href{https://github.com/ansys/pydpf-core}{{\color{blue}PyDPF-Core on GitHub}} \includegraphics[height=\fontcharht\font`\S]{slash.png} Visit \code{\href{https://dpf.docs.pyansys.com/}}{{\color{blue}dpf.docs.pyansys.com}}
 \end{center}
 \end{document}

@@ -1,0 +1,147 @@
+\documentclass[9pt,landscape]{article}
+\usepackage{{./../static/style}}
+\pdfinfo{
+  /Title (PyEnSight cheat sheet)
+  /Creator (TeX)
+  /Producer (pdfTeX 1.40.0)
+  /Author (Ansys)
+  /Subject (PyEnSight)
+  /Keywords (PyEnSight, cheat sheet, template)}
+
+\begin{document}
+\raggedright
+\footnotesize
+
+% Add the title of cheat sheet here
+% ----------------------------------------
+\begin{center}
+     \Huge{\textbf{PyEnSight cheat sheet}} \\
+\end{center}
+\begin{center}
+     \small{\textbf{Version: 0.5.1 (stable)}} \\
+\end{center}
+
+\AddToShipoutPicture*
+  {\put(670,577.5){\includegraphics[height = 1.2cm]{ansys.png}}}
+\AddToShipoutPictureBG*{\includegraphics[width=\paperwidth]{bground.png}}
+\vspace{-0.3cm}
+\noindent\makebox[\linewidth]{\rule{\paperwidth}{2pt}}
+\begin{multicols}{3}
+\setlength{\premulticols}{0.5pt}
+\setlength{\postmulticols}{0.5pt}
+\setlength{\multicolsep}{0.5pt}
+\setlength{\columnsep}{1pt}
+
+% session starts here. 
+% First colomn
+% --------------------------------------------------------------------------------
+
+\section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Launch EnSight}
+
+
+Launch EnSight locally:
+
+\pythoncode{scripts/generated_scripts/pyensight_script_0.py}
+
+% row 2 col 1
+Launch EnSight locally using the launcher:
+\pythoncode{scripts/generated_scripts/pyensight_script_1.py}
+
+Launch EnSight locally from a container:
+
+
+\pythoncode{scripts/generated_scripts/pyensight_script_2.py}
+
+
+% row 3 col 1
+\section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Load data}
+
+Load an example for postprocessing a design point:
+
+\pythoncode{scripts/generated_scripts/pyensight_script_3.py}
+
+Load EnSight, Fluent, or Mechanical data:
+
+\pythoncode{scripts/generated_scripts/pyensight_script_4.py}
+
+
+% Second column
+% --------------------------------------------------------------------------------
+% row 1 col 2
+\section{\includegraphics[height=\fontcharht\font`\S]{slash.png} PyEnSight renderables}
+
+Create an image renderable:
+
+
+\pythoncode{scripts/generated_scripts/pyensight_script_5.py}
+
+% row 2 col 2
+Create a deep-pixel picture, an animation, and a WebGL renderable:
+\pythoncode{scripts/generated_scripts/pyensight_script_6.py}
+
+Display the EnSight rendering window:
+\pythoncode{scripts/generated_scripts/pyensight_script_7.py}
+
+
+\section{{\includegraphics[height=\fontcharht\font`\S]{slash.png}  Working with EnSight}}
+
+Export a picture, a deep-pixel picture, and an animation:
+\pythoncode{scripts/generated_scripts/pyensight_script_8.py}
+Select parts by a specific dimension:
+\pythoncode{scripts/generated_scripts/pyensight_script_9.py}
+Set an isometric view: 
+\pythoncode{scripts/generated_scripts/pyensight_script_10.py}
+Query a 1D part and plot the result:
+\pythoncode{scripts/generated_scripts/pyensight_script_11.py}
+
+
+\section{{\includegraphics[height=\fontcharht\font`\S]{slash.png}  Saving and restoring }} \\
+
+Save in memory:
+\pythoncode{scripts/generated_scripts/pyensight_script_12.py}
+
+Save on disk:
+\pythoncode{scripts/generated_scripts/pyensight_script_13.py}
+
+Restore from memory:
+\pythoncode{scripts/generated_scripts/pyensight_script_14.py}
+
+Restore from disk:
+\pythoncode{scripts/generated_scripts/pyensight_script_15.py}
+
+\section{{\includegraphics[height=\fontcharht\font`\S]{slash.png}  Common graphics operations}} 
+
+
+Color by a variable:
+\pythoncode{scripts/generated_scripts/pyensight_script_16.py}
+
+Change the representation:
+\pythoncode{scripts/generated_scripts/pyensight_script_17.py}
+
+Show the mesh lines:
+\pythoncode{scripts/generated_scripts/pyensight_script_18.py}
+% Third column
+% --------------------------------------------------------------------------------
+
+% row 1 col 3
+\
+% Add subsection
+% This section includes useful links to the documentation.
+% Examples: installation, API reference, commands, examples.
+% Replace 'name of link' with appropriate display text.
+
+\subsection{References from PyEnSight documentation}
+\begin{itemize}
+\item \href{https://ensight.docs.pyansys.com/version/stable/getting_started/index.html}{\color{blue}{Getting started}}  
+\item \href{https://ensight.docs.pyansys.com/version/stable/class_documentation.html}{\color{blue}{EnSight API through PyEnSight}}
+\item \href{https://ensight.docs.pyansys.com/version/stable/_examples/index.html}{\color{blue}{Examples}}
+\end{itemize}
+\end{multicols}
+
+% Footer session of the latex with link to documentation and GitHub page
+\vspace{-0.2cm}
+\noindent\makebox[\linewidth]{\rule{\paperwidth}{4pt}}
+\begin{center}
+Getting started with PyEnSight \includegraphics[height=\fontcharht\font`\S]{slash.png} \href{https://github.com/ansys/pyensight}{\color{blue}{PyEnSight on GitHub}}} \includegraphics[height=\fontcharht\font`\S]{slash.png} Visit \code{\href{https://ensight.docs.pyansys.com/}}{\color{blue}{ensight.docs.pyansys.com/}}
+\end{center}
+\end{document}

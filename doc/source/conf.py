@@ -4,7 +4,11 @@ from datetime import datetime
 
 from sphinx.builders.latex import LaTeXBuilder
 
-LaTeXBuilder.supported_image_types = ["image/png", "image/pdf", "image/svg+xml"]
+LaTeXBuilder.supported_image_types = [
+    "image/png",
+    "image/pdf",
+    "image/svg+xml",
+]
 
 from ansys_sphinx_theme import (
     __version__,
@@ -14,7 +18,9 @@ from ansys_sphinx_theme import (
 
 # Project information
 project = "ansys_sphinx_theme"
-copyright = f"(c) {datetime.now().year} ANSYS, Inc. All rights reserved"
+copyright = (
+    f"(c) {datetime.now().year} ANSYS, Inc. All rights reserved"
+)
 author = "ANSYS, Inc."
 release = version = __version__
 

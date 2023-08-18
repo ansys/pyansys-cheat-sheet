@@ -1,12 +1,12 @@
 \documentclass[9pt,landscape]{article}
 \usepackage{{./../static/style}}
 \pdfinfo{
-  /Title (Pydynamicreporting Cheat Sheet)
+  /Title (PyDynamicReporting cheat sheet)
   /Creator (TeX)
   /Producer (pdfTeX 1.40.0)
   /Author (Ansys)
-  /Subject (Pydynamicreporting)
-  /Keywords (Pydynamicreporting, Cheat sheet)}
+  /Subject (PyDynamicReporting)
+  /Keywords (PyDynamicReporting, cheat sheet, template)}
 
 \begin{document}
 \raggedright
@@ -16,10 +16,10 @@
 % ----------------------------------------
 
 \begin{center}
-     \Huge{\textbf{PyDynamicReporting Cheat sheet}} \\
+     \Huge{\textbf{PyDynamicReporting cheat sheet}} \\
 \end{center}
 \begin{center}
-  \small{\textbf{version:0.4.0 (stable)}} \\
+  \small{\textbf{Version: 0.4.0 (stable)}} \\
 \end{center}
 \AddToShipoutPicture*
   {\put(670,577.5){\includegraphics[height = 1.2cm]{ansys.png}}}
@@ -33,8 +33,8 @@
 \setlength{\multicolsep}{1pt}
 \setlength{\columnsep}{2pt}
 
-\section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Ansys Dynamic Reporting Service}
-To launch and stop a local ADR Service on a new database:
+\section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Launch Dynamic Reporting Service}
+Launch and stop a local instance of the Ansys Dynamic Reporting Service on a new database:
 \begin{lstlisting}[language=Python]
 import ansys.dynamicreporting.core as adr
 db_dir = r'C:\tmp\my_local_db_directory'
@@ -42,11 +42,11 @@ ansys_ins = r'C:\Program Files\Ansys Inc\v241'
 adr_service = adr.Service(
   ansys_installation=ansys_ins, db_directory=db_dir)
 session_guid = adr_service.start(create_db=True)
-# To stop the service
+# Stop the service
 adr_service.stop()
 \end{lstlisting}
 
-To connect to an already running ADR service on port 8000:
+Connect to an already running Ansys Dynamic Reporting service on port 8000:
 
 \begin{lstlisting}[language=Python]
 import ansys.dynamicreporting.core as adr
@@ -56,8 +56,8 @@ adr_service = adr.Service(
 adr_service.connect(url='http://localhost:8000') 
 \end{lstlisting}
 
-\section{\includegraphics[height=\fontcharht\font`\S]{slash.png}  Create new items}
-To create new items in the database of different types:
+\section{\includegraphics[height=\fontcharht\font`\S]{slash.png}  Create items}
+Create items of different types in the database:
 \begin{lstlisting}[language=Python]
 # Create text item
 my_text = adr_service.create_item(obj_name='Text')
@@ -98,9 +98,9 @@ my_tree.item_tree = tree
 
 
 \section{\includegraphics[height=\fontcharht\font`\S]{slash.png}  Set plot properties}
-To display a table item as a plot:
+Display a table item as a plot:
 \begin{lstlisting}[language=Python]
-# Set visualization to be plot instead of table
+# Set visualization to be a plot instead of a table
 my_table.plot = 'line'
 # Set X axis and axis formatting
 my_table.xaxis = 'Row 1'
@@ -108,25 +108,24 @@ my_table.format = 'floatdot1'
 \end{lstlisting} 
 
 \section{\includegraphics[height=\fontcharht\font`\S]{slash.png}  Tag items}
-To set tags on an item:
+Set tags on an item:
 
 \begin{lstlisting}[language=Python]
 my_text.set_tags("tag1=one tag2=two tag3=three")
 \end{lstlisting} 
 
-To add or remove tags on an item:
+Add or remove tags on an item:
 \begin{lstlisting}[language=Python]
 my_text.add_tag(tag='tag4', value='four')
 my_text.rem_tag("tag1")
 \end{lstlisting} 
 
 \section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Create report templates}
-To create report templates use the ADR low level API. The first step is to define 
-the server object:
+You use the low-level API for Ansys Dynamic Reporting to create report templates. First define the server object:
 \begin{lstlisting}[language=Python]
 server = adr_service.serverobj
 \end{lstlisting}
-Then use the low level API to create a new report template:
+Then use the low-level API to create a report template:
 \begin{lstlisting}[language=Python]
 template_0=server.create_template(name="My Report", 
   parent=None, report_type="Layout:basic")
@@ -146,26 +145,26 @@ server.put_objects(template_0)
 \end{lstlisting}
 
 \section{\includegraphics[height=\fontcharht\font`\S]{slash.png}  Visualize items and reports}
-To search for text items:
+Search for text items:
 \begin{lstlisting}[language=Python]
 all_items = adr_service.query()
 only_text_items = adr_service.query(filter=
   "A|i_type|cont|html,string")
 \end{lstlisting}
-To visualize the first item returned:
+Visualize the first item returned:
 \begin{lstlisting}[language=Python]
 only_text_items[0].visualize()
 \end{lstlisting}
 
-To visualize all the items in the report listed one after the other:
+Visualize all items in the report, listed one after the other:
 \begin{lstlisting}[language=Python]
 adr_service.visualize_report()
 \end{lstlisting}
-To list all the reports:
+List all reports:
 \begin{lstlisting}[language=Python]
 all_reports = adr_service.get_list_reports()
 \end{lstlisting}
-To view a report with a specific name:
+View a report with a specific name:
 \begin{lstlisting}[language=Python]
 report_by_name = adr_service.get_report(
   report_name='My Report')
@@ -173,12 +172,12 @@ report_by_name.visualize()
 \end{lstlisting}
 
 
-\section{\includegraphics[height=\fontcharht\font`\S]{slash.png}  Get url for items and reports}
-To get the URL from the first item returned:
+\section{\includegraphics[height=\fontcharht\font`\S]{slash.png}  Get URLs for items and reports}
+Get the URL from the first item returned:
 \begin{lstlisting}[language=Python]
 only_text_items[0].url
 \end{lstlisting}
-To get the URL of a report:
+Get the URL of a report:
 \begin{lstlisting}[language=Python]
 report_by_name.get_url()
 \end{lstlisting}
@@ -189,9 +188,9 @@ report_by_name.get_url()
 % Examples: installation, API reference, commands, examples.
 % Replace 'name of link' with appropriate display text.
 
-\subsection{References from PyAnsys Documentation}
+\subsection{References from PyAnsys documentation}
 \begin{itemize}
-\item \href{https://dynamicreporting.docs.pyansys.com/version/stable/gettingstarted/index.html}{\color{blue}{Getting Started}}
+\item \href{https://dynamicreporting.docs.pyansys.com/version/stable/gettingstarted/index.html}{\color{blue}{Getting started}}
 \item \href{https://dynamicreporting.docs.pyansys.com/version/stable/class_documentation.html}{\color{blue}{API reference}}}
 \item \href{https://dynamicreporting.docs.pyansys.com/version/stable/examples/index.html}{\color{blue}{Examples}}}
 \end{itemize}
@@ -201,6 +200,6 @@ report_by_name.get_url()
 \vspace{-0.15cm}
 \noindent\makebox[\linewidth]{\rule{\paperwidth}{4pt}}
 \begin{center}
-Getting Started with PyDynamicReporting \includegraphics[height=\fontcharht\font`\S]{slash.png} \href{https://github.com/ansys/pydynamicreporting}{\color{blue}{PyAnsys on GitHub}} \includegraphics[height=\fontcharht\font`\S]{slash.png} Visit \code{\href{https://dynamicreporting.docs.pyansys.com/}}{\color{blue}{dynamicreporting.docs.pyansys.com}}
+Getting started with PyDynamicReporting \includegraphics[height=\fontcharht\font`\S]{slash.png} \href{https://github.com/ansys/pydynamicreporting}{\color{blue}{PyAnsys on GitHub}} \includegraphics[height=\fontcharht\font`\S]{slash.png} Visit \code{\href{https://dynamicreporting.docs.pyansys.com/}}{\color{blue}{dynamicreporting.docs.pyansys.com}}
 \end{center}
 \end{document}

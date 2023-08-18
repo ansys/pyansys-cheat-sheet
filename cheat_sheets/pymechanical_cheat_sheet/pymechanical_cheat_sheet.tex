@@ -1,0 +1,141 @@
+\documentclass[9pt,landscape]{article}
+\usepackage{{./../static/style}}
+\pdfinfo{
+  /Title (PyMechanical cheat sheet)
+  /Creator (TeX)
+  /Producer (pdfTeX 1.40.0)
+  /Author (Ansys)
+  /Subject (PyAnsys)
+  /Keywords (PyAnsys, PyMechanical, Mechanical, cheat sheet, template)}
+
+
+\begin{document}
+\raggedright
+\footnotesize
+
+% Add the title of cheat sheet here
+% ----------------------------------------
+\begin{center}
+     \Huge{\textbf{PyMechanical cheat sheet}} \\
+\end{center}
+
+\begin{center}
+  \small{\textbf{Version: 0.9 (stable)}} \\
+\end{center}
+
+\AddToShipoutPicture*
+  {\put(670,577.5){\includegraphics[height = 1.2cm]{ansys.png}}}
+\AddToShipoutPictureBG*{\includegraphics[width=\paperwidth]{bground.png}}
+\vspace{-0.40cm}
+\noindent\makebox[\linewidth]{\rule{\paperwidth}{2pt}}
+
+\begin{multicols}{3}
+\setlength{\premulticols}{1pt}
+\setlength{\postmulticols}{1pt}
+\setlength{\multicolsep}{1pt}
+\setlength{\columnsep}{2pt}
+
+% session starts here. 
+% First colomn
+% --------------------------------------------------------------------------------
+\vfill
+\section{\includegraphics[height=\fontcharht\font`\S]{slash.png} # A. Connect to a \underline{remote session} of Mechanical from Python}
+
+% \vspace{5mm} %5mm vertical space
+% {\color{orange} \rule{\linewidth}{0.1mm}}
+
+\section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Launch and connect to a session}
+Launch and connect to Mechanical locally:
+\pythoncode{scripts/generated_scripts/pymechanical_script_0.py}
+
+Launch Mechanical from a local or remote terminal:
+\pythoncode{scripts/generated_scripts/pymechanical_script_1.py}
+
+Manually connect to this Mechanical session from a local client:
+\pythoncode{scripts/generated_scripts/pymechanical_script_2.py}
+
+
+
+% row 2 col 1
+\section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Launch by version}
+Verify the license and version of Mechanical that is used:
+\pythoncode{scripts/generated_scripts/pymechanical_script_3.py}
+
+Launch a specific version of Mechanical:
+\pythoncode{scripts/generated_scripts/pymechanical_script_4.py}
+
+\section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Launch the  Mechanical UI}
+Launch the  Mechanical UI:
+\pythoncode{scripts/generated_scripts/pymechanical_script_5.py}
+
+
+% Second column
+% --------------------------------------------------------------------------------
+% row 1 col 2
+
+\vfill
+\section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Send commands to Mechanical}
+Run a single command:
+\pythoncode{scripts/generated_scripts/pymechanical_script_6.py}
+
+Execute a block of commands:
+\pythoncode{scripts/generated_scripts/pymechanical_script_7.py}
+
+Execute a Python script file:
+\pythoncode{scripts/generated_scripts/pymechanical_script_8.py}
+
+Import a Mechancial file and print the count of bodies:
+\pythoncode{scripts/generated_scripts/pymechanical_script_9.py}
+
+% \section{\includegraphics[height=\fontcharht\font`\S]{slash.png}Project-specific operations}
+Perform project-specific operations:
+\pythoncode{scripts/generated_scripts/pymechanical_script_10.py}
+
+% Third column
+% --------------------------------------------------------------------------------
+%\vfill
+% row 1 col 3
+
+\section{\includegraphics[height=\fontcharht\font`\S]{slash.png} # B. Load an  \underline{embedded instance} of Mechanical in Python}
+% \vspace{5mm} %5mm vertical space
+% {\color{orange} \rule{\linewidth}{0.1mm}}
+Embed a Mechanical instance: 
+\pythoncode{scripts/generated_scripts/pymechanical_script_11.py}
+
+% To extract the global API entry points, that are available from built-in Mechanical scripting, and merge them into your global Python global variables:
+Extract and merge global API entry points:
+\pythoncode{scripts/generated_scripts/pymechanical_script_12.py}
+
+Access entry points from Python: 
+\pythoncode{scripts/generated_scripts/pymechanical_script_13.py}
+
+Import a file and print the count of bodies:
+\pythoncode{scripts/generated_scripts/pymechanical_script_14.py}
+
+Turn on warning logging:
+\pythoncode{scripts/generated_scripts/pymechanical_script_15.py}
+
+% Add subsection
+% This section includes useful links to the documentation.
+% Examples: installation, API reference, commands, examples.
+% Replace 'name of link' with appropriate display text.
+
+\subsection{References from PyMechanical and Mechanical documentation}
+\begin{multicols}{2}
+\begin{itemize}
+\item \href{https://mechanical.docs.pyansys.com/version/stable/getting_started/index.html}{\color{blue}{Getting started}}
+\item \href{https://mechanical.docs.pyansys.com/version/stable/examples/index.html}{\color{blue}{Examples}}
+\item \href{https://mechanical.docs.pyansys.com/version/stable/api/index.html}{\color{blue}{API reference}}
+\item \href{https://ansyshelp.ansys.com/account/secured?returnurl=/Views/Secured/corp/v231/en/act_script/act_script.html}{\color{blue}{Scripting in Mechanical Guide}}
+\end{itemize}
+\end{multicols}
+\end{multicols}
+
+% Footer session of the latex with link to documentation and GitHub page
+\vspace{-0.45cm}
+\noindent\makebox[\linewidth]{\rule{\paperwidth}{3pt}}
+\begin{center}
+Getting started with PyMechanical \includegraphics[height=\fontcharht\font`\S]{slash.png} \href{https://github.com/ansys/pymechanical}{\color{blue}{PyMechanical on GitHub}}
+\includegraphics[height=\fontcharht\font`\S]{slash.png} Visit \code{\href{https://mechanical.docs.pyansys.com/}}{\color{blue}{mechanical.docs.pyansys.com}}
+\end{center}
+\end{document}
