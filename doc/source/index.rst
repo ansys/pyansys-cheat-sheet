@@ -75,3 +75,9 @@ Clicking a link for a cheat sheet opens the a PDF file.
             :img-top: https://cheatsheets.docs.pyansys.com/pymechanical_cheat_sheet.png
             :link: https://cheatsheets.docs.pyansys.com/pymechanical_cheat_sheet.pdf
 
+
+    .. grid-item::
+
+        .. card:: PyMotorCAD
+            :img-top: https://cheatsheets.docs.pyansys.com/pymotorcad_cheat_sheet.png
+            :link: https://cheatsheets.docs.pyansys.com/pymotorcad_cheat_sheet.pdf
