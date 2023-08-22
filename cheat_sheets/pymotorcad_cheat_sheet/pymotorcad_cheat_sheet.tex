@@ -1,21 +1,21 @@
 \documentclass[landscape]{article}
 \usepackage{{./../static/style}}
 \pdfinfo{
-  /Title (PyMotorcad cheat sheet)
+  /Title (PyMotorCAD cheat sheet)
   /Creator (TeX)
   /Producer (pdfTeX 1.40.0)
   /Author (Ansys)
   /Subject (PyMotorCAD)
-  /Keywords (PyAnsys, PyMotorCAD, MotorCAD, cheat sheet)}
+  /Keywords (PyAnsys, PyMotorCAD, Motor-CAD, cheat sheet, template)}
 
 \begin{document}
 \raggedright
 \footnotesize
 \begin{center}
-     \Huge{\textbf{PyMotorCAD-API Cheatsheet}} 
+     \Huge{\textbf{PyMotorCAD-API cheat sheet}} 
 \end{center}
 \begin{center}
-	\small{\textbf{based on version:0.1 (stable)}} 
+	\small{\textbf{Version: 0.1 (stable)}} 
 \end{center}
 \AddToShipoutPicture*
   {\put(670,577.5){\includegraphics[height = 1.2cm]{ansys.png}}}
@@ -32,73 +32,73 @@
 % session starts here. 
 % First colomn
 % --------------------------------------------------------------------------------
-\section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Launching MotorCAD using PyMotorCAD}
-To launch Motor-CAD instance locally and exit:
+\section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Launch Motor-CAD using PyMotorCAD}
+Launch a Motor-CAD instance locally and then exit:
 \pythoncode{scripts/generated_scripts/pymotorcad_script_0.py}
 
 
-%\section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Loading Template}
-%To load template and save file:
+%\section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Load template}
+%Load template and save file:
 %\begin{lstlisting}[language=Python]
 %mcad.load_template(template_name)
 %mcad.save_to_file(os.path.join(working_folder, mcad_name + ".mot"))
 %\end{lstlisting}
 
-\section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Geometrical properties}
-To specify the motor geometry:
+\section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Geometry properties}
+Specify the motor geometry:
 \pythoncode{scripts/generated_scripts/pymotorcad_script_1.py}
 
-To set winding patterns:
+Set winding patterns:
 \pythoncode{scripts/generated_scripts/pymotorcad_script_2.py}
 
-\section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Material Assignment}
-To set stater and rotor lamination materials:
+\section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Material assignment}
+Set stater and rotor lamination materials:
 \pythoncode{scripts/generated_scripts/pymotorcad_script_3.py}
 
-\section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Building Model}
-To set building commands:
+\section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Model motor}
+Set building commands:
 \pythoncode{scripts/generated_scripts/pymotorcad_script_4.py}
 
-\section{\includegraphics[height=\fontcharht\font`\S]{slash.png} E-magnetic Performance Curves in LAB}
-To set lab operating mode:
+\section{\includegraphics[height=\fontcharht\font`\S]{slash.png} E-magnetic performance curves in LAB}
+Set lab operating mode:
 \pythoncode{scripts/generated_scripts/pymotorcad_script_5.py}
 
-To calculate the E-Magnetic performance:
+Calculate the E-Magnetic performance:
 \pythoncode{scripts/generated_scripts/pymotorcad_script_6.py}
 
-\section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Operating Point Calculation}
-To set the operating point variables:
+\section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Operating point calculation}
+Set the operating point variables:
 \pythoncode{scripts/generated_scripts/pymotorcad_script_7.py}
 
-To calculate operating point:
+Calculate the operating point:
 \pythoncode{scripts/generated_scripts/pymotorcad_script_8.py}
 
-\section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Electromagnetic Calculations in Emag}
-To perform electromagnetic calculations:
+\section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Electromagnetic calculations in Emag}
+Perform electromagnetic calculations:
 \pythoncode{scripts/generated_scripts/pymotorcad_script_9.py}
 
 \section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Results}
 \pythoncode{scripts/generated_scripts/pymotorcad_script_10.py}
 
-\section{\includegraphics[height=\fontcharht\font`\S]{slash.png} PyMotorCAD Scripting in MATLAB}
-The Python version that MATLAB is using has the \textit{ansys.motorcad.core} package installed, PyMotorCAD is available to use in MATLAB.
+\section{\includegraphics[height=\fontcharht\font`\S]{slash.png} PyMotorCAD scripting in MATLAB}
+The Python version that MATLAB is using has the \textit{ansys.motorcad.core} package installed. PyMotorCAD is available to use in MATLAB.
 
-To import the \textit{ansys.motorcad.core} python package for use in MATLAB:
+Import the \textit{ansys.motorcad.core} Python package for use in MATLAB:
 \pythoncode{scripts/generated_scripts/pymotorcad_script_11.py}
 
-\section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Backwards Compatibility}
-To use ActiveX scripts to connect to Motor-CAD:
+\section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Backwards compatibility}
+Use ActiveX scripts to connect to Motor-CAD:
 \pythoncode{scripts/generated_scripts/pymotorcad_script_12.py}
 
-To use PyMotorCAD to connect to Motor-CAD:
+Use PyMotorCAD to connect to Motor-CAD:
 \pythoncode{scripts/generated_scripts/pymotorcad_script_13.py}
 
-\subsection{References from PyMotorCad Documentation}
+\subsection{References from PyMotorCAD documentation}
 \begin{center}
 \begin{itemize}
-\item \href{https://motorcad.docs.pyansys.com/version/stable/getting_started/index.html}{\color{blue}{Getting Started}}
+\item \href{https://motorcad.docs.pyansys.com/version/stable/getting_started/index.html}{\color{blue}{Getting started}}
 \item \href{https://motorcad.docs.pyansys.com/version/stable/examples/index.html}{\color{blue}{Examples}}
-\item \href{https://motorcad.docs.pyansys.com/version/stable/methods/index.html}{\color{blue}{API Reference}}
+\item \href{https://motorcad.docs.pyansys.com/version/stable/methods/index.html}{\color{blue}{API reference}}
 \end{itemize}
 \end{center}
 \end{multicols}

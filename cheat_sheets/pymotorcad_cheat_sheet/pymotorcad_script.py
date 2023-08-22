@@ -2,13 +2,13 @@ import ansys.motorcad.core as pymotorcad
 
 mcad = pymotorcad.MotorCAD()
 mcad.load_from_file(r"path/motor_cad.mot")
-# loading pre-defined template
+# Load predefined template
 mcad.load_template(template_name)
 # saving file to working_folder
 mcad.save_to_file(
     os.path.join(working_folder, mcad_name + ".mot")
 )
-# existing MotorCAD
+# Exit Motor-CAD
 mcad.quit()
 # BREAK BLOCK
 
@@ -34,7 +34,7 @@ mcad.set_variable("ModelBuildSpeed_MotorLAB", 10000)
 mcad.set_variable("MaxModelCurrent_MotorLAB", 480)
 mcad.set_variable("BuildSatModel_MotorLAB", True)
 
-# Setting lab context and building model
+# Set lab context and build model
 mcad.set_motorlab_context()
 mcad.clear_model_build_lab()
 mcad.build_model_lab()
@@ -62,28 +62,28 @@ mcad.set_variable("LabMagneticCoupling", 0)
 mcad.calculate_operating_point_lab()
 # BREAK BLOCK
 
-# Set the torque calculation options.
+# Set the torque calculation options
 points_per_cycle = 60
 number_cycles = 1
 mcad.set_variable("TorquePointsPerCycle", points_per_cycle)
 mcad.set_variable("TorqueNumberCycles", number_cycles)
-# Disable all performance tests except the ones for transient torque.
+# Disable all performance tests except the ones for transient torque
 mcad.set_variable("BackEMFCalculation", False)
 mcad.set_variable("CoggingTorqueCalculation", False)
-# Enable transient torque.
+# Enable transient torque
 mcad.set_variable("TorqueCalculation", True)
-# For running  Emag performance tests
+# Run Emag performance tests
 mcad.do_magnetic_calculation()
 # BREAK BLOCK
 
-# Getting the transient torque waveform in Emag
+# Get the transient torque waveform in Emag
 for n in range(points_per_cycle):
     (x, y) = mcad.get_magnetic_graph_point("TorqueVW", n)
     rotor_position.append(x)
     torque_.append(y)
-# line voltage calculation
+# Calculate line voltage
 line_voltage = mcad.get_variable("PeakLineLineVoltage")
-# Retrieving lab performance curves
+# Retrieve lab performance curves
 data = io.loadmat(
     os.path.join(
         working_folder, mcad_name, "Lab", "MotorLAB_elecdata.mat"
