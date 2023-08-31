@@ -64,7 +64,7 @@ pool.exit()
 \end{lstlisting}
 
 \section{\includegraphics[height=\fontcharht\font`\S]{slash.png} PyMAPDL commands}
-PyMAPDL commands are Python statements that act as a wrapper for APDL commands. For example, \textt{ESEL, s, type, 1} is translated as:
+PyMAPDL commands are Python statements that act as a wrapper for APDL commands. For example, \texttt{ESEL, s, type, 1} is translated as:
 \begin{lstlisting}[language=Python]
 mapdl.esel('s', 'type', vmin=1) 
 \end{lstlisting}
@@ -116,7 +116,7 @@ mapdl.get_array(entity='NODE', item1='NLIST')
 \end{lstlisting} 
 
 \section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Mesh class}
-Store the finite element mesh as a VTK \textt{UnstructuredGrid} data object:
+Store the finite element mesh as a VTK \texttt{UnstructuredGrid} data object:
 \begin{lstlisting}[language=Python]
 grid = mapdl.mesh.grid
 \end{lstlisting} 
@@ -165,7 +165,7 @@ post_processing.plot_nodal_eqv_stress(
 \vfill
 
 \section{\includegraphics[height=\fontcharht\font`\S]{slash.png} Plotting class}
-Use PyVista to interpolate data, saving the resulting stress and storing it in the underlying \textt{UnstructuredGrid} object:
+Use PyVista to interpolate data, saving the resulting stress and storing it in the underlying \texttt{UnstructuredGrid} object:
 \begin{lstlisting}[language=Python]
 pl = pyvista.Plotter()
 pl0 = post_processing.plot_nodal_stress(

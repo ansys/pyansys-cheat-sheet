@@ -3,7 +3,7 @@ import ansys.mechanical.core as pymechanical
 mechanical = pymechanical.launch_mechanical()
 # BREAK BLOCK
 # Standalone Mechanical from a local or remote terminal
-"C:/Program Files/ANSYS Inc/v232/aisol/bin/winx64/AnsysWBU.exe" -DSApplet -AppModeMech  -nosplash -notabctrl -grpc 10000
+ansys-mechanical -r 232 --port 10000 -g
 # BREAK BLOCK
 import ansys.mechanical.core as pymechanical
 # #Note: The following code uses port 10000, but you can specify an alternative port if required.
