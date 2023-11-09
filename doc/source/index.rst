@@ -1,8 +1,8 @@
-PyAnsys cheat Sheets documentation
-==================================
+PyAnsys cheat sheet documentation
+=================================
 
 PyAnsys provides cheat sheets for different libraries as quick reference guides.
-Clicking a link for a cheat sheet opens the a PDF file.
+Clicking a link for a cheat sheet opens a PDF file.
 
 .. grid:: 3 1 1 3
 
