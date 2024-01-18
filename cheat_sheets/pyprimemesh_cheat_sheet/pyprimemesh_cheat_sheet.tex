@@ -117,8 +117,6 @@ mesher.wrap(
   max_size=16,
   input_parts="flange,pipe",
   use_existing_features=True,
-  recompute_remesh_sizes=True,
-  remesh_size_controls=[curvature_control],
 )
 \end{lstlisting}
 
@@ -151,7 +149,7 @@ diag_params = prime.SurfaceDiagnosticSummaryParams(
     compute_free_edges=True,
 )
 diag_res = diag.get_surface_diagnostic_summary(diag_params)
-print("Number of free faces : ", diag_res.n_free_edges)
+print("Number of free edges : ", diag_res.n_free_edges)
 \end{lstlisting}
 
 Generate surface mesh quality metrics:
