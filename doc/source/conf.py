@@ -10,11 +10,7 @@ LaTeXBuilder.supported_image_types = [
     "image/svg+xml",
 ]
 
-from ansys_sphinx_theme import (
-    __version__,
-    ansys_favicon,
-    ansys_logo_black,
-)
+from ansys_sphinx_theme import __version__, ansys_favicon, ansys_logo_black
 
 # Project information
 project = "ansys_sphinx_theme"
