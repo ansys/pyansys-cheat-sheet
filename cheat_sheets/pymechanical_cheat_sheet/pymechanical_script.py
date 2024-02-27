@@ -78,7 +78,7 @@ from ansys.mechanical.core import global_variables
 # Merge them into your Python global variables
 # Optional argument  for Enums without namespaces
 globals().update(global_variables(app),True)
-# Import python modules shipped with Mechanical
+# Import Python modules shipped with Mechanical
 from ansys.mechanical.core.embedding import add_mechanical_python_libraries
 add_mechanical_python_libraries(241)
 # BREAK BLOCK
