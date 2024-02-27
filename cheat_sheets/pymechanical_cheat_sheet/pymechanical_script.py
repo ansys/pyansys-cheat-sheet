@@ -69,7 +69,6 @@ mechanical.exit(force=True)
 
 # BREAK BLOCK
 from ansys.mechanical.core import App
-
 app = App(version=241)
 print(app)
 # BREAK BLOCK
@@ -77,7 +76,11 @@ print(app)
 # Extract the global API entry points (available from built-in Mechanical scripting)
 from ansys.mechanical.core import global_variables
 # Merge them into your Python global variables
-globals().update(global_variables(app))
+# Optional argument  for Enums without namespaces
+globals().update(global_variables(app),True)
+# Import Python modules shipped with Mechanical
+from ansys.mechanical.core.embedding import add_mechanical_python_libraries
+add_mechanical_python_libraries(241)
 # BREAK BLOCK
 ExtAPI  # Application.ExtAPI
 DataModel  # Application.DataModel
@@ -89,16 +92,13 @@ Graphics  # Application.ExtAPI.Graphics
 file = r"D:\\Workdir\\bracket.mechdb"
 app.open(file)
 allbodies = DataModel.Project.Model.GetChildren(
-    Ansys.Mechanical.DataModel.Enums.DataModelObjectCategory.Body,
-    True)
+    DataModelObjectCategory.Body,True)
 print(allbodies.Count)
 # BREAK BLOCK
 import logging
 from ansys.mechanical.core import App
 from ansys.mechanical.core.embedding.logger import (
-    Configuration,
-    Logger)
-
+    Configuration,Logger)
 Configuration.configure(level=logging.WARNING, to_stdout=True)
 app = App(version=241)
 Logger.error("message")
