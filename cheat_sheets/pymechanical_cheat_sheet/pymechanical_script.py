@@ -75,9 +75,8 @@ print(app)
 # BREAK BLOCK
 
 # Extract the global API entry points (available from built-in Mechanical scripting)
-from ansys.mechanical.core import global_variables
 # Merge them into your Python global variables
-globals().update(global_variables(app))
+app.update_globals(globals())
 # BREAK BLOCK
 ExtAPI  # Application.ExtAPI
 DataModel  # Application.DataModel
