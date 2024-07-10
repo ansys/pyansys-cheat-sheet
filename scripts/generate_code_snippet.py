@@ -29,6 +29,13 @@ def generate_code_examples(file_path):
         with open(file_path, "w") as file:
             file.write(example.strip())
 
+def version_fetch_pymechanical():
+    import ansys.mechanical.core as pymech
+    version = pymech.__version__
+    file_name = f"pymechanical_version.txt"
+    file_path = os.path.join(OUTPUT_PATH, file_name)
+    with open(file_path, "w") as file:
+        file.write(version)
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
@@ -40,3 +47,4 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     generate_code_examples(args.file_path)
+    version_fetch_pymechanical()
