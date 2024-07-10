@@ -3,7 +3,7 @@ import ansys.mechanical.core as pymechanical
 mechanical = pymechanical.launch_mechanical()
 # BREAK BLOCK
 # Standalone Mechanical from a local or remote terminal
-ansys-mechanical -r 241 --port 10000 -g
+ansys-mechanical -r 242 --port 10000 -g
 # BREAK BLOCK
 import ansys.mechanical.core as pymechanical
 # #Note: The following code uses port 10000, but you can specify an alternative port if required.
@@ -20,8 +20,8 @@ print(mechanical)
 # BREAK BLOCK
 from ansys.mechanical.core import find_mechanical
 
-wb_exe = find_mechanical(241)[0]
-# 'Ansys Inc\\v241\\aisol\\bin\\winx64\\AnsysWBU.exe'
+wb_exe = find_mechanical(242)[0]
+# 'Ansys Inc\\v242\\aisol\\bin\\winx64\\AnsysWBU.exe'
 mechanical = launch_mechanical(
     exec_file=wb_exe, verbose_mechanical=True, batch=True)
 print(mechanical)
@@ -70,7 +70,7 @@ mechanical.exit(force=True)
 # BREAK BLOCK
 from ansys.mechanical.core import App
 
-app = App(version=241)
+app = App(version=242)
 print(app)
 # BREAK BLOCK
 
@@ -99,5 +99,5 @@ from ansys.mechanical.core.embedding.logger import (
     Logger)
 
 Configuration.configure(level=logging.WARNING, to_stdout=True)
-app = App(version=241)
+app = App(version=242)
 Logger.error("message")
