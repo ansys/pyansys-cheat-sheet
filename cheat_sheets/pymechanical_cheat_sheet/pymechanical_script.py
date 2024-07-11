@@ -73,7 +73,6 @@ from ansys.mechanical.core import App
 app = App(version=242)
 print(app)
 # BREAK BLOCK
-
 # Extract the global API entry points (available from built-in Mechanical scripting)
 # Merge them into your Python global variables
 app.update_globals(globals())
@@ -83,13 +82,11 @@ DataModel  # Application.DataModel
 Model  # Application.DataModel.Project.Model
 Tree  # Application.DataModel.Tree
 Graphics  # Application.ExtAPI.Graphics
-
 # BREAK BLOCK
 file = r"D:\\Workdir\\bracket.mechdb"
 app.open(file)
-allbodies = DataModel.Project.Model.GetChildren(
-    Ansys.Mechanical.DataModel.Enums.DataModelObjectCategory.Body,
-    True)
+app.update_globals(globals())
+allbodies = Model.GetChildren(DataModelObjectCategory.Body, True)
 print(allbodies.Count)
 # BREAK BLOCK
 import logging
